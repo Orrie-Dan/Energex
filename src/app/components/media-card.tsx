@@ -24,12 +24,12 @@ export default function MediaCard({ d, cids, styles, index = 0 }: { d: MediaCard
         <div data-cid={cids[2]} className="contents min-w-0 2xl:w-384 2xl:h-135 2xl:min-h-135 2xl:block 2xl:relative 2xl:z-1 2xl:grow 2xl:shrink-0 2xl:basis-0">
           <div data-cid={cids[3]} className={cn("w-full h-112.5 min-h-100 block relative z-1 grow shrink-0 basis-0 max-md:w-[20.4375rem] max-lg:min-h-0 md:max-lg:w-180 md:max-lg:h-[23.65rem] 2xl:w-384 2xl:flex 2xl:p-2 2xl:justify-center 2xl:items-center 2xl:content-center 2xl:overflow-clip 2xl:bg-surface 2xl:min-h-0 2xl:z-[initial] 2xl:grow-[initial] 2xl:shrink-[initial] 2xl:basis-[initial] after:content-[''] after:block after:absolute after:inset-0 after:w-full after:h-112.5 max-lg:after:hidden 2xl:after:w-384", styles.className3)}>
             <div data-cid={cids[4]} className={cn("w-full h-full flex relative p-2 justify-center items-center content-center overflow-clip bg-surface max-lg:flex-col max-lg:justify-start max-lg:items-start max-lg:content-start 2xl:w-1/2 2xl:z-1 2xl:p-6 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:grow 2xl:shrink-0 2xl:basis-0 2xl:[overflow-x:initial] 2xl:[overflow-y:initial] 2xl:bg-[initial] after:content-[''] after:block after:absolute after:inset-0 after:w-full after:h-112.5 max-md:after:w-[20.4375rem] md:max-lg:after:w-180 md:max-lg:after:h-[23.65rem] 2xl:after:hidden", styles.className4)}>
-              <div data-cid={cids[5]} className={cn("w-1/2 h-108.5 flex relative z-1 p-6 flex-col justify-start items-start content-start grow shrink-0 basis-0 max-md:w-[92%] max-lg:p-4 max-lg:gap-4 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:w-[92.5%] md:max-lg:h-[6.4rem] 2xl:h-[2.4rem] 2xl:whitespace-pre 2xl:text-nowrap 2xl:z-[initial] 2xl:p-0 2xl:[align-items:initial] 2xl:[align-content:initial] 2xl:grow-[initial] 2xl:basis-[initial]", styles.className5)}>
-                <h3 data-cid={cids[6]} className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-[2rem] 2xl:font-medium 2xl:leading-[2.375rem] 2xl:tracking-[-0.3px] 2xl:whitespace-pre-wrap 2xl:text-balance" dir="auto">
+              <div data-cid={cids[5]} className={cn("w-1/2 h-108.5 flex relative z-1 p-6 flex-col justify-start items-start content-start grow shrink-0 basis-0 max-md:w-[92%] max-lg:p-4 max-lg:gap-4 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:w-[92.5%] md:max-lg:h-[6.4rem] 2xl:min-h-[2.4rem] 2xl:h-auto 2xl:z-[initial] 2xl:p-0 2xl:[align-items:initial] 2xl:[align-content:initial] 2xl:grow-[initial] 2xl:basis-[initial]", styles.className5)}>
+                <h3 data-cid={cids[6]} className="hidden 2xl:block 2xl:w-full 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-[2rem] 2xl:font-medium 2xl:leading-[2.375rem] 2xl:tracking-[-0.3px] 2xl:whitespace-normal 2xl:text-balance" dir="auto">
                   {d.title}
                 </h3>
-                <div data-cid={cids[7]} className={cn("flex relative flex-col justify-start shrink-0 whitespace-pre text-nowrap 2xl:hidden", styles.className6)}>
-                  <h3 data-cid={cids[8]} className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-[2rem] font-medium leading-[2.375rem] tracking-[-0.3px] whitespace-pre-wrap text-balance max-lg:text-2xl max-lg:leading-[1.8125rem] 2xl:hidden" data-component="heading" dir="auto">
+                <div data-cid={cids[7]} className={cn("flex relative w-full flex-col justify-start shrink-0 2xl:hidden", styles.className6)}>
+                  <h3 data-cid={cids[8]} className="block w-full text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-[2rem] font-medium leading-[2.375rem] tracking-[-0.3px] whitespace-normal text-balance max-lg:text-2xl max-lg:leading-[1.8125rem] 2xl:hidden" data-component="heading" dir="auto">
                     {d.title2}
                   </h3>
                 </div>
@@ -84,7 +84,7 @@ export default function MediaCard({ d, cids, styles, index = 0 }: { d: MediaCard
                     <img data-cid={cids[30]} className={cn("w-full h-full block overflow-clip object-cover max-lg:h-65 2xl:hidden", styles.className8)} data-component="image" alt="" height={d.height} sizes="max((max(min(100vw, 1600px) - 64px, 1px) - 16px) / 2, 1px)" src={d.imgSrc} srcSet={d.srcSet} width={d.width} />
                   </div>
                 </div>
-                <div data-cid={cids[31]} className="hidden 2xl:w-[28.925rem] 2xl:h-13.5 2xl:flex 2xl:relative 2xl:right-0 2xl:bottom-0 2xl:flex-col 2xl:justify-start 2xl:pointer-events-auto">
+                <div data-cid={cids[31]} className="hidden 2xl:w-[28.925rem] 2xl:min-h-13.5 2xl:h-auto 2xl:flex 2xl:relative 2xl:right-0 2xl:bottom-0 2xl:flex-col 2xl:justify-start 2xl:pointer-events-auto">
                   <h6 data-cid={cids[32]} className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-lg 2xl:leading-[1.6875rem] 2xl:tracking-[-0.2px] 2xl:text-balance" dir="auto">
                     {d.title4}
                   </h6>

@@ -20,14 +20,14 @@ export default function CardGridSection() {
           </div>
         </div>
         <div className="contents min-w-0 2xl:w-max 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0 2xl:pointer-events-none" data-cid="n197">
-          <div className="block relative shrink-0 pointer-events-none max-lg:[pointer-events:initial] 2xl:flex 2xl:max-w-212.5 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:overflow-clip 2xl:shrink-[initial] after:content-[''] after:block after:absolute after:inset-0 after:w-[11.125rem] after:h-[1.4rem] max-lg:after:hidden" data-cid="n198">
-            <div className="flex relative max-w-212.5 pr-2 pl-3 flex-col justify-start items-start content-start overflow-clip pointer-events-none max-lg:[pointer-events:initial] 2xl:shrink-0 2xl:whitespace-pre 2xl:text-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial] 2xl:[overflow-x:initial] 2xl:[overflow-y:initial] after:content-[''] after:block after:absolute after:inset-0 after:w-[11.125rem] after:h-[1.4rem] 2xl:after:hidden" data-cid="n199">
+          <div className="block relative shrink-0 pointer-events-none max-lg:[pointer-events:initial] 2xl:flex 2xl:w-auto 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:shrink-[initial]" data-cid="n198">
+            <div className="flex relative w-auto pr-2 pl-3 flex-col justify-start items-start content-start pointer-events-none max-lg:[pointer-events:initial] 2xl:shrink-0 2xl:whitespace-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial]" data-cid="n199">
               <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:pointer-events-none" data-cid="n200" dir="auto">
                 <span className="hidden 2xl:inline-block 2xl:pointer-events-none" data-cid="n201">
   Integrated Energy Solutions
 </span>
               </p>
-              <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-pre text-nowrap pointer-events-none max-lg:[pointer-events:initial] 2xl:hidden pl-3" data-cid="n203">
+              <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-nowrap pointer-events-none max-lg:[pointer-events:initial] 2xl:hidden pl-3" data-cid="n203">
                 <span className="ditto-hero-accent" aria-hidden="true" />
                 <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] pointer-events-none max-lg:[pointer-events:initial] 2xl:hidden" data-cid="n204" dir="auto">
                   <span className="inline-block pointer-events-none max-lg:[pointer-events:initial] 2xl:hidden" data-cid="n205">
@@ -86,7 +86,7 @@ export default function CardGridSection() {
                 <div className="hidden 2xl:w-97 2xl:h-72 2xl:block 2xl:absolute 2xl:-top-11 2xl:-left-11 2xl:[background-position:-1.11629px_-1.11629px] 2xl:[animation-name:hatchMove\_ree] 2xl:[animation-duration:1.5s] 2xl:[animation-timing-function:linear] 2xl:[animation-iteration-count:infinite] 2xl:pointer-events-none" data-cid="n306" />
               </div>
             </div>
-            <div className="hidden 2xl:w-59 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-pre-wrap 2xl:[word-break:break-word] 2xl:[overflow-wrap:break-word]" data-cid="n307">
+            <div className="hidden 2xl:w-auto 2xl:max-w-full 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-normal" data-cid="n307">
               <h4 className="hidden 2xl:block 2xl:text-background 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-2xl 2xl:font-medium 2xl:leading-[1.9375rem] 2xl:tracking-[-0.2px] 2xl:text-balance" data-cid="n308" dir="auto">
                 Start a Project
               </h4>
@@ -111,7 +111,7 @@ export default function CardGridSection() {
                   <div className="w-97 h-72 block absolute -top-11 -left-11 [background-position:-1.75815px_-1.75815px] [animation-name:hatchMove\_r84] [animation-duration:1.5s] [animation-timing-function:linear] [animation-iteration-count:infinite] pointer-events-none max-md:w-[28.9375rem] max-lg:h-38 max-md:[background-position:-9.17466px_-9.17466px] max-lg:[animation-name:hatchMove\_r3n] md:max-lg:w-214 md:max-lg:[background-position:-10.6764px_-10.6764px] 2xl:hidden hover:[background-position:-6.73995px_-6.73995px] focus:[background-position:-9.75694px_-9.75694px]" style={{ backgroundImage: "repeating-linear-gradient(-45deg, var(--surface-3) 0px, var(--surface-3) 2px, var(--clr-2) 2px, var(--clr-2) 16px)" }} data-cid="n320" />
                 </div>
               </div>
-              <div className="w-59 flex relative flex-col justify-start shrink-0 whitespace-pre-wrap [word-break:break-word] [overflow-wrap:break-word] max-md:w-[20.4375rem] max-lg:flex-1 md:max-lg:w-180 2xl:hidden" data-cid="n321">
+              <div className="w-auto max-w-full flex relative flex-col justify-start shrink-0 whitespace-normal max-md:w-[20.4375rem] max-lg:flex-1 md:max-lg:w-180 2xl:hidden" data-cid="n321">
                 <p className="hidden max-lg:block max-lg:text-background max-lg:[font-family:Inter,_'Inter_Placeholder',_sans-serif] max-lg:text-base max-lg:font-semibold max-lg:leading-[1.625rem] max-lg:[font-feature-settings:'blwf',_'cv03',_'cv04',_'cv09',_'cv11']" data-cid="n322" dir="auto">
                   Start a Project
                 </p>
@@ -172,14 +172,14 @@ Global
               </div>
             </div>
           </div>
-          <div className="w-59 flex relative flex-col justify-start shrink-0 max-md:w-[20.4375rem] md:max-lg:w-180" data-cid="n352">
+          <div className="w-full max-w-none flex relative flex-col justify-start shrink-0 max-md:w-[20.4375rem] md:max-lg:w-180" data-cid="n352">
             <p className="block text-color-002 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-balance" data-cid="n353" dir="auto">
 {hero.supporting}
             </p>
 <p className="hidden max-lg:block mt-2 text-color-002 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm leading-[1.375rem]" dir="auto">
   {hero.body}
 </p>
-<a className="hidden max-lg:inline-flex mt-3 items-center gap-2 text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] underline decoration-accent decoration-2 underline-offset-4 hover:text-accent" href={hero.primaryCta.href}>
+<a className="hidden max-lg:inline-flex mt-3 w-auto items-center gap-2 text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] underline decoration-accent decoration-2 underline-offset-4 hover:text-accent" href={hero.primaryCta.href}>
   Explore All Capabilities &rarr;
 </a>
           </div>

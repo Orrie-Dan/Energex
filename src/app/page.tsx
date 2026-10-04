@@ -173,7 +173,7 @@ export default function Page() {
                     </a>
                   </div>
                 </div>
-                <div className="w-[445.3px] flex relative px-5 justify-start items-center content-center shrink-0 gap-8 overflow-clip max-lg:hidden" data-cid="n142">
+                <div className="w-auto flex relative px-5 justify-start items-center content-center shrink-0 gap-8 max-lg:hidden" data-cid="n142">
                   {Tile2_data.map((d, i) => <Tile2 key={i} d={d} cids={Tile2_cids[i]} styles={Tile2_styles[i]} />)}
                 </div>
                 <div className="hidden" data-cid="n168" aria-hidden="true">
@@ -190,7 +190,7 @@ export default function Page() {
                         <div className="w-72 h-38 block absolute -top-11 -left-11 [background-position:-1.75815px_-1.75815px] [animation-name:hatchMove\_r82] [animation-duration:1.5s] [animation-timing-function:linear] [animation-iteration-count:infinite] pointer-events-none max-lg:hidden 2xl:[background-position:-1.11629px_-1.11629px] 2xl:[animation-name:hatchMove\_re9] hover:[background-position:-3.97865px_-3.97865px] focus:[background-position:-6.74448px_-6.74448px]" style={{ backgroundImage: "repeating-linear-gradient(-45deg, var(--surface-3) 0px, var(--surface-3) 2px, var(--clr-2) 2px, var(--clr-2) 16px)" }} data-cid="n176" />
                       </div>
                     </div>
-                    <div className="w-38 flex relative flex-col justify-start grow shrink-0 basis-0 whitespace-pre-wrap [word-break:break-word] [overflow-wrap:break-word] max-lg:hidden" data-cid="n177">
+                    <div className="w-auto flex relative flex-col justify-start grow shrink-0 basis-0 whitespace-nowrap max-lg:hidden" data-cid="n177">
                       <p className="block text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-base font-semibold leading-[1.625rem] [font-feature-settings:'blwf',_'cv03',_'cv04',_'cv09',_'cv11'] max-lg:hidden" data-cid="n178" dir="auto">
                         Start a Project
                       </p>
@@ -230,15 +230,15 @@ export default function Page() {
                     <div className="w-full max-w-100 min-h-125 flex relative flex-col justify-start items-start content-start grow shrink-0 basis-0 gap-12 max-md:h-auto max-lg:gap-8 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:h-auto" data-cid="n361">
                       <div className="w-100 h-auto flex relative flex-col justify-start items-start content-start grow shrink-0 basis-0 gap-10 overflow-clip max-md:w-[20.4375rem] max-md:h-auto max-lg:gap-8 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:h-auto" data-cid="n362">
                         <div className="w-100 flex relative flex-col justify-start items-start content-start shrink-0 gap-4 max-md:w-[20.4375rem]" data-cid="n363">
-                          <div className="contents min-w-0 2xl:w-100 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n364">
-                            <div className="w-full block relative shrink-0 2xl:flex 2xl:max-w-212.5 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:overflow-clip 2xl:shrink-[initial] after:content-[''] after:block after:absolute after:inset-0 after:w-100 after:h-[1.4rem] max-lg:after:hidden" data-cid="n365">
-                              <div className="flex relative max-w-212.5 pr-2 pl-3 flex-col justify-start items-start content-start overflow-clip 2xl:shrink-0 2xl:whitespace-pre 2xl:text-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial] 2xl:[overflow-x:initial] 2xl:[overflow-y:initial] after:content-[''] after:block after:absolute after:inset-0 after:h-[1.4rem] 2xl:after:hidden" data-cid="n366">
+                          <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n364">
+                            <div className="w-full block relative shrink-0 2xl:flex 2xl:w-auto 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:shrink-[initial]" data-cid="n365">
+                              <div className="flex relative w-auto pr-2 pl-3 flex-col justify-start items-start content-start 2xl:shrink-0 2xl:whitespace-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial]" data-cid="n366">
                                 <p className="hidden 2xl:block 2xl:text-background 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n367" dir="auto">
                                   <span className="hidden 2xl:inline-block" data-cid="n368">
   ABOUT ENERGEX
 </span>
                                 </p>
-                                <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-pre text-nowrap 2xl:hidden" data-cid="n370">
+                                <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n370">
                                   <p className="block text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] 2xl:hidden" data-cid="n371" dir="auto">
                                     <span className="inline-block 2xl:hidden" data-cid="n372">
   ABOUT ENERGEX
@@ -268,9 +268,9 @@ export default function Page() {
                           </p>
                         </div>
                       </div>
-                      <div className="contents min-w-0 2xl:w-[101.1px] 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n383">
-                        <a className="hidden 2xl:w-[101.1px] 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:overflow-clip 2xl:text-primary 2xl:cursor-pointer" data-cid="n384" href="/about">
-                          <div className="hidden 2xl:w-[77.1px] 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-pre 2xl:[word-break:break-word] 2xl:[overflow-wrap:break-word] 2xl:text-nowrap" data-cid="n385">
+                      <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n383">
+                        <a className="hidden 2xl:w-auto 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:text-primary 2xl:cursor-pointer" data-cid="n384" href="/about">
+                          <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n385">
                             <p className="hidden 2xl:block 2xl:text-background 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:text-left" data-cid="n386" dir="auto">
                               About Energex
                             </p>
@@ -289,8 +289,8 @@ export default function Page() {
                           </div>
                         </a>
                         <div className="block relative shrink-0 2xl:hidden" data-cid="n394">
-                          <a className="w-[101.1px] h-[1.4rem] flex relative justify-start items-center content-center gap-3 overflow-clip text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n395" data-component="link" href="/about">
-                            <div className="w-[77.1px] flex relative flex-col justify-start shrink-0 whitespace-pre [word-break:break-word] [overflow-wrap:break-word] text-nowrap 2xl:hidden" data-cid="n396">
+                          <a className="w-auto h-[1.4rem] flex relative justify-start items-center content-center gap-3 text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n395" data-component="link" href="/about">
+                            <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n396">
                               <p className="block text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-left 2xl:hidden" data-cid="n397" dir="auto">
                                 About Energex
                               </p>
@@ -328,15 +328,15 @@ export default function Page() {
                 <div className="h-full flex absolute top-0 inset-x-0 z-0 min-w-0 flex-col justify-center items-center content-center shrink-0 gap-2.5 overflow-clip bg-muted-foreground" data-cid="n412" />
                 <div className="w-full max-w-400 flex relative py-37.5 px-8 flex-col justify-start items-start content-start shrink-0 gap-10 overflow-clip max-lg:py-18 max-lg:px-6 max-lg:gap-8" data-cid="n413">
                   <div className="w-304 flex relative flex-col justify-start items-start content-start shrink-0 gap-4 max-md:w-[20.4375rem] md:max-lg:w-180 2xl:w-384" data-cid="n414" id="service-title">
-                    <div className="contents min-w-0 2xl:w-384 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n415">
-                      <div className="w-full block relative shrink-0 2xl:flex 2xl:max-w-212.5 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:overflow-clip 2xl:shrink-[initial] after:content-[''] after:block after:absolute after:inset-0 after:w-212.5 after:h-[1.4rem] max-lg:after:hidden" data-cid="n416">
-                        <div className="flex relative max-w-212.5 pr-2 pl-3 flex-col justify-start items-start content-start overflow-clip 2xl:shrink-0 2xl:whitespace-pre 2xl:text-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial] 2xl:[overflow-x:initial] 2xl:[overflow-y:initial] after:content-[''] after:block after:absolute after:inset-0 after:h-[1.4rem] 2xl:after:hidden" data-cid="n417">
+                    <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n415">
+                      <div className="w-full block relative shrink-0 2xl:flex 2xl:w-auto 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:shrink-[initial]" data-cid="n416">
+                        <div className="flex relative w-auto pr-2 pl-3 flex-col justify-start items-start content-start 2xl:shrink-0 2xl:whitespace-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial]" data-cid="n417">
                           <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n418" dir="auto">
                             <span className="hidden 2xl:inline-block" data-cid="n419">
   Energy Solutions
 </span>
                           </p>
-                          <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-pre text-nowrap 2xl:hidden" data-cid="n420">
+                          <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n420">
                             <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] 2xl:hidden" data-cid="n421" dir="auto">
                               <span className="inline-block 2xl:hidden" data-cid="n422">
   Energy Solutions
@@ -355,9 +355,9 @@ export default function Page() {
                           </span>
                         </h2>
                       </div>
-                      <div className="contents min-w-0 2xl:w-[6.5125rem] 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n427">
-                        <a className="hidden 2xl:w-[6.5125rem] 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:overflow-clip 2xl:text-primary 2xl:cursor-pointer" data-cid="n428" href="/solutions">
-                          <div className="hidden 2xl:w-20 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-pre 2xl:[word-break:break-word] 2xl:[overflow-wrap:break-word] 2xl:text-nowrap" data-cid="n429">
+                      <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n427">
+                        <a className="hidden 2xl:w-auto 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:text-primary 2xl:cursor-pointer" data-cid="n428" href="/solutions">
+                          <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n429">
                             <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:text-left" data-cid="n430" dir="auto">
                               Explore All Capabilities
                             </p>
@@ -376,8 +376,8 @@ export default function Page() {
                           </div>
                         </a>
                         <div className="block relative shrink-0 2xl:hidden" data-cid="n438">
-                          <a className="w-[6.5125rem] h-[1.4rem] flex relative justify-start items-center content-center gap-3 overflow-clip text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n439" data-component="link" href="/solutions">
-                            <div className="w-20 flex relative flex-col justify-start shrink-0 whitespace-pre [word-break:break-word] [overflow-wrap:break-word] text-nowrap 2xl:hidden" data-cid="n440">
+                          <a className="w-auto h-[1.4rem] flex relative justify-start items-center content-center gap-3 text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n439" data-component="link" href="/solutions">
+                            <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n440">
                               <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-left 2xl:hidden" data-cid="n441" dir="auto">
                                 Explore All Capabilities
                               </p>
@@ -597,14 +597,14 @@ export default function Page() {
                       </p>
                     </div>
                     <div className="hidden 2xl:flex 2xl:relative 2xl:justify-center 2xl:items-center 2xl:content-center 2xl:shrink-0 2xl:gap-8" data-cid="n2226">
-                      <div className="hidden 2xl:w-[89.7px] 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-pre 2xl:text-nowrap" data-cid="n2227">
+                      <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n2227">
                         <p className="hidden 2xl:block 2xl:text-color-002 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n2228" dir="auto">
                           <a className="hidden 2xl:inline 2xl:text-background 2xl:cursor-pointer" data-cid="n2229" href="/terms">
                             Terms of Use
                           </a>
                         </p>
                       </div>
-                      <div className="hidden 2xl:w-[95.1px] 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-pre 2xl:text-nowrap" data-cid="n2230">
+                      <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n2230">
                         <p className="hidden 2xl:block 2xl:text-color-002 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n2231" dir="auto">
                           <a className="hidden 2xl:inline 2xl:text-background 2xl:cursor-pointer" data-cid="n2232" href="/privacy">
                             Privacy Policy
@@ -638,14 +638,14 @@ export default function Page() {
                         </p>
                       </div>
                       <div className="w-[35.5%] flex relative justify-center items-center content-center shrink-0 gap-8 max-lg:w-full max-lg:grid max-lg:gap-6 max-lg:[grid-auto-rows:minmax(0px,_1fr)] max-lg:grid-cols-2 max-lg:[align-items:initial] max-lg:[align-content:initial] 2xl:hidden" data-cid="n2359">
-                        <div className="w-[89.7px] flex relative flex-col justify-start shrink-0 whitespace-pre text-nowrap max-md:w-[151.5px] max-lg:[align-self:start] max-lg:whitespace-pre-wrap max-lg:[word-break:break-word] max-lg:[overflow-wrap:break-word] max-lg:[text-wrap:initial] md:max-lg:w-87 2xl:hidden" data-cid="n2360">
+                        <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap max-lg:[align-self:start] max-lg:whitespace-normal 2xl:hidden" data-cid="n2360">
                           <p className="block text-color-002 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] max-lg:text-center 2xl:hidden" data-cid="n2361" dir="auto">
                             <a className="inline text-background cursor-pointer 2xl:hidden hover:border-accent hover:text-accent hover:outline-accent hover:[text-decoration-color:var(--accent)]" data-cid="n2362" data-component="link" href="/terms">
                               Terms of Use
                             </a>
                           </p>
                         </div>
-                        <div className="w-[95.1px] flex relative flex-col justify-start shrink-0 whitespace-pre text-nowrap max-md:w-[151.5px] max-lg:[align-self:start] max-lg:whitespace-pre-wrap max-lg:[word-break:break-word] max-lg:[overflow-wrap:break-word] max-lg:[text-wrap:initial] md:max-lg:w-87 2xl:hidden" data-cid="n2363">
+                        <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap max-lg:[align-self:start] max-lg:whitespace-normal 2xl:hidden" data-cid="n2363">
                           <p className="block text-color-002 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] max-lg:text-center 2xl:hidden" data-cid="n2364" dir="auto">
                             <a className="inline text-background cursor-pointer 2xl:hidden hover:border-clr-10 hover:text-clr-10 hover:outline-clr-10 hover:[text-decoration-color:var(--clr-10)]" data-cid="n2365" data-component="link" href="/privacy">
                               Privacy Policy

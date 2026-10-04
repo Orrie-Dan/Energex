@@ -10,14 +10,14 @@ export default function CardGridSection7({ phases = marketPhases }: { phases?: r
       <div className="w-full max-w-400 flex relative py-37.5 px-8 flex-col justify-start items-start content-start shrink-0 gap-10 max-lg:py-18 max-lg:px-6 max-lg:gap-8" data-cid="n1937">
         <div className="w-full flex relative flex-col justify-start items-start content-start shrink-0 gap-4" data-cid="n1938">
           <div className="contents min-w-0 2xl:w-max 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n1939">
-            <div className="block relative shrink-0 2xl:flex 2xl:max-w-212.5 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:overflow-clip 2xl:shrink-[initial] after:content-[''] after:block after:absolute after:inset-0 after:w-[3.1375rem] after:h-[1.4rem] max-lg:after:hidden" data-cid="n1940">
-              <div className="flex relative max-w-212.5 pr-2 pl-3 flex-col justify-start items-start content-start overflow-clip 2xl:shrink-0 2xl:whitespace-pre 2xl:text-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial] 2xl:[overflow-x:initial] 2xl:[overflow-y:initial] after:content-[''] after:block after:absolute after:inset-0 after:w-[3.1375rem] after:h-[1.4rem] 2xl:after:hidden" data-cid="n1941">
+            <div className="block relative shrink-0 2xl:flex 2xl:w-auto 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:shrink-[initial]" data-cid="n1940">
+              <div className="flex relative w-auto pr-2 pl-3 flex-col justify-start items-start content-start 2xl:shrink-0 2xl:whitespace-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial]" data-cid="n1941">
                 <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n1942" dir="auto">
                   <span className="hidden 2xl:inline-block" data-cid="n1943">
                     Market Strategy
                   </span>
                 </p>
-                <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-pre text-nowrap 2xl:hidden" data-cid="n1944">
+                <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n1944">
                   <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] 2xl:hidden" data-cid="n1945" dir="auto">
                     <span className="inline-block 2xl:hidden" data-cid="n1946">
                       Market Strategy
@@ -36,9 +36,9 @@ export default function CardGridSection7({ phases = marketPhases }: { phases?: r
                 {"Focused Execution."}
               </h2>
             </div>
-            <div className="contents min-w-0 2xl:w-max 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n1951">
-              <a className="hidden 2xl:w-max 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:overflow-clip 2xl:text-primary 2xl:cursor-pointer" data-cid="n1952" href="/about">
-                <div className="hidden 2xl:w-max 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-pre 2xl:[word-break:break-word] 2xl:[overflow-wrap:break-word] 2xl:text-nowrap" data-cid="n1953">
+            <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n1951">
+              <a className="hidden 2xl:w-auto 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:text-primary 2xl:cursor-pointer" data-cid="n1952" href="/about">
+                <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n1953">
                   <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:text-left" data-cid="n1954" dir="auto">
                     About Energex
                   </p>
@@ -57,8 +57,8 @@ export default function CardGridSection7({ phases = marketPhases }: { phases?: r
                 </div>
               </a>
               <div className="block relative shrink-0 2xl:hidden" data-cid="n1962">
-                <a className="w-max h-[1.4rem] flex relative justify-start items-center content-center gap-3 overflow-clip text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n1963" data-component="link" href="/about">
-                  <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-pre [word-break:break-word] [overflow-wrap:break-word] text-nowrap 2xl:hidden" data-cid="n1964">
+                <a className="w-auto h-[1.4rem] flex relative justify-start items-center content-center gap-3 text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n1963" data-component="link" href="/about">
+                  <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n1964">
                     <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-left 2xl:hidden" data-cid="n1965" dir="auto">
                       About Energex
                     </p>
