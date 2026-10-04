@@ -7,7 +7,8 @@ import IndustryExplorerSection from "./sections/industry-explorer-section";
 import DigitalEnergySection from "./sections/digital-energy-section";
 import DeliveryFlexibilitySection from "./sections/delivery-flexibility-section";
 import MarketBridgeSection from "./sections/market-bridge-section";
-import { brand, finalCta, solutionFamilyMediaCards } from "../data/energex";
+import SolutionsFamilyGrid from "./sections/solutions-family-grid";
+import { brand, finalCta } from "../data/energex";
 import Tile, { type TileData } from "./components/tile";
 import Icon from "./svgs/svg-icon";
 import FeatureCard, { type FeatureCardData } from "./components/feature-card";
@@ -22,7 +23,6 @@ import Icon14 from "./svgs/svg-icon14";
 import Icon15 from "./svgs/svg-icon15";
 import Icon16 from "./svgs/svg-icon16";
 import Icon17 from "./svgs/svg-icon17";
-import MediaCard, { type MediaCardData } from "./components/media-card";
 import Icon24 from "./svgs/svg-icon24";
 import Icon25 from "./svgs/svg-icon25";
 import Icon26 from "./svgs/svg-icon26";
@@ -33,8 +33,8 @@ import Tile3, { type Tile3Data } from "./components/tile3";
 import Tile4, { type Tile4Data } from "./components/tile4";
 import Logo2, { type Logo2Data } from "./components/logo2";
 import Logo3, { type Logo3Data } from "./components/logo3";
-import { Tile_cids, FeatureCard_cids, Tile2_cids, MediaCard_cids, Tile3_cids, Tile4_cids, Logo2_cids, Logo3_cids } from "./_cids";
-import { Tile_styles, FeatureCard_styles, Tile2_styles, MediaCard_styles, Tile3_styles, Tile4_styles, Logo2_styles, Logo3_styles } from "./_styles";
+import { Tile_cids, FeatureCard_cids, Tile2_cids, Tile3_cids, Tile4_cids, Logo2_cids, Logo3_cids } from "./_cids";
+import { Tile_styles, FeatureCard_styles, Tile2_styles, Tile3_styles, Tile4_styles, Logo2_styles, Logo3_styles } from "./_styles";
 
 const Tile_data: TileData[] = [
     { href: "/solutions", description: "Solutions" },
@@ -54,7 +54,6 @@ const Tile2_data: Tile2Data[] = [
     { href: "/about", description: "About" },
     { href: "/contact", description: "Contact" }
 ];
-const MediaCard_data: MediaCardData[] = solutionFamilyMediaCards();
 const Tile3_data: Tile3Data[] = [
     { href: "/", description: "Home" },
     { href: "/about", description: "About" },
@@ -214,18 +213,20 @@ export default function Page() {
           </div>
           <div className="h-[min-content] min-h-screen contents relative min-w-0 flex-col justify-start items-center content-center overflow-clip bg-background" data-cid="n186">
             <main className="w-full flex relative flex-col justify-start items-center content-center shrink-0 overflow-clip" data-cid="n187">
-              <header className="w-full flex relative flex-col justify-start items-center content-center shrink-0 overflow-clip bg-surface" data-cid="n188" id="hero">
-                <CardGridSection />
-              </header>
-              <section className="w-full flex relative flex-col justify-center items-center content-center shrink-0 overflow-clip" data-cid="n354">
-                <div className="w-full h-[56.25rem] flex sticky top-0 z-1 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-muted-foreground max-md:h-[16.825rem] max-lg:top-14 max-lg:aspect-[1.39286/1] md:max-lg:h-[34.4625rem] 2xl:h-270" data-cid="n355" data-scroll-zoom-sticky="">
+              <section className="w-full flex relative flex-col justify-center items-center content-center shrink-0 overflow-clip" data-cid="n354" aria-label="Hero video">
+                <div className="w-full h-[56.25rem] flex sticky top-0 z-1 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background max-md:h-[16.825rem] max-lg:top-14 max-lg:aspect-[1.39286/1] md:max-lg:h-[34.4625rem] 2xl:h-270" data-cid="n355" data-scroll-zoom-sticky="">
                   <div className="w-full h-full flex relative flex-col justify-center items-center content-center grow shrink-0 basis-0 overflow-clip" data-cid="n356">
                     <div className="w-full h-[56.25rem] block relative grow shrink-0 basis-0 max-md:h-[16.825rem] md:max-lg:h-[34.4625rem] 2xl:h-270" data-cid="n357" data-scroll-zoom="">
                       <video className="w-full h-[56.25rem] block overflow-clip object-cover max-md:h-[16.8125rem] md:max-lg:h-[34.4375rem] 2xl:h-270" data-cid="n358" src="/assets/energex/hero.mp4" autoPlay muted loop playsInline preload="auto" />
                     </div>
                   </div>
                 </div>
-                <div className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-muted-foreground" data-cid="n359">
+              </section>
+              <header className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background" data-cid="n188" id="hero">
+                <CardGridSection />
+              </header>
+              <section className="w-full flex relative z-2 flex-col justify-center items-center content-center shrink-0 overflow-clip bg-background" data-cid="n359-wrap">
+                <div className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background" data-cid="n359">
                   <div className="w-full flex relative max-w-400 py-37.5 px-8 justify-start items-start content-start shrink-0 gap-25 overflow-clip max-lg:py-18 max-lg:px-6 max-lg:flex-col max-lg:gap-10 max-lg:max-w-none" data-cid="n360">
                     <div className="w-full max-w-100 min-h-125 flex relative flex-col justify-start items-start content-start grow shrink-0 basis-0 gap-12 max-md:h-auto max-lg:gap-8 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:h-auto" data-cid="n361">
                       <div className="w-100 h-auto flex relative flex-col justify-start items-start content-start grow shrink-0 basis-0 gap-10 overflow-clip max-md:w-[20.4375rem] max-md:h-auto max-lg:gap-8 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:h-auto" data-cid="n362">
@@ -233,13 +234,13 @@ export default function Page() {
                           <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n364">
                             <div className="w-full block relative shrink-0 2xl:flex 2xl:w-auto 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:shrink-[initial]" data-cid="n365">
                               <div className="flex relative w-auto pr-2 pl-3 flex-col justify-start items-start content-start 2xl:shrink-0 2xl:whitespace-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial]" data-cid="n366">
-                                <p className="hidden 2xl:block 2xl:text-background 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n367" dir="auto">
+                                <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n367" dir="auto">
                                   <span className="hidden 2xl:inline-block" data-cid="n368">
   ABOUT ENERGEX
 </span>
                                 </p>
                                 <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n370">
-                                  <p className="block text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] 2xl:hidden" data-cid="n371" dir="auto">
+                                  <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] 2xl:hidden" data-cid="n371" dir="auto">
                                     <span className="inline-block 2xl:hidden" data-cid="n372">
   ABOUT ENERGEX
 </span>
@@ -249,8 +250,8 @@ export default function Page() {
                             </div>
                           </div>
                           <div className="w-100 flex relative flex-col justify-start shrink-0 whitespace-pre-wrap [word-break:break-word] [overflow-wrap:break-word] max-md:w-[20.4375rem]" data-cid="n374">
-                            <h2 className="block text-clr-3 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-[2.75rem] font-medium leading-11 tracking-[-1.76px] text-balance max-lg:text-4xl max-lg:leading-9 max-lg:tracking-[-1.44px]" data-cid="n375" data-component="heading" dir="auto">
-<span className="inline text-background" data-cid="n376">
+                            <h2 className="block text-muted-foreground [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-[2.75rem] font-medium leading-11 tracking-[-1.76px] text-balance max-lg:text-4xl max-lg:leading-9 max-lg:tracking-[-1.44px]" data-cid="n375" data-component="heading" dir="auto">
+<span className="inline text-color-001" data-cid="n376">
   {"ONE COMPANY. "}
 </span>
 {"ONE INTEGRATED ENERGY SOLUTION."}
@@ -258,12 +259,12 @@ export default function Page() {
                           </div>
                         </div>
                         <div className="w-full h-10 block relative z-1 shrink-0" data-cid="n378">
-                          <div className="h-10 min-h-[0.3125rem] block relative min-w-[0.3125rem] overflow-hidden bg-muted-foreground shadow-[var(--surface-3)_0px_0px_0px_1px_inset]" data-cid="n379" aria-hidden="true">
-                            <div className="h-26.5 block absolute -top-[2.0625rem] -inset-x-[2.0625rem] [background-position:-5.64215px_-5.64215px] [animation-name:hatchMove\_R6pd8lb5dp] [animation-duration:1.5s] [animation-timing-function:linear] [animation-iteration-count:infinite] pointer-events-none max-md:[background-position:-3.29455px_-3.29455px] md:max-lg:[background-position:-4.42083px_-4.42083px] 2xl:[background-position:-0.837214px_-0.837214px] 2xl:[animation-name:hatchMove\_reg]" style={{ backgroundImage: "repeating-linear-gradient(-45deg, var(--surface-3) 0px, var(--surface-3) 1px, var(--clr-2) 1px, var(--clr-2) 12px)" }} data-cid="n380" />
+                          <div className="h-10 min-h-[0.3125rem] block relative min-w-[0.3125rem] overflow-hidden bg-color-001" data-cid="n379" aria-hidden="true">
+                            <div className="h-26.5 block absolute -top-[2.0625rem] -inset-x-[2.0625rem] [background-position:-5.64215px_-5.64215px] [animation-name:hatchMove\_R6pd8lb5dp] [animation-duration:1.5s] [animation-timing-function:linear] [animation-iteration-count:infinite] pointer-events-none max-md:[background-position:-3.29455px_-3.29455px] md:max-lg:[background-position:-4.42083px_-4.42083px] 2xl:[background-position:-0.837214px_-0.837214px] 2xl:[animation-name:hatchMove\_reg]" style={{ backgroundImage: "repeating-linear-gradient(-45deg, rgba(255,255,255,0.15) 0px, rgba(255,255,255,0.15) 1px, transparent 1px, transparent 12px)" }} data-cid="n380" />
                           </div>
                         </div>
                         <div className="w-100 flex relative flex-col justify-start shrink-0 max-md:w-[20.4375rem]" data-cid="n381">
-                          <p className="block text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-base leading-[1.625rem] text-balance [font-feature-settings:'blwf',_'cv03',_'cv04',_'cv09',_'cv11']" data-cid="n382" dir="auto">
+                          <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-base leading-[1.625rem] text-balance [font-feature-settings:'blwf',_'cv03',_'cv04',_'cv09',_'cv11']" data-cid="n382" dir="auto">
                             ENERGEX Global Solutions provides clients with a single commercial and technical interface across the full energy project lifecycle. From development and engineering to global procurement, EPC delivery, financing support, operations and long-term asset management, Energex coordinates the technologies and partners required around each project's needs.
                           </p>
                         </div>
@@ -271,7 +272,7 @@ export default function Page() {
                       <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n383">
                         <a className="hidden 2xl:w-auto 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:text-primary 2xl:cursor-pointer" data-cid="n384" href="/about">
                           <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n385">
-                            <p className="hidden 2xl:block 2xl:text-background 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:text-left" data-cid="n386" dir="auto">
+                            <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:text-left" data-cid="n386" dir="auto">
                               About Energex
                             </p>
                           </div>
@@ -291,7 +292,7 @@ export default function Page() {
                         <div className="block relative shrink-0 2xl:hidden" data-cid="n394">
                           <a className="w-auto h-[1.4rem] flex relative justify-start items-center content-center gap-3 text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n395" data-component="link" href="/about">
                             <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n396">
-                              <p className="block text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-left 2xl:hidden" data-cid="n397" dir="auto">
+                              <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-left 2xl:hidden" data-cid="n397" dir="auto">
                                 About Energex
                               </p>
                             </div>
@@ -325,7 +326,7 @@ export default function Page() {
                 </div>
               </section>
               <section className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background" data-cid="n411">
-                <div className="h-full flex absolute top-0 inset-x-0 z-0 min-w-0 flex-col justify-center items-center content-center shrink-0 gap-2.5 overflow-clip bg-muted-foreground" data-cid="n412" />
+                <div className="h-full flex absolute top-0 inset-x-0 z-0 min-w-0 flex-col justify-center items-center content-center shrink-0 gap-2.5 overflow-clip bg-background" data-cid="n412" />
                 <div className="w-full max-w-400 flex relative py-37.5 px-8 flex-col justify-start items-start content-start shrink-0 gap-10 overflow-clip max-lg:py-18 max-lg:px-6 max-lg:gap-8" data-cid="n413">
                   <div className="w-304 flex relative flex-col justify-start items-start content-start shrink-0 gap-4 max-md:w-[20.4375rem] md:max-lg:w-180 2xl:w-384" data-cid="n414" id="service-title">
                     <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n415">
@@ -399,7 +400,7 @@ export default function Page() {
                       </div>
                     </div>
                   </div>
-                  {MediaCard_data.map((d, i) => <MediaCard key={i} index={i} d={d} cids={MediaCard_cids[i]} styles={MediaCard_styles[i]} />)}
+                  <SolutionsFamilyGrid />
                 </div>
               </section>
               <IntegratorModelSection />
