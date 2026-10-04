@@ -1,4 +1,3 @@
-import CardGridSection from "./sections/card-grid-section";
 import CorporateFooterSection from "./sections/corporate-footer-section";
 import IntegratorModelSection from "./sections/integrator-model-section";
 import ProjectLifecycleSection from "./sections/project-lifecycle-section";
@@ -8,6 +7,7 @@ import DigitalEnergySection from "./sections/digital-energy-section";
 import DeliveryFlexibilitySection from "./sections/delivery-flexibility-section";
 import MarketBridgeSection from "./sections/market-bridge-section";
 import SolutionsFamilyGrid from "./sections/solutions-family-grid";
+import VideoHeroSection from "./sections/video-hero-section";
 import { brand, finalCta } from "../data/energex";
 import Tile, { type TileData } from "./components/tile";
 import Icon from "./svgs/svg-icon";
@@ -213,18 +213,7 @@ export default function Page() {
           </div>
           <div className="h-[min-content] min-h-screen contents relative min-w-0 flex-col justify-start items-center content-center overflow-clip bg-background" data-cid="n186">
             <main className="w-full flex relative flex-col justify-start items-center content-center shrink-0 overflow-clip" data-cid="n187">
-              <section className="w-full flex relative flex-col justify-center items-center content-center shrink-0 overflow-clip" data-cid="n354" aria-label="Hero video">
-                <div className="w-full h-[56.25rem] flex sticky top-0 z-1 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background max-md:h-[16.825rem] max-lg:top-14 max-lg:aspect-[1.39286/1] md:max-lg:h-[34.4625rem] 2xl:h-270" data-cid="n355" data-scroll-zoom-sticky="">
-                  <div className="w-full h-full flex relative flex-col justify-center items-center content-center grow shrink-0 basis-0 overflow-clip" data-cid="n356">
-                    <div className="w-full h-[56.25rem] block relative grow shrink-0 basis-0 max-md:h-[16.825rem] md:max-lg:h-[34.4625rem] 2xl:h-270" data-cid="n357" data-scroll-zoom="">
-                      <video className="w-full h-[56.25rem] block overflow-clip object-cover max-md:h-[16.8125rem] md:max-lg:h-[34.4375rem] 2xl:h-270" data-cid="n358" src="/assets/energex/hero.mp4" autoPlay muted loop playsInline preload="auto" />
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <header className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background" data-cid="n188" id="hero">
-                <CardGridSection />
-              </header>
+              <VideoHeroSection />
               <section className="w-full flex relative z-2 flex-col justify-center items-center content-center shrink-0 overflow-clip bg-background" data-cid="n359-wrap">
                 <div className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background" data-cid="n359">
                   <div className="w-full flex relative max-w-400 py-37.5 px-8 justify-start items-start content-start shrink-0 gap-25 overflow-clip max-lg:py-18 max-lg:px-6 max-lg:flex-col max-lg:gap-10 max-lg:max-w-none" data-cid="n360">
