@@ -1,0 +1,192 @@
+/* Solutions index — mirrors Tilanium /services listing grammar */
+
+.sl-page {
+  --sl-bg: #e4eaf2;
+  --sl-ink: #0d0d0d;
+  --sl-muted: #636573;
+  --sl-accent: #f06f12;
+  --sl-navy: #011836;
+  --sl-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  background: #fff;
+  color: var(--sl-ink);
+  font-family: Inter, "Inter Placeholder", system-ui, sans-serif;
+  overflow-x: clip;
+}
+
+.sl-hero {
+  position: relative;
+  min-height: 25rem; /* ~400px @1440 — Tilanium services hero */
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  background:
+    radial-gradient(circle at 1px 1px, rgba(13, 13, 13, 0.06) 1px, transparent 0) 0 0 / 12px 12px,
+    var(--sl-bg);
+}
+
+.sl-hero-inner {
+  width: 100%;
+  max-width: 100rem;
+}
+
+.sl-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.sl-hero-eyebrow-bar {
+  width: 2px;
+  height: 0.9rem;
+  background: var(--sl-accent);
+  flex-shrink: 0;
+}
+
+.sl-hero-eyebrow p {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--sl-ink);
+}
+
+.sl-hero-title {
+  margin: 0;
+  max-width: 53rem;
+  font-size: 4.375rem;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: var(--sl-ink);
+  text-wrap: balance;
+}
+
+.sl-hero-title-muted {
+  color: var(--sl-muted);
+}
+
+.sl-hero-intro {
+  margin: 1.25rem 0 0;
+  max-width: 40rem;
+  font-size: 1rem;
+  line-height: 1.625;
+  color: rgba(13, 13, 13, 0.72);
+}
+
+.sl-connect {
+  background: var(--sl-bg);
+  padding: 4rem 2rem;
+}
+
+.sl-connect-inner {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
+.sl-connect-title {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: -0.03em;
+  color: var(--sl-ink);
+}
+
+.sl-connect-body {
+  margin: 1rem 0 0;
+  max-width: 40rem;
+  font-size: 1rem;
+  line-height: 1.625;
+  color: rgba(13, 13, 13, 0.72);
+}
+
+.sl-services {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  background: #fff;
+}
+
+.sl-services-inner {
+  width: 100%;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 2.5rem 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+
+.sl-final-cta {
+  display: block;
+  position: relative;
+  overflow: clip;
+  padding: 5rem 2rem 4.5rem;
+  background: var(--sl-accent);
+  color: #fff;
+  text-decoration: none;
+}
+
+.sl-final-cta-title {
+  margin: 0;
+  max-width: 40rem;
+  font-size: 4.375rem;
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  color: #fff;
+  text-wrap: balance;
+}
+
+.sl-final-cta-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  min-height: 3rem;
+  padding: 0 1.5rem;
+  background: #fff;
+  color: var(--sl-navy);
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.sl-final-cta:hover .sl-final-cta-action {
+  background: var(--sl-bg);
+}
+
+@media (max-width: 1024px) {
+  .sl-hero {
+    min-height: 18rem;
+    padding: 1.5rem;
+  }
+
+  .sl-hero-title {
+    font-size: 3rem;
+  }
+
+  .sl-services-inner {
+    padding: 1.5rem 1.5rem 3rem;
+    gap: 2rem;
+  }
+
+  .sl-final-cta {
+    padding: 3.5rem 1.5rem 3rem;
+  }
+
+  .sl-final-cta-title {
+    font-size: 2.75rem;
+  }
+}
+
+@media (max-width: 809.98px) {
+  .sl-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .sl-final-cta-title {
+    font-size: 2.25rem;
+  }
+}

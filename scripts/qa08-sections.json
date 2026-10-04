@@ -1,0 +1,165 @@
+[
+  {
+    "name": "power",
+    "w": 1440,
+    "h": 900,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [
+      "Power Generation",
+      "LNG, Natural Gas & Gas-to-Power",
+      "Floating Power Solutions",
+      "Digital Energy Platform"
+    ],
+    "digital": "Cross-cutting",
+    "navCards": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ]
+  },
+  {
+    "name": "renewables",
+    "w": 1440,
+    "h": 900,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [
+      "Renewable Energy",
+      "Battery Energy Storage Systems",
+      "Digital Energy Platform"
+    ],
+    "digital": "Cross-cutting",
+    "navCards": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ]
+  },
+  {
+    "name": "grid",
+    "w": 1440,
+    "h": 900,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [
+      "Grid, Transmission & Distribution",
+      "Rural Electrification & Distributed Energy",
+      "Industrial Energy Solutions",
+      "E-Mobility & Charging Infrastructure",
+      "Digital Energy Platform"
+    ],
+    "digital": "Cross-cutting",
+    "navCards": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ]
+  },
+  {
+    "name": "grid",
+    "w": 390,
+    "h": 844,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [
+      "Grid, Transmission & Distribution",
+      "Rural Electrification & Distributed Energy",
+      "Industrial Energy Solutions",
+      "E-Mobility & Charging Infrastructure",
+      "Digital Energy Platform"
+    ],
+    "digital": "Cross-cutting",
+    "navCards": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ]
+  },
+  {
+    "name": "delivery",
+    "w": 1440,
+    "h": 900,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [
+      "Project Development & Advisory",
+      "Equipment Trading & Global Procurement",
+      "EPC & Project Management",
+      "Financing & Investment Solutions",
+      "Operations, Maintenance & Asset Management",
+      "Digital Energy Platform"
+    ],
+    "digital": "Cross-cutting",
+    "navCards": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ]
+  },
+  {
+    "name": "delivery",
+    "w": 390,
+    "h": 844,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [
+      "Project Development & Advisory",
+      "Equipment Trading & Global Procurement",
+      "EPC & Project Management",
+      "Financing & Investment Solutions",
+      "Operations, Maintenance & Asset Management",
+      "Digital Energy Platform"
+    ],
+    "digital": "Cross-cutting",
+    "navCards": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ]
+  },
+  {
+    "name": "solutions",
+    "w": 1440,
+    "h": 900,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [],
+    "navCards": []
+  },
+  {
+    "name": "solutions",
+    "w": 390,
+    "h": 844,
+    "consoleErrors": [],
+    "overflowOk": true,
+    "hidden": 0,
+    "caps": [],
+    "navCards": []
+  }
+]

@@ -1,0 +1,608 @@
+[
+  {
+    "name": "power",
+    "w": 1440,
+    "h": 900,
+    "overflowOk": true,
+    "h1": "Power &Generation",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "renewables",
+    "w": 1440,
+    "h": 900,
+    "overflowOk": true,
+    "h1": "Renewables &Storage",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "grid",
+    "w": 1440,
+    "h": 900,
+    "overflowOk": true,
+    "h1": "Grid &Distributed Energy",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "delivery",
+    "w": 1440,
+    "h": 900,
+    "overflowOk": true,
+    "h1": "Project Delivery& Lifecycle",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "power",
+    "w": 1280,
+    "h": 800,
+    "overflowOk": true,
+    "h1": "Power &Generation",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "renewables",
+    "w": 1280,
+    "h": 800,
+    "overflowOk": true,
+    "h1": "Renewables &Storage",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "grid",
+    "w": 1280,
+    "h": 800,
+    "overflowOk": true,
+    "h1": "Grid &Distributed Energy",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "delivery",
+    "w": 1280,
+    "h": 800,
+    "overflowOk": true,
+    "h1": "Project Delivery& Lifecycle",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "power",
+    "w": 1024,
+    "h": 768,
+    "overflowOk": true,
+    "h1": "Power &Generation",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "renewables",
+    "w": 1024,
+    "h": 768,
+    "overflowOk": true,
+    "h1": "Renewables &Storage",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "grid",
+    "w": 1024,
+    "h": 768,
+    "overflowOk": true,
+    "h1": "Grid &Distributed Energy",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "delivery",
+    "w": 1024,
+    "h": 768,
+    "overflowOk": true,
+    "h1": "Project Delivery& Lifecycle",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "power",
+    "w": 768,
+    "h": 1024,
+    "overflowOk": true,
+    "h1": "Power &Generation",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "renewables",
+    "w": 768,
+    "h": 1024,
+    "overflowOk": true,
+    "h1": "Renewables &Storage",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "grid",
+    "w": 768,
+    "h": 1024,
+    "overflowOk": true,
+    "h1": "Grid &Distributed Energy",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "delivery",
+    "w": 768,
+    "h": 1024,
+    "overflowOk": true,
+    "h1": "Project Delivery& Lifecycle",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "power",
+    "w": 430,
+    "h": 932,
+    "overflowOk": true,
+    "h1": "Power &Generation",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "renewables",
+    "w": 430,
+    "h": 932,
+    "overflowOk": true,
+    "h1": "Renewables &Storage",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "grid",
+    "w": 430,
+    "h": 932,
+    "overflowOk": true,
+    "h1": "Grid &Distributed Energy",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "delivery",
+    "w": 430,
+    "h": 932,
+    "overflowOk": true,
+    "h1": "Project Delivery& Lifecycle",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "power",
+    "w": 390,
+    "h": 844,
+    "overflowOk": true,
+    "h1": "Power &Generation",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "renewables",
+    "w": 390,
+    "h": 844,
+    "overflowOk": true,
+    "h1": "Renewables &Storage",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "grid",
+    "w": 390,
+    "h": 844,
+    "overflowOk": true,
+    "h1": "Grid &Distributed Energy",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "delivery",
+    "w": 390,
+    "h": 844,
+    "overflowOk": true,
+    "h1": "Project Delivery& Lifecycle",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "power",
+    "w": 375,
+    "h": 812,
+    "overflowOk": true,
+    "h1": "Power &Generation",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Next solutionRenewables & Storage"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "renewables",
+    "w": 375,
+    "h": 812,
+    "overflowOk": true,
+    "h1": "Renewables &Storage",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/power-generation",
+        "text": "Previous solutionPower & Generation"
+      },
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Next solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "grid",
+    "w": 375,
+    "h": 812,
+    "overflowOk": true,
+    "h1": "Grid &Distributed Energy",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/renewables-storage",
+        "text": "Previous solutionRenewables & Storage"
+      },
+      {
+        "href": "/solutions/project-delivery-lifecycle",
+        "text": "Next solutionProject Delivery & Lifecycle"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "delivery",
+    "w": 375,
+    "h": 812,
+    "overflowOk": true,
+    "h1": "Project Delivery& Lifecycle",
+    "h1Lines": 2,
+    "h1Breaks": [],
+    "pn": [
+      {
+        "href": "/solutions/grid-distributed-energy",
+        "text": "Previous solutionGrid & Distributed Energy"
+      }
+    ],
+    "crossCutting": "Cross-cutting",
+    "clickableDivs": 0
+  },
+  {
+    "name": "solutions",
+    "w": 1440,
+    "h": 900,
+    "overflowOk": true,
+    "uniqueNums": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "familyLinks": [
+      "/solutions/project-delivery-lifecycle",
+      "/solutions/power-generation",
+      "/solutions/renewables-storage",
+      "/solutions/grid-distributed-energy"
+    ]
+  },
+  {
+    "name": "solutions",
+    "w": 390,
+    "h": 844,
+    "overflowOk": true,
+    "uniqueNums": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15"
+    ],
+    "familyLinks": [
+      "/solutions/project-delivery-lifecycle",
+      "/solutions/power-generation",
+      "/solutions/renewables-storage",
+      "/solutions/grid-distributed-energy"
+    ]
+  },
+  {
+    "keyboard": {
+      "before": "false",
+      "afterEnter": "true",
+      "afterEnter2": "false",
+      "afterSpace": "true",
+      "tag": "BUTTON"
+    }
+  },
+  {
+    "reducedMotion": {
+      "hidden": 0,
+      "total": 15,
+      "allVisible": true
+    }
+  }
+]

@@ -1,0 +1,801 @@
+{
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "title": "ENERGEX",
+      "headings": [
+        "Solutions",
+        "Industries",
+        "About",
+        "Projects",
+        "Contact",
+        "One Partner. Every Energy Solution.",
+        "One Partner. Every Energy Solution.",
+        "ONE COMPANY. ONE INTEGRATED ENERGY SOLUTION.",
+        "What We Deliver",
+        "One Partner. Every Moving Part.",
+        "From Requirement to Long-Term Operation.",
+        "Power at Every Scale.",
+        "Built Around the Energy Requirement.",
+        "Energy. Connected.",
+        "One Platform. Built Around the Project.",
+        "Africa & Middle East First.",
+        "Let's Power What's Next.",
+        "Let's Power What's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "ProjectsProjects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/contact",
+          "text": "Start a ProjectStart a Project",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/solutions",
+      "status": 200,
+      "title": "Solutions | ENERGEX",
+      "headings": [
+        "Energy Infrastructure, From Concept to Operation.",
+        "Fifteen specialist capabilities",
+        "How capabilities connect",
+        "Ready to Shape Your Energy Project?"
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/solutions/power-generation",
+      "status": 200,
+      "title": "Power & Generation | ENERGEX",
+      "headings": [
+        "Power &Generation",
+        "Introduction",
+        "What We Deliver",
+        "Our Approach",
+        "How capabilities connect",
+        "Digital Layer",
+        "Built For",
+        "Let's PowerWhat's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/solutions/renewables-storage",
+      "status": 200,
+      "title": "Renewables & Storage | ENERGEX",
+      "headings": [
+        "Renewables &Storage",
+        "Introduction",
+        "What We Deliver",
+        "Our Approach",
+        "How capabilities connect",
+        "Digital Layer",
+        "Built For",
+        "Let's PowerWhat's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/solutions/grid-distributed-energy",
+      "status": 200,
+      "title": "Grid & Distributed Energy | ENERGEX",
+      "headings": [
+        "Grid &Distributed Energy",
+        "Introduction",
+        "What We Deliver",
+        "Our Approach",
+        "How capabilities connect",
+        "Digital Layer",
+        "Built For",
+        "Let's PowerWhat's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/solutions/project-delivery-lifecycle",
+      "status": 200,
+      "title": "Project Delivery & Lifecycle | ENERGEX",
+      "headings": [
+        "Project Delivery& Lifecycle",
+        "Introduction",
+        "What We Deliver",
+        "Our Approach",
+        "How capabilities connect",
+        "Digital Layer",
+        "Built For",
+        "From requirement to long-term operation.",
+        "Let's PowerWhat's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/industries",
+      "status": 200,
+      "title": "Industries | ENERGEX",
+      "headings": [
+        "Built Around the Energy Requirement.",
+        "Governments & Utilities",
+        "Independent Power Producers",
+        "Mining & Heavy Industry",
+        "Industrial Parks & Data Centers",
+        "Oil & Gas / LNG",
+        "Commercial & Real Estate",
+        "Fleet Operators",
+        "Development Institutions",
+        "Industrial focus areas",
+        "Let's Power What's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/about",
+      "status": 200,
+      "title": "About | ENERGEX",
+      "headings": [
+        "One Company. One Integrated Energy Solution.",
+        "Operating model",
+        "How the scope is applied",
+        "Project delivery framework",
+        "Delivery controls",
+        "Built for Global Energy Markets.",
+        "Organization & Key Functions.",
+        "Deliverables across the project lifecycle",
+        "Commercial models",
+        "Let's Power What's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/projects",
+      "status": 200,
+      "title": "Projects | ENERGEX",
+      "headings": [
+        "Project portfolio"
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/contact",
+      "status": 200,
+      "title": "Contact | ENERGEX",
+      "headings": [
+        "Start a Project",
+        "ENERGEX GLOBAL SOLUTIONS"
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/privacy",
+      "status": 200,
+      "title": "Privacy | ENERGEX",
+      "headings": [
+        "Privacy Policy"
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/terms",
+      "status": 200,
+      "title": "Terms | ENERGEX",
+      "headings": [
+        "Terms of Use"
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    },
+    {
+      "route": "/reference-solution-test",
+      "status": 200,
+      "title": "Reference Solution Test | ENERGEX",
+      "headings": [
+        "Automation Solutions",
+        "Introduction",
+        "What We Deliver",
+        "Our Approach",
+        "Why Companies Choose Us",
+        "Results",
+        "Let's PowerWhat's Next."
+      ],
+      "claims": [],
+      "residue": [],
+      "navProjects": [
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": true
+        },
+        {
+          "href": "/projects",
+          "text": "Projects",
+          "inHeader": false
+        }
+      ]
+    }
+  ],
+  "overflow": [
+    {
+      "route": "/",
+      "w": 1440,
+      "h": 900,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/solutions",
+      "w": 1440,
+      "h": 900,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/industries",
+      "w": 1440,
+      "h": 900,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/about",
+      "w": 1440,
+      "h": 900,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/contact",
+      "w": 1440,
+      "h": 900,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/",
+      "w": 1280,
+      "h": 800,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/solutions",
+      "w": 1280,
+      "h": 800,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/industries",
+      "w": 1280,
+      "h": 800,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/about",
+      "w": 1280,
+      "h": 800,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/contact",
+      "w": 1280,
+      "h": 800,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/",
+      "w": 1024,
+      "h": 768,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/solutions",
+      "w": 1024,
+      "h": 768,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/industries",
+      "w": 1024,
+      "h": 768,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/about",
+      "w": 1024,
+      "h": 768,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/contact",
+      "w": 1024,
+      "h": 768,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/",
+      "w": 768,
+      "h": 1024,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/solutions",
+      "w": 768,
+      "h": 1024,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/industries",
+      "w": 768,
+      "h": 1024,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/about",
+      "w": 768,
+      "h": 1024,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/contact",
+      "w": 768,
+      "h": 1024,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/",
+      "w": 430,
+      "h": 932,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/solutions",
+      "w": 430,
+      "h": 932,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/industries",
+      "w": 430,
+      "h": 932,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/about",
+      "w": 430,
+      "h": 932,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/contact",
+      "w": 430,
+      "h": 932,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/",
+      "w": 390,
+      "h": 844,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/solutions",
+      "w": 390,
+      "h": 844,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/industries",
+      "w": 390,
+      "h": 844,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/about",
+      "w": 390,
+      "h": 844,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/contact",
+      "w": 390,
+      "h": 844,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/",
+      "w": 375,
+      "h": 812,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/solutions",
+      "w": 375,
+      "h": 812,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/industries",
+      "w": 375,
+      "h": 812,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/about",
+      "w": 375,
+      "h": 812,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    },
+    {
+      "route": "/contact",
+      "w": 375,
+      "h": 812,
+      "overflowOk": true,
+      "hiddenRevealLike": 0,
+      "visibleOpacityZero": 0
+    }
+  ],
+  "reveal": [],
+  "reducedMotion": [
+    {
+      "route": "/",
+      "zero": 0,
+      "title": "ENERGEX"
+    },
+    {
+      "route": "/solutions",
+      "zero": 0,
+      "title": "Solutions | ENERGEX"
+    },
+    {
+      "route": "/solutions/power-generation",
+      "zero": 0,
+      "title": "Power & Generation | ENERGEX"
+    },
+    {
+      "route": "/industries",
+      "zero": 0,
+      "title": "Industries | ENERGEX"
+    },
+    {
+      "route": "/about",
+      "zero": 0,
+      "title": "About | ENERGEX"
+    }
+  ],
+  "links": {
+    "valid": [
+      "/",
+      "/#hero",
+      "/about",
+      "/about#controls",
+      "/about#delivery",
+      "/about#markets",
+      "/contact",
+      "/industries",
+      "/privacy",
+      "/projects",
+      "/solutions",
+      "/solutions/grid-distributed-energy",
+      "/solutions/power-generation",
+      "/solutions/project-delivery-lifecycle",
+      "/solutions/renewables-storage",
+      "/terms"
+    ],
+    "broken": [],
+    "external": [],
+    "hash": [],
+    "tilanium": []
+  },
+  "claims": [],
+  "residueUi": [],
+  "contactForm": {
+    "button": "Preview submit",
+    "notice": "Form preview only — submission is not connected yet.",
+    "nonGetRequests": []
+  },
+  "journeys": [
+    {
+      "name": "A",
+      "path": [
+        {
+          "step": "/",
+          "status": 200,
+          "title": "ENERGEX"
+        },
+        {
+          "step": "/solutions",
+          "status": 200,
+          "title": "Solutions | ENERGEX"
+        },
+        {
+          "step": "/solutions/power-generation",
+          "status": 200,
+          "title": "Power & Generation | ENERGEX"
+        },
+        {
+          "step": "/contact",
+          "status": 200,
+          "title": "Contact | ENERGEX"
+        }
+      ]
+    }
+  ],
+  "stickyNav": [
+    {
+      "y": 1905,
+      "present": true,
+      "display": "block",
+      "opacity": "0.827974",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "text": ""
+    },
+    {
+      "y": 4446,
+      "present": true,
+      "display": "block",
+      "opacity": "0.997906",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "text": ""
+    },
+    {
+      "y": 6986,
+      "present": true,
+      "display": "block",
+      "opacity": "1",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "text": ""
+    },
+    {
+      "y": 9527,
+      "present": true,
+      "display": "block",
+      "opacity": "1",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "text": ""
+    },
+    {
+      "y": 11432,
+      "present": true,
+      "display": "block",
+      "opacity": "1",
+      "color": "rgb(0, 0, 238)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "text": ""
+    }
+  ],
+  "console": []
+}

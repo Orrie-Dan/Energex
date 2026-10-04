@@ -1,0 +1,128 @@
+﻿src/app/components/media-card2.tsx(14,8): error TS2322: Type '{ children: Element; "data-cid": string; className: string; "aria-hidden": string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Type '{ children: Element; "data-cid": string; className: string; "aria-hidden": string; }' is not assignable to type 'HTMLAttributes<HTMLDivElement>'.
+    Types of property '"aria-hidden"' are incompatible.
+      Type 'string' is not assignable to type 'Booleanish'.
+src/app/components/media-card3.tsx(15,8): error TS2322: Type '{ children: Element; "data-cid": string; className: string; "aria-hidden": string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Type '{ children: Element; "data-cid": string; className: string; "aria-hidden": string; }' is not assignable to type 'HTMLAttributes<HTMLDivElement>'.
+    Types of property '"aria-hidden"' are incompatible.
+      Type 'string' is not assignable to type 'Booleanish'.
+src/app/components/media-card4.tsx(15,305): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(16,198): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(24,120): error TS2322: Type '{ children: Element; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(25,138): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(31,234): error TS2322: Type '{ children: Element; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(32,138): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(38,286): error TS2322: Type '{ children: Element; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(39,119): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(63,150): error TS2322: Type '{ children: Element; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(64,171): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(70,215): error TS2322: Type '{ children: Element; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(71,171): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(77,226): error TS2322: Type '{ children: Element; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/components/media-card4.tsx(78,149): error TS2322: Type '{ children: Element[]; "data-cid": string; className: string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(209,70): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(210,301): error TS2322: Type '{ children: Element[]; className: string; "data-cid": string; "data-component": string; href: string; name: string; target: "_blank"; }' is not assignable to type 'DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement>'.
+src/app/page.tsx(247,156): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>'.
+src/app/page.tsx(270,287): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(271,156): error TS2322: Type '{ children: Element; className: string; "data-cid": string; "data-component": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>'.
+src/app/page.tsx(328,224): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(329,152): error TS2322: Type '{ children: Element; className: string; "data-cid": string; "data-component": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>'.
+src/app/page.tsx(1725,275): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1726,245): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1730,128): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1731,146): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1738,168): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1798,281): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1799,137): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1803,229): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1804,151): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1834,216): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1835,164): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1839,227): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1840,175): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1877,275): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1878,245): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1882,128): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1883,146): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1890,168): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1950,281): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1951,137): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1955,229): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1956,151): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1986,216): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1987,164): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1991,227): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(1992,175): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2029,275): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2030,245): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2034,128): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2035,146): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2042,168): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2102,281): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2103,137): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2107,229): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2108,151): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2133,216): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2134,164): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2138,227): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+src/app/page.tsx(2139,175): error TS2322: Type '{ children: Element; className: string; "data-cid": string; name: string; }' is not assignable to type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
+  Property 'name' does not exist on type 'DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>'.
