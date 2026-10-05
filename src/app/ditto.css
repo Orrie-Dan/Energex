@@ -395,6 +395,20 @@ body.ditto-menu-lock {
   [data-scroll-zoom] { transform: scale(1.32); }
   [data-why-stage] { aspect-ratio: 0.682 / 1; }
 }
+
+/*
+  Framer mobile artboard widths (327px / 279px) were authored for a 375px frame.
+  On narrower phones they clip inside overflow:clip sections; on wider phones
+  they leave an uneven right gutter. Keep decorative bleed widths alone.
+*/
+@media (max-width: 767.98px) {
+  [class*="max-md:w-[20.4375rem]"],
+  [class*="max-md:w-[17.4375rem]"],
+  [class*="max-md:w-[16.4375rem]"] {
+    width: 100% !important;
+    max-width: 100%;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   [data-service-tilt] { transform: none; }
   [data-scroll-zoom] { transform: scale(1.05); }
