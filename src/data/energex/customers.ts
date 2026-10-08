@@ -136,6 +136,15 @@ export const customers: readonly CustomerSegment[] = [
   },
 ] as const;
 
+/** Stable in-page id shared by the homepage tiles and /industries. */
+export function customerSegmentId(title: string): string {
+  return title
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+}
+
 /** Alias used by existing homepage / industries components. */
 export const industries = customers;
 

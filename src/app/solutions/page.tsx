@@ -2,13 +2,20 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteChrome } from "../components/site-chrome";
 import CapabilityIndexSection from "../sections/capability-index-section";
-import { solutionsIndexPage } from "../../data/energex";
+import { digitalEnergy, solutionsIndexPage } from "../../data/energex";
 import "../solutions-index.css";
 
 export const metadata: Metadata = {
   title: "Solutions",
   description:
     "Complete ENERGEX capability portfolio — fifteen specialist areas from development and generation through grid, industrial energy, financing support, O&M and digital energy.",
+  alternates: { canonical: "/solutions" },
+  openGraph: {
+    title: "Solutions",
+    description:
+      "Complete ENERGEX capability portfolio — fifteen specialist areas from development and generation through grid, industrial energy, financing support, O&M and digital energy.",
+    url: "/solutions",
+  },
 };
 
 export default function SolutionsPage() {
@@ -31,6 +38,21 @@ export default function SolutionsPage() {
 
         <CapabilityIndexSection />
 
+        <section className="sl-connect" id="digital-energy" aria-labelledby="digital-heading">
+          <div className="sl-connect-inner">
+            <h2 id="digital-heading" className="sl-connect-title">
+              {digitalEnergy.headingLead} {digitalEnergy.headingAccent}
+            </h2>
+            <p className="sl-connect-body">{digitalEnergy.supporting}</p>
+            <p className="sl-connect-body">
+              Physical layers: {digitalEnergy.layers.join(" · ")}
+            </p>
+            <p className="sl-connect-body">
+              Digital actions: {digitalEnergy.capabilities.join(" · ")}
+            </p>
+          </div>
+        </section>
+
         <section className="sl-connect" aria-labelledby="connect-heading">
           <div className="sl-connect-inner">
             <h2 id="connect-heading" className="sl-connect-title">
@@ -39,7 +61,7 @@ export default function SolutionsPage() {
             <p className="sl-connect-body">{solutionsIndexPage.connectBody}</p>
             <p className="sl-connect-body">
               Brand lifecycle: Develop · Design · Finance · Source · Build · Operate · Optimize —
-              assembled through the documented project delivery framework on the homepage and About.
+              assembled through the documented project delivery framework on About.
             </p>
           </div>
         </section>

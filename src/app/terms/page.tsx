@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Terms",
   description: "Terms of use placeholder for ENERGEX Global Solutions.",
   robots: { index: false, follow: true },
+  alternates: { canonical: "/terms" },
+  openGraph: { url: "/terms" },
 };
 
 export default function TermsPage() {

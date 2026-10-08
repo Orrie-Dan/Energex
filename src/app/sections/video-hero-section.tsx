@@ -1,4 +1,4 @@
-import { brand, hero, navCta } from "../../data/energex";
+import { brand, hero } from "../../data/energex";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
@@ -44,9 +44,14 @@ export default function VideoHeroSection() {
           <span className="block text-background/70">{hero.headlineAccent}</span>
         </h1>
         <p
-          className={`max-w-xl text-balance text-background/85 ${FONT} text-base leading-[1.625rem]`}
+          className={`max-w-xl text-balance text-background/85 ${FONT} text-base font-semibold leading-[1.625rem]`}
         >
           {hero.supporting}
+        </p>
+        <p
+          className={`max-w-2xl text-balance text-background/80 ${FONT} text-base leading-[1.625rem]`}
+        >
+          {hero.body}
         </p>
         <div className="flex flex-wrap items-center gap-4 pt-1">
           <a
@@ -56,10 +61,10 @@ export default function VideoHeroSection() {
             {hero.primaryCta.label}
           </a>
           <a
-            href={navCta.href}
+            href={hero.secondaryCta.href}
             className={`inline-flex h-12 items-center gap-2 border border-background/40 px-6 text-background ${FONT} text-sm font-semibold leading-[1.375rem] transition-colors hover:border-background hover:bg-background/10`}
           >
-            {navCta.label}
+            {hero.secondaryCta.label}
           </a>
         </div>
         <p className={`sr-only`}>{brand.name}</p>

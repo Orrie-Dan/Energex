@@ -1,11 +1,27 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { contactPage } from "../../data/energex";
+
+const INTERESTS = contactPage.interests;
+
+function interestFromQuery(): string {
+  if (typeof window === "undefined") return "";
+  const raw = new URLSearchParams(window.location.search).get("interest")?.trim().toLowerCase() ?? "";
+  if (!raw) return "";
+  if (raw === "project") return "Project inquiry";
+  if (raw === "equipment") return "Power Equipment Supply";
+  return INTERESTS.find((item) => item.toLowerCase() === raw) ?? "";
+}
 
 export function ContactForm() {
   const [previewNotice, setPreviewNotice] = useState(false);
+  const [interest, setInterest] = useState("");
+
+  useEffect(() => {
+    setInterest(interestFromQuery());
+  }, []);
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -55,14 +71,15 @@ export function ContactForm() {
         <select
           name="interest"
           className="mt-1 w-full rounded-md border border-[#011836]/20 px-3 py-2 text-sm"
-          defaultValue=""
+          value={interest}
+          onChange={(event) => setInterest(event.target.value)}
         >
           <option value="" disabled>
             Select an area
           </option>
-          {contactPage.interests.map((interest) => (
-            <option key={interest} value={interest}>
-              {interest}
+          {INTERESTS.map((item) => (
+            <option key={item} value={item}>
+              {item}
             </option>
           ))}
         </select>

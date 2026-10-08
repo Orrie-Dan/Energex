@@ -96,15 +96,18 @@ export const Tile_styles: TileStyles[] = [
     { className: "2xl:w-max", className2: "2xl:w-max" },
     { className: "2xl:w-max", className2: "2xl:w-max" },
     { className: "2xl:w-max", className2: "2xl:w-max" },
+    { className: "2xl:w-max", className2: "2xl:w-max" },
     { className: "2xl:w-max", className2: "2xl:w-max" }
 ];
 export const FeatureCard_styles: FeatureCardStyles[] = [
     { className: "w-max", className2: "w-max" },
     { className: "w-max", className2: "w-max" },
     { className: "w-max", className2: "w-max" },
+    { className: "w-max", className2: "w-max" },
     { className: "w-max", className2: "w-max" }
 ];
 export const Tile2_styles: Tile2Styles[] = [
+    { className: "w-max", className2: "w-max" },
     { className: "w-max", className2: "w-max" },
     { className: "w-max", className2: "w-max" },
     { className: "w-max", className2: "w-max" },
@@ -153,9 +156,11 @@ export const Tile3_styles: Tile3Styles[] = [
     { className: "2xl:w-max" },
     { className: "2xl:w-max" },
     { className: "2xl:w-max" },
+    { className: "2xl:w-max" },
     { className: "2xl:w-max" }
 ];
 export const Tile4_styles: Tile4Styles[] = [
+    { className: "2xl:w-max" },
     { className: "2xl:w-max" },
     { className: "2xl:w-max" },
     { className: "2xl:w-max" },

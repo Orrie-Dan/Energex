@@ -11,7 +11,7 @@ import { SITE_ORIGIN } from "../../lib/site";
 export const dynamic = "force-static";
 
 export async function GET() {
-  const origin = SITE_ORIGIN || "http://localhost:3000";
+  const origin = SITE_ORIGIN;
   const links = [
     { path: "/", label: "Home" },
     ...navLinks.map((l) => ({ path: l.href, label: l.label })),

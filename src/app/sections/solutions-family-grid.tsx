@@ -2,20 +2,40 @@ import { solutionFamilies } from "../../data/energex";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
-/** Four solution families in one horizontal row (stacks on small screens). */
-export default function SolutionsFamilyGrid() {
+export type SolutionOffering = {
+  href: string;
+  title: string;
+  description: string;
+  imgSrc: string;
+};
+
+/** Solution families, plus any extra commercial cards passed in. */
+export default function SolutionsFamilyGrid({
+  offerings,
+}: {
+  offerings?: readonly SolutionOffering[];
+}) {
+  const items =
+    offerings ??
+    solutionFamilies.map((family) => ({
+      href: family.href,
+      title: family.title,
+      description: family.description,
+      imgSrc: family.imgSrc,
+    }));
+
   return (
     <div
-      className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 xl:gap-5"
+      className="w-full grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-6 xl:gap-5"
       role="list"
-      aria-label="Energy solution families"
+      aria-label="Energy solutions and equipment supply"
     >
-      {solutionFamilies.map((family) => (
+      {items.map((family, index) => (
         <a
           key={family.href}
           href={family.href}
           role="listitem"
-          className="group relative flex min-w-0 flex-col overflow-hidden bg-background text-primary outline-none ring-1 ring-color-001/10 transition-[transform,box-shadow,ring-color] duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] hover:-translate-y-1 hover:ring-accent hover:shadow-[0_16px_36px_-22px_rgba(1,24,54,0.38)] focus-visible:ring-2 focus-visible:ring-accent before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-0.5 before:origin-left before:scale-x-0 before:bg-accent before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.33,0,0.2,1)] hover:before:scale-x-100 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none motion-reduce:before:transition-none"
+          className={`group relative flex min-w-0 flex-col overflow-hidden bg-background text-primary outline-none ring-1 ring-color-001/10 xl:col-span-2 ${items.length === 5 && index === 3 ? "xl:col-start-2" : ""} transition-[transform,box-shadow,ring-color] duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] hover:-translate-y-1 hover:ring-accent hover:shadow-[0_16px_36px_-22px_rgba(1,24,54,0.38)] focus-visible:ring-2 focus-visible:ring-accent before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-0.5 before:origin-left before:scale-x-0 before:bg-accent before:transition-transform before:duration-500 before:ease-[cubic-bezier(0.33,0,0.2,1)] hover:before:scale-x-100 motion-reduce:transition-none motion-reduce:hover:translate-y-0 motion-reduce:hover:shadow-none motion-reduce:before:transition-none`}
         >
           <div className="relative aspect-[4/3] w-full overflow-hidden bg-color-001">
             <img
@@ -30,7 +50,7 @@ export default function SolutionsFamilyGrid() {
           </div>
           <div className="flex flex-1 flex-col gap-2 p-5">
             <h3
-              className={`block text-color-001 ${FONT} text-lg font-medium leading-6 tracking-[-0.2px] whitespace-nowrap overflow-hidden text-ellipsis transition-colors duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] group-hover:text-accent`}
+              className={`block text-color-001 ${FONT} text-lg font-medium leading-6 tracking-[-0.2px] text-balance transition-colors duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] group-hover:text-accent`}
             >
               {family.title}
             </h3>

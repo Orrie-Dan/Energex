@@ -32,6 +32,7 @@ export {
 } from "./energex/delivery";
 
 export {
+  customerSegmentId,
   customers,
   industries,
   industriesSection,
@@ -56,6 +57,13 @@ export {
   financingNote,
 } from "./energex/commercial";
 
+export {
+  equipmentCategories,
+  equipmentPage,
+  equipmentSupplyCard,
+  type EquipmentCategory,
+} from "./energex/equipment";
+
 export const brand = {
   name: "ENERGEX GLOBAL SOLUTIONS",
   shortName: "ENERGEX",
@@ -72,6 +80,7 @@ export const brand = {
 /** Primary nav — Projects omitted until verified case studies are supplied. */
 export const navLinks = [
   { href: "/solutions", label: "Solutions" },
+  { href: "/equipment", label: "Equipment Supply" },
   { href: "/industries", label: "Industries" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
@@ -84,9 +93,9 @@ export const hero = {
   headlineLead: "One Partner.",
   headlineAccent: "Every Energy Solution.",
   supporting: "From Concept to Power.",
-  body: "From project development and engineering to global procurement, EPC delivery, financing support, operations and long-term asset management, Energex provides one commercial and technical interface across the full energy project lifecycle.",
-  primaryCta: { href: "/solutions", label: "Explore All Capabilities" },
-  secondaryCta: { href: "/contact", label: "Start a Project" },
+  body: "Energex gives energy buyers one interface for engineering, equipment sourcing, project delivery, and lifecycle support — from the first requirement through operations.",
+  primaryCta: { href: "/solutions", label: "Explore Solutions" },
+  secondaryCta: { href: "/contact?interest=project", label: "Start a Project" },
 };
 
 export const about = {
@@ -192,6 +201,36 @@ export function solutionFamilyMediaCards() {
     width2: "1400",
   }));
 }
+
+export const whyEnergex = {
+  label: "Why ENERGEX",
+  headingLead: "One interface",
+  headingAccent: "across the work.",
+  supporting:
+    "Four ways Energex can take responsibility around an energy requirement. These describe how the company can participate. They are not a record of completed projects.",
+  pillars: [
+    {
+      number: "01",
+      title: "Engineering",
+      body: "Define the technical configuration around load, site, fuel or resource, and the grid or industrial connection.",
+    },
+    {
+      number: "02",
+      title: "Global Sourcing",
+      body: "Qualify and coordinate OEM equipment and supply packages, including factory audit, logistics, and customs support.",
+    },
+    {
+      number: "03",
+      title: "Project Delivery",
+      body: "Integrate engineering, procurement, and construction interfaces while Energex keeps the client relationship.",
+    },
+    {
+      number: "04",
+      title: "Lifecycle Support",
+      body: "Plan operations, maintenance, spare parts, and performance follow-through after commercial operation.",
+    },
+  ],
+} as const;
 
 export const whySlides = [
   {
@@ -314,6 +353,8 @@ export const contactPage = {
   formNote:
     "Form preview only — submission is not connected yet. Direct email and phone lines will be published when confirmed.",
   interests: [
+    "Project inquiry",
+    "Power Equipment Supply",
     "Power & Generation",
     "Renewables & Storage",
     "Grid & Distributed Energy",
@@ -321,6 +362,57 @@ export const contactPage = {
     "General inquiry",
   ],
 } as const;
+
+export const contactClose = {
+  label: "Contact",
+  heading: "Project and equipment inquiries.",
+  body: "Choose a path. Both open a page on this site. Nothing is submitted from the homepage.",
+  project: { href: "/contact?interest=project", label: "Project inquiries" },
+  equipment: { href: "/equipment#inquiry", label: "Equipment inquiries" },
+} as const;
+
+/** Approved public evidence. Leave empty until a record is cleared for publication. */
+export type ApprovedEvidence = {
+  id: string;
+  title: string;
+  summary: string;
+  kind: "Project" | "Delivery" | "Credential";
+};
+
+export const approvedEvidence: readonly ApprovedEvidence[] = [];
+
+export const evidenceSection = {
+  label: "Capabilities & Evidence",
+  headingLead: "What can be stated",
+  headingAccent: "today.",
+  supporting:
+    "Capabilities and delivery methods are listed separately from project evidence. Completed projects, clients, and credentials appear only after they are approved for publication.",
+  empty: "No project, client, delivery, or credential record is approved for publication yet.",
+  strengthsLabel: "Verified capabilities — not completed-project claims",
+} as const;
+
+export const capabilityStrengths = [
+  {
+    title: "Fifteen specialist capabilities",
+    body: "Development, generation, renewables, storage, grid, industrial energy, procurement, EPC, financing support, operations, and a digital layer.",
+    href: "/solutions",
+  },
+  {
+    title: "Power equipment supply",
+    body: "International trading and procurement with technical qualification and supply-chain management.",
+    href: "/equipment",
+  },
+  {
+    title: "Ten-stage delivery framework",
+    body: "From the client requirement through testing, commercial operation, monitoring, and expansion.",
+    href: "/about#delivery",
+  },
+  {
+    title: "Configurable participation",
+    body: "Developer, advisor, equipment supplier, EPC integrator, owner's representative, operator, or asset manager — set per project.",
+    href: "/about#roles",
+  },
+] as const;
 
 export const projectsPage = {
   eyebrow: "Project Experience",
@@ -342,6 +434,7 @@ export const footer = {
     { href: "/solutions/renewables-storage", label: "Renewables & Storage" },
     { href: "/solutions/grid-distributed-energy", label: "Grid & Distributed Energy" },
     { href: "/solutions/project-delivery-lifecycle", label: "Project Delivery & Lifecycle" },
+    { href: "/equipment", label: "Power Equipment Supply" },
     { href: "/solutions", label: "All Capabilities" },
   ],
   delivery: [

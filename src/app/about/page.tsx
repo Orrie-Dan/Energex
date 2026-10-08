@@ -4,8 +4,11 @@ import { SiteChrome } from "../components/site-chrome";
 import {
   about,
   brandLifecycle,
+  integratorModel,
+  scale,
   deliverableGroups,
   deliveryControls,
+  deliveryFlexibility,
   deliveryFramework,
   deliveryRoles,
   financingNote,
@@ -22,6 +25,13 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "ENERGEX operating model, project delivery framework, delivery controls, market strategy, organization and responsibility framework.",
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About",
+    description:
+      "ENERGEX operating model, project delivery framework, delivery controls, market strategy, organization and responsibility framework.",
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {
@@ -53,6 +63,35 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-[#011836]/50">
+            Coordination interfaces
+          </p>
+          <p className="mt-2 max-w-3xl text-sm text-[#011836]/70">
+            {integratorModel.supporting} The labels below are a simplified view of partner types.
+            They are not a reporting hierarchy.
+          </p>
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {integratorModel.partners.map((partner) => (
+              <li
+                key={partner.id}
+                className="rounded-full border border-[#011836]/15 bg-white px-4 py-2 text-sm text-[#011836]"
+              >
+                {partner.label}
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-14" id="scale">
+          <h2 className="text-xl font-semibold text-[#011836]">{scale.label}</h2>
+          <p className="mt-3 text-2xl font-medium tracking-tight text-[#011836]">
+            {scale.from} – {scale.to}
+          </p>
+          <p className="mt-3 max-w-3xl text-[#011836]/80">{scale.supporting}</p>
+          <p className="mt-3 max-w-3xl text-sm text-[#011836]/65">
+            This is a configured range for the systems Energex can coordinate. It is not a list of
+            completed projects or installed capacity.
+          </p>
         </section>
 
         <section className="mt-14" id="roles">
@@ -71,6 +110,16 @@ export default function AboutPage() {
               </li>
             ))}
           </ul>
+          <p className="mt-6 max-w-3xl text-sm text-[#011836]/75">{deliveryFlexibility.supporting}</p>
+          <dl className="mt-4 grid gap-3 sm:grid-cols-2">
+            {deliveryFlexibility.matrix.map((pair) => (
+              <div key={pair.left} className="rounded-lg border border-[#011836]/10 bg-white px-4 py-3 text-sm text-[#011836]">
+                <dt className="font-medium">{pair.left}</dt>
+                <dd className="mt-1 text-[#011836]/70">{pair.right}</dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-4 max-w-3xl text-sm text-[#011836]/65">{deliveryFlexibility.financingNote}</p>
         </section>
 
         <section className="mt-14" id="delivery">

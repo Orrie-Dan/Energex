@@ -279,6 +279,7 @@
   [data-ditto-mobile-nav].ditto-mobile-nav-open [data-ditto-mobile-panel] {
     max-height: 80vh;
     opacity: 1;
+    overflow-y: auto;
     pointer-events: auto;
   }
   [data-ditto-mobile-nav].ditto-mobile-nav-open [data-ditto-mobile-panel] > * {

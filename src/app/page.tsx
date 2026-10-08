@@ -1,14 +1,11 @@
 import CorporateFooterSection from "./sections/corporate-footer-section";
-import IntegratorModelSection from "./sections/integrator-model-section";
-import ProjectLifecycleSection from "./sections/project-lifecycle-section";
-import ScaleSection from "./sections/scale-section";
-import IndustryExplorerSection from "./sections/industry-explorer-section";
-import DigitalEnergySection from "./sections/digital-energy-section";
-import DeliveryFlexibilitySection from "./sections/delivery-flexibility-section";
-import MarketBridgeSection from "./sections/market-bridge-section";
-import SolutionsFamilyGrid from "./sections/solutions-family-grid";
 import VideoHeroSection from "./sections/video-hero-section";
-import { brand, finalCta } from "../data/energex";
+import SolutionsHomeSection from "./sections/solutions-home-section";
+import WhyEnergexSection from "./sections/why-energex-section";
+import IndustriesCompactSection from "./sections/industries-compact-section";
+import CapabilitiesEvidenceSection from "./sections/capabilities-evidence-section";
+import ContactCloseSection from "./sections/contact-close-section";
+import { brand, finalCta, footer, navLinks } from "../data/energex";
 import Tile, { type TileData } from "./components/tile";
 import Icon from "./svgs/svg-icon";
 import FeatureCard, { type FeatureCardData } from "./components/feature-card";
@@ -19,14 +16,6 @@ import Tile2, { type Tile2Data } from "./components/tile2";
 import Icon5 from "./svgs/svg-icon5";
 import Icon6 from "./svgs/svg-icon6";
 import Icon7 from "./svgs/svg-icon7";
-import Icon14 from "./svgs/svg-icon14";
-import Icon15 from "./svgs/svg-icon15";
-import Icon16 from "./svgs/svg-icon16";
-import Icon17 from "./svgs/svg-icon17";
-import Icon24 from "./svgs/svg-icon24";
-import Icon25 from "./svgs/svg-icon25";
-import Icon26 from "./svgs/svg-icon26";
-import Illustration from "./svgs/svg-illustration";
 import Icon27 from "./svgs/svg-icon27";
 import Icon28 from "./svgs/svg-icon28";
 import Tile3, { type Tile3Data } from "./components/tile3";
@@ -36,38 +25,21 @@ import Logo3, { type Logo3Data } from "./components/logo3";
 import { Tile_cids, FeatureCard_cids, Tile2_cids, Tile3_cids, Tile4_cids, Logo2_cids, Logo3_cids } from "./_cids";
 import { Tile_styles, FeatureCard_styles, Tile2_styles, Tile3_styles, Tile4_styles, Logo2_styles, Logo3_styles } from "./_styles";
 
-const Tile_data: TileData[] = [
-    { href: "/solutions", description: "Solutions" },
-    { href: "/industries", description: "Industries" },
-    { href: "/about", description: "About" },
-    { href: "/contact", description: "Contact" }
-];
-const FeatureCard_data: FeatureCardData[] = [
-    { href: "/solutions", title: "Solutions", description: "Solutions" },
-    { href: "/industries", title: "Industries", description: "Industries" },
-    { href: "/about", title: "About", description: "About" },
-    { href: "/contact", title: "Contact", description: "Contact" }
-];
-const Tile2_data: Tile2Data[] = [
-    { href: "/solutions", description: "Solutions" },
-    { href: "/industries", description: "Industries" },
-    { href: "/about", description: "About" },
-    { href: "/contact", description: "Contact" }
-];
+const Tile_data: TileData[] = navLinks.map((link) => ({ href: link.href, description: link.label }));
+const FeatureCard_data: FeatureCardData[] = navLinks.map((link) => ({
+  href: link.href,
+  title: link.label,
+  description: link.label,
+}));
+const Tile2_data: Tile2Data[] = Tile_data;
 const Tile3_data: Tile3Data[] = [
-    { href: "/", description: "Home" },
-    { href: "/about", description: "About" },
-    { href: "/solutions", description: "Solutions" },
-    { href: "/industries", description: "Industries" },
-    { href: "/contact", description: "Contact" },
-    { href: "/privacy", description: "Privacy" }
+  { href: "/", description: "Home" },
+  ...Tile_data,
+  { href: "/privacy", description: "Privacy" },
 ];
-const Tile4_data: Tile4Data[] = [
-    { href: "/solutions/power-generation", description: "Power & Generation" },
-    { href: "/solutions/renewables-storage", description: "Renewables & Storage" },
-    { href: "/solutions/grid-distributed-energy", description: "Grid & Distributed Energy" },
-    { href: "/solutions/project-delivery-lifecycle", description: "Project Delivery & Lifecycle" }
-];
+const Tile4_data: Tile4Data[] = footer.solutions
+  .filter((item) => item.href !== "/solutions")
+  .map((item) => ({ href: item.href, description: item.label }));
 const Logo2_data: Logo2Data[] = [];
 const Logo3_data: Logo3Data[] = [];
 
@@ -162,7 +134,7 @@ export default function Page() {
           </div>
           <div className="h-16 block fixed bottom-2 inset-x-0 z-10 opacity-0 min-w-0 shrink-0 order-[-998] transform-[matrix3d(1,0,0,0,0,1,0,0,0,0,1,-0.000833333,0,80,0,1)] origin-[640px_32px] max-lg:hidden" data-cid="n134" data-name="Navigation bottom" data-ditto-nav-bottom aria-hidden="true">
             <nav className="flex relative justify-center items-center content-center overflow-clip max-lg:hidden" data-cid="n135" data-component="nav" data-name="Navigation bottom">
-              <div className="w-[55.25rem] flex relative pl-4 justify-start items-center content-center shrink-0 gap-5 bg-color-001 max-lg:hidden" data-cid="n136">
+              <div className="w-max max-w-[calc(100vw-2rem)] flex relative pl-4 justify-start items-center content-center shrink-0 gap-5 bg-color-001 max-lg:hidden" data-cid="n136">
                 <div className="w-[8.6625rem] flex relative justify-start items-center content-center shrink-0 max-lg:hidden" data-cid="n137">
                   <div className="w-[8.6625rem] h-7 block relative z-1 shrink-0 max-lg:hidden" data-cid="n138">
                     <a className="h-7 block relative aspect-[4.95/1] text-primary cursor-pointer max-lg:hidden" data-cid="n139" data-component="link" href="/">
@@ -214,271 +186,11 @@ export default function Page() {
           <div className="h-[min-content] min-h-screen contents relative min-w-0 flex-col justify-start items-center content-center overflow-clip bg-background" data-cid="n186">
             <main className="w-full flex relative flex-col justify-start items-center content-center shrink-0 overflow-clip" data-cid="n187">
               <VideoHeroSection />
-              <section className="w-full flex relative z-2 flex-col justify-center items-center content-center shrink-0 overflow-clip bg-background" data-cid="n359-wrap">
-                <div className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background" data-cid="n359">
-                  <div className="w-full flex relative max-w-400 py-37.5 px-8 justify-start items-start content-start shrink-0 gap-25 overflow-clip max-lg:py-18 max-lg:px-6 max-lg:flex-col max-lg:gap-10 max-lg:max-w-none" data-cid="n360">
-                    <div className="w-full max-w-100 min-h-125 flex relative flex-col justify-start items-start content-start grow shrink-0 basis-0 gap-12 max-md:h-auto max-lg:gap-8 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:h-auto" data-cid="n361">
-                      <div className="w-100 h-auto flex relative flex-col justify-start items-start content-start grow shrink-0 basis-0 gap-10 overflow-clip max-md:w-[20.4375rem] max-md:h-auto max-lg:gap-8 max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:h-auto" data-cid="n362">
-                        <div className="w-100 flex relative flex-col justify-start items-start content-start shrink-0 gap-4 max-md:w-[20.4375rem]" data-cid="n363">
-                          <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n364">
-                            <div className="w-full block relative shrink-0 2xl:flex 2xl:w-auto 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:shrink-[initial]" data-cid="n365">
-                              <div className="flex relative w-auto pr-2 pl-3 flex-col justify-start items-start content-start 2xl:shrink-0 2xl:whitespace-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial]" data-cid="n366">
-                                <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n367" dir="auto">
-                                  <span className="hidden 2xl:inline-block" data-cid="n368">
-  ABOUT ENERGEX
-</span>
-                                </p>
-                                <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n370">
-                                  <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] 2xl:hidden" data-cid="n371" dir="auto">
-                                    <span className="inline-block 2xl:hidden" data-cid="n372">
-  ABOUT ENERGEX
-</span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="w-100 flex relative flex-col justify-start shrink-0 whitespace-pre-wrap [word-break:break-word] [overflow-wrap:break-word] max-md:w-[20.4375rem]" data-cid="n374">
-                            <h2 className="block text-muted-foreground [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-[2.75rem] font-medium leading-11 tracking-[-1.76px] text-balance max-lg:text-4xl max-lg:leading-9 max-lg:tracking-[-1.44px]" data-cid="n375" data-component="heading" dir="auto">
-<span className="inline text-color-001" data-cid="n376">
-  {"ONE COMPANY. "}
-</span>
-{"ONE INTEGRATED ENERGY SOLUTION."}
-                            </h2>
-                          </div>
-                        </div>
-                        <div className="w-full h-10 block relative z-1 shrink-0" data-cid="n378">
-                          <div className="h-10 min-h-[0.3125rem] block relative min-w-[0.3125rem] overflow-hidden bg-color-001" data-cid="n379" aria-hidden="true">
-                            <div className="h-26.5 block absolute -top-[2.0625rem] -inset-x-[2.0625rem] [background-position:-5.64215px_-5.64215px] [animation-name:hatchMove\_R6pd8lb5dp] [animation-duration:1.5s] [animation-timing-function:linear] [animation-iteration-count:infinite] pointer-events-none max-md:[background-position:-3.29455px_-3.29455px] md:max-lg:[background-position:-4.42083px_-4.42083px] 2xl:[background-position:-0.837214px_-0.837214px] 2xl:[animation-name:hatchMove\_reg]" style={{ backgroundImage: "repeating-linear-gradient(-45deg, rgba(255,255,255,0.15) 0px, rgba(255,255,255,0.15) 1px, transparent 1px, transparent 12px)" }} data-cid="n380" />
-                          </div>
-                        </div>
-                        <div className="w-100 flex relative flex-col justify-start shrink-0 max-md:w-[20.4375rem]" data-cid="n381">
-                          <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-base leading-[1.625rem] text-balance [font-feature-settings:'blwf',_'cv03',_'cv04',_'cv09',_'cv11']" data-cid="n382" dir="auto">
-                            ENERGEX Global Solutions provides clients with a single commercial and technical interface across the full energy project lifecycle. From development and engineering to global procurement, EPC delivery, financing support, operations and long-term asset management, Energex coordinates the technologies and partners required around each project's needs.
-                          </p>
-                        </div>
-                      </div>
-                      <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n383">
-                        <a className="hidden 2xl:w-auto 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:text-primary 2xl:cursor-pointer" data-cid="n384" href="/about">
-                          <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n385">
-                            <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:text-left" data-cid="n386" dir="auto">
-                              About Energex
-                            </p>
-                          </div>
-                          <div className="hidden 2xl:w-3 2xl:h-3 2xl:flex 2xl:relative 2xl:z-1 2xl:flex-col 2xl:justify-center 2xl:items-center 2xl:content-center 2xl:shrink-0 2xl:overflow-clip" data-cid="n387">
-                            <div className="hidden 2xl:w-[0.1875rem] 2xl:h-px 2xl:block 2xl:absolute 2xl:top-px 2xl:left-[0.5625rem] 2xl:min-w-0 2xl:shrink-0 2xl:transform-[matrix(0.707107,0.707107,-0.707107,0.707107,0,0)] 2xl:origin-[1.5px_0.5px]" data-cid="n388" aria-hidden="true">
-                              <div className="hidden 2xl:h-full 2xl:block" data-cid="n389">
-                                <Icon14 cid={"n390"} />
-                              </div>
-                            </div>
-                            <div className="hidden 2xl:w-3 2xl:h-3 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n391" aria-hidden="true">
-                              <div className="hidden 2xl:h-full 2xl:block" data-cid="n392">
-                                <Icon15 cid={"n393"} />
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                        <div className="block relative shrink-0 2xl:hidden" data-cid="n394">
-                          <a className="w-auto h-[1.4rem] flex relative justify-start items-center content-center gap-3 text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n395" data-component="link" href="/about">
-                            <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n396">
-                              <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-left 2xl:hidden" data-cid="n397" dir="auto">
-                                About Energex
-                              </p>
-                            </div>
-                            <div className="w-3 h-3 flex relative z-1 flex-col justify-center items-center content-center shrink-0 overflow-clip 2xl:hidden" data-cid="n398">
-                              <div className="w-[0.1875rem] h-px block absolute top-px left-[0.5625rem] min-w-0 shrink-0 transform-[matrix(0.707107,0.707107,-0.707107,0.707107,0,0)] origin-[1.5px_0.5px] max-lg:h-4 max-lg:-top-px max-lg:left-[0.1875rem] max-lg:origin-[1.5px_8px] 2xl:hidden" data-cid="n399" aria-hidden="true">
-                                <div className="h-full block 2xl:hidden" data-cid="n400">
-                                  <Icon16 cid={"n401"} />
-                                </div>
-                              </div>
-                              <div className="w-3 h-3 block relative shrink-0 2xl:hidden" data-cid="n402" aria-hidden="true">
-                                <div className="h-full block 2xl:hidden" data-cid="n403">
-                                  <Icon17 cid={"n404"} />
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-[59%] h-125 flex relative justify-center items-center content-center grow shrink-0 basis-0 overflow-clip max-lg:w-full max-lg:h-60 max-lg:grow-[initial] max-lg:basis-[initial] 2xl:w-[67.5%]" data-cid="n405">
-                      <div className="contents min-w-0 transform-[none] 2xl:w-259 2xl:h-125 2xl:block 2xl:relative 2xl:grow 2xl:shrink-0 2xl:basis-0 2xl:transform-[matrix(1.2,0,0,1.2,0,0)] 2xl:origin-[518px_250px]" data-cid="n406">
-                        <div className="w-179 h-125 block relative inset-0 grow shrink-0 basis-0 transform-[matrix(1.2,0,0,1.2,0,0)] origin-[358px_250px] max-md:w-[20.4375rem] max-lg:h-60 max-md:origin-[163.5px_120px] md:max-lg:w-180 md:max-lg:origin-[360px_120px] 2xl:w-259 2xl:absolute 2xl:transform-[none] 2xl:right-auto 2xl:bottom-auto 2xl:grow-[initial] 2xl:shrink-[initial] 2xl:basis-[initial] 2xl:origin-[initial]" data-cid="n407">
-                          <img className="hidden 2xl:w-full 2xl:h-125 2xl:block 2xl:overflow-clip 2xl:object-cover 2xl:aspect-[auto_1448/1086]" data-cid="n408" alt="Energex engineers inspecting a solar array" height="1086" sizes="max((min(100vw, 1600px) - 164px) / 2, 1px)" src="/assets/energex/engineers.png" width="1448" />
-                          <div className="h-full block absolute top-0 inset-x-0 2xl:hidden" data-cid="n409">
-                            <img className="w-full h-125 block overflow-clip object-cover aspect-[auto_1448/1086] max-lg:h-60 2xl:hidden" data-cid="n410" data-component="image" alt="Energex engineers inspecting a solar array" height="1086" sizes="max((min(100vw, 1600px) - 164px) / 2, 1px)" src="/assets/energex/engineers.png" width="1448" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section className="w-full flex relative z-2 flex-col justify-start items-center content-center shrink-0 overflow-clip bg-background" data-cid="n411">
-                <div className="h-full flex absolute top-0 inset-x-0 z-0 min-w-0 flex-col justify-center items-center content-center shrink-0 gap-2.5 overflow-clip bg-background" data-cid="n412" />
-                <div className="w-full max-w-400 flex relative py-37.5 px-8 flex-col justify-start items-start content-start shrink-0 gap-10 overflow-clip max-lg:py-18 max-lg:px-6 max-lg:gap-8" data-cid="n413">
-                  <div className="w-304 flex relative flex-col justify-start items-start content-start shrink-0 gap-4 max-md:w-[20.4375rem] md:max-lg:w-180 2xl:w-384" data-cid="n414" id="service-title">
-                    <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n415">
-                      <div className="w-full block relative shrink-0 2xl:flex 2xl:w-auto 2xl:pr-2 2xl:pl-3 2xl:flex-col 2xl:justify-start 2xl:items-start 2xl:content-start 2xl:shrink-[initial]" data-cid="n416">
-                        <div className="flex relative w-auto pr-2 pl-3 flex-col justify-start items-start content-start 2xl:shrink-0 2xl:whitespace-nowrap 2xl:max-w-none 2xl:px-0 2xl:[align-items:initial] 2xl:[align-content:initial]" data-cid="n417">
-                          <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem]" data-cid="n418" dir="auto">
-                            <span className="hidden 2xl:inline-block" data-cid="n419">
-  Energy Solutions
-</span>
-                          </p>
-                          <div className="w-max flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n420">
-                            <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] 2xl:hidden" data-cid="n421" dir="auto">
-                              <span className="inline-block 2xl:hidden" data-cid="n422">
-  Energy Solutions
-</span>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="w-full flex relative justify-start items-end content-end shrink-0 gap-2.5 max-lg:flex-col max-lg:items-start max-lg:content-start max-lg:gap-8" data-cid="n423">
-                      <div className="w-[68.8625rem] flex relative flex-col justify-start grow shrink-0 basis-0 whitespace-pre-wrap [word-break:break-word] [overflow-wrap:break-word] max-md:w-[20.4375rem] max-lg:grow-[initial] max-lg:basis-[initial] md:max-lg:w-180 2xl:w-[88.8625rem]" data-cid="n424">
-                        <h2 className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-[2.75rem] font-medium leading-11 tracking-[-1.76px] text-balance max-lg:text-4xl max-lg:leading-9 max-lg:tracking-[-1.44px]" data-cid="n425" data-component="heading" dir="auto">
-                          {"What We "}
-                          <span className="inline text-muted-foreground" data-cid="n426">
-                            Deliver
-                          </span>
-                        </h2>
-                      </div>
-                      <div className="contents min-w-0 2xl:w-auto 2xl:h-[1.4rem] 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n427">
-                        <a className="hidden 2xl:w-auto 2xl:h-[1.4rem] 2xl:flex 2xl:relative 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:gap-3 2xl:text-primary 2xl:cursor-pointer" data-cid="n428" href="/solutions">
-                          <div className="hidden 2xl:w-auto 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:shrink-0 2xl:whitespace-nowrap" data-cid="n429">
-                            <p className="hidden 2xl:block 2xl:text-color-001 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-sm 2xl:font-semibold 2xl:leading-[1.375rem] 2xl:text-left" data-cid="n430" dir="auto">
-                              Explore All Capabilities
-                            </p>
-                          </div>
-                          <div className="hidden 2xl:w-3 2xl:h-3 2xl:flex 2xl:relative 2xl:z-1 2xl:flex-col 2xl:justify-center 2xl:items-center 2xl:content-center 2xl:shrink-0 2xl:overflow-clip" data-cid="n431">
-                            <div className="hidden 2xl:w-[0.1875rem] 2xl:h-px 2xl:block 2xl:absolute 2xl:top-px 2xl:left-[0.5625rem] 2xl:min-w-0 2xl:shrink-0 2xl:transform-[matrix(0.707107,0.707107,-0.707107,0.707107,0,0)] 2xl:origin-[1.5px_0.5px]" data-cid="n432" aria-hidden="true">
-                              <div className="hidden 2xl:h-full 2xl:block" data-cid="n433">
-                                <Icon14 cid={"n434"} />
-                              </div>
-                            </div>
-                            <div className="hidden 2xl:w-3 2xl:h-3 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n435" aria-hidden="true">
-                              <div className="hidden 2xl:h-full 2xl:block" data-cid="n436">
-                                <Icon15 cid={"n437"} />
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                        <div className="block relative shrink-0 2xl:hidden" data-cid="n438">
-                          <a className="w-auto h-[1.4rem] flex relative justify-start items-center content-center gap-3 text-primary cursor-pointer max-lg:items-start max-lg:content-start 2xl:hidden" data-cid="n439" data-component="link" href="/solutions">
-                            <div className="w-auto flex relative flex-col justify-start shrink-0 whitespace-nowrap 2xl:hidden" data-cid="n440">
-                              <p className="block text-color-001 [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-sm font-semibold leading-[1.375rem] text-left 2xl:hidden" data-cid="n441" dir="auto">
-                                Explore All Capabilities
-                              </p>
-                            </div>
-                            <div className="w-3 h-3 flex relative z-1 flex-col justify-center items-center content-center shrink-0 overflow-clip 2xl:hidden" data-cid="n442">
-                              <div className="w-[0.1875rem] h-px block absolute top-px left-[0.5625rem] min-w-0 shrink-0 transform-[matrix(0.707107,0.707107,-0.707107,0.707107,0,0)] origin-[1.5px_0.5px] max-lg:h-4 max-lg:-top-px max-lg:left-[0.1875rem] max-lg:origin-[1.5px_8px] 2xl:hidden" data-cid="n443" aria-hidden="true">
-                                <div className="h-full block 2xl:hidden" data-cid="n444">
-                                  <Icon16 cid={"n445"} />
-                                </div>
-                              </div>
-                              <div className="w-3 h-3 block relative shrink-0 2xl:hidden" data-cid="n446" aria-hidden="true">
-                                <div className="h-full block 2xl:hidden" data-cid="n447">
-                                  <Icon17 cid={"n448"} />
-                                </div>
-                              </div>
-                            </div>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <SolutionsFamilyGrid />
-                </div>
-              </section>
-              <IntegratorModelSection />
-              <ProjectLifecycleSection />
-              <ScaleSection />
-              <IndustryExplorerSection />
-              <DigitalEnergySection />
-              <DeliveryFlexibilitySection />
-              <MarketBridgeSection />
-              <div className="hidden 2xl:w-full 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n2090" id="cta">
-                <a className="hidden 2xl:w-480 2xl:flex 2xl:relative 2xl:flex-col 2xl:justify-start 2xl:items-center 2xl:content-center 2xl:overflow-clip 2xl:text-primary 2xl:bg-accent 2xl:cursor-pointer" data-cid="n2091" href="/contact">
-                  <div className="hidden 2xl:w-400 2xl:h-107 2xl:flex 2xl:relative 2xl:max-w-400 2xl:p-8 2xl:flex-col 2xl:justify-end 2xl:items-start 2xl:content-start 2xl:shrink-0 2xl:gap-25" data-cid="n2092">
-                    <div className="hidden" data-cid="n2093">
-                      <div className="hidden 2xl:w-400 2xl:h-107 2xl:min-h-[0.3125rem] 2xl:block 2xl:relative 2xl:min-w-[0.3125rem] 2xl:overflow-hidden 2xl:bg-clr-1" data-cid="n2094" aria-hidden="true">
-                        <div className="hidden 2xl:w-449 2xl:h-156 2xl:block 2xl:absolute 2xl:-top-24.5 2xl:-left-24.5 2xl:[background-position:-2.51164px_-2.51164px] 2xl:[animation-name:hatchMove\_rin] 2xl:[animation-duration:1.5s] 2xl:[animation-timing-function:linear] 2xl:[animation-iteration-count:infinite] 2xl:pointer-events-none" data-cid="n2095" />
-                      </div>
-                    </div>
-                    <div className="hidden 2xl:w-full 2xl:h-91 2xl:flex 2xl:relative 2xl:justify-between 2xl:items-end 2xl:content-end 2xl:grow 2xl:shrink-0 2xl:basis-0" data-cid="n2096">
-                      <div className="hidden 2xl:w-200 2xl:flex 2xl:relative 2xl:max-w-200 2xl:flex-col 2xl:justify-start 2xl:grow 2xl:shrink-0 2xl:basis-0 2xl:whitespace-pre-wrap 2xl:[word-break:break-word] 2xl:[overflow-wrap:break-word]" data-cid="n2097">
-                        <h1 className="hidden 2xl:block 2xl:text-background 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:text-[4.375rem] 2xl:font-medium 2xl:leading-[3.9375rem] 2xl:tracking-[-2.8px] 2xl:text-balance" data-cid="n2098" dir="auto">
-{finalCta.headingLead}{" "}
-                          <span className="hidden 2xl:inline 2xl:text-clr-3" data-cid="n2099">
-  {finalCta.headingAccent}
-</span>
-                        </h1>
-<p className="hidden 2xl:block 2xl:mt-6 2xl:max-w-125 2xl:text-background 2xl:text-base 2xl:leading-[1.625rem] 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] " dir="auto">
-  {finalCta.body}
-</p>
-<span className="hidden 2xl:inline-flex 2xl:mt-8 2xl:w-fit 2xl:h-12 2xl:items-center 2xl:gap-2 2xl:px-6 2xl:bg-background 2xl:text-color-001 2xl:text-base 2xl:font-semibold 2xl:leading-[1.625rem] 2xl:[font-family:Inter,_'Inter_Placeholder',_sans-serif] ">
-  Start a Project &rarr;
-</span>
-                      </div>
-                    </div>
-                    <div className="hidden 2xl:w-25 2xl:h-25 2xl:flex 2xl:absolute 2xl:top-4 2xl:right-4 2xl:z-1 2xl:min-w-0 2xl:justify-center 2xl:items-center 2xl:content-center 2xl:shrink-0 2xl:gap-2.5 2xl:overflow-clip 2xl:aspect-square" data-cid="n2100">
-                      <div className="hidden 2xl:w-4.5 2xl:h-[0.1875rem] 2xl:block 2xl:absolute 2xl:top-[0.5625rem] 2xl:left-[5.0625rem] 2xl:min-w-0 2xl:shrink-0 2xl:transform-[matrix(0.707107,0.707107,-0.707107,0.707107,0,0)] 2xl:origin-[9px_1.5px]" data-cid="n2101" aria-hidden="true">
-                        <div className="hidden 2xl:h-full 2xl:block" data-cid="n2102">
-                          <Icon24 cid={"n2103"} />
-                        </div>
-                      </div>
-                      <div className="hidden 2xl:w-25 2xl:h-25 2xl:block 2xl:relative 2xl:shrink-0" data-cid="n2104" aria-hidden="true">
-                        <div className="hidden 2xl:h-full 2xl:block" data-cid="n2105">
-                          <Icon25 cid={"n2106"} />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
-              <div className="contents min-w-0 2xl:hidden" data-cid="n2107">
-                <div className="w-full block relative shrink-0 2xl:hidden" data-cid="n2108" id="cta">
-                  <a className="flex relative flex-col justify-start items-center content-center overflow-clip text-primary bg-accent cursor-pointer max-lg:[cursor:inherit] 2xl:hidden group" data-cid="n2109" data-component="link" href="/contact">
-                    <div className="w-full h-107 flex relative max-w-400 p-8 flex-col justify-end items-start content-start shrink-0 gap-25 max-lg:p-6 2xl:hidden group" data-cid="n2110">
-                      <div className="w-320 h-full block absolute top-0 left-0 z-0 opacity-0 min-w-0 shrink-0 transform-[matrix(1.1,0,0,1.1,0,0)] origin-[640px_214px] max-md:w-[23.4375rem] max-lg:transform-[none] max-lg:opacity-[initial] max-lg:origin-[initial] md:max-lg:w-192 2xl:hidden group-hover:opacity-[0.928867] group-hover:opacity-100" style={{ maskImage: "linear-gradient(315deg, var(--clr-2) 10%, var(--foreground) 50%, var(--clr-2) 90%)" }} data-cid="n2111">
-                        <div className="h-full min-h-[0.3125rem] block relative min-w-[0.3125rem] overflow-hidden bg-clr-1 2xl:hidden" data-cid="n2112" aria-hidden="true">
-                          <div className="w-369 h-156 block absolute -top-24.5 -left-24.5 [background-position:-3.95584px_-3.95584px] [animation-name:hatchMove\_rbt] [animation-duration:1.5s] [animation-timing-function:linear] [animation-iteration-count:infinite] pointer-events-none max-md:w-[28.9375rem] max-lg:h-129 max-lg:-top-11 max-lg:-left-11 max-md:[background-position:-9.17466px_-9.17466px] max-lg:[animation-name:hatchMove\_r7g] md:max-lg:w-214 md:max-lg:[background-position:-10.6764px_-10.6764px] 2xl:hidden hover:[background-position:-22.5165px_-22.5165px] focus:[background-position:-3.2838px_-3.2838px]" data-cid="n2113" />
-                        </div>
-                      </div>
-                      <div className="w-full h-full flex relative justify-between items-end content-end grow shrink-0 basis-0 2xl:hidden" data-cid="n2114">
-                        <div className="w-full max-w-200 flex relative flex-col justify-start grow shrink-0 basis-0 whitespace-pre-wrap [word-break:break-word] [overflow-wrap:break-word] 2xl:hidden" data-cid="n2115">
-                          <h1 className="block text-background [font-family:Inter,_'Inter_Placeholder',_sans-serif] text-[4.375rem] font-medium leading-[3.9375rem] tracking-[-2.8px] text-balance max-lg:text-5xl max-lg:leading-[2.6875rem] max-lg:tracking-[-1.92px] 2xl:hidden" data-cid="n2116" data-component="heading" dir="auto">
-{finalCta.headingLead}{" "}
-                            <span className="inline text-clr-3 2xl:hidden" data-cid="n2117">
-  {finalCta.headingAccent}
-</span>
-                          </h1>
-<p className="block mt-6 max-w-125 text-background text-base leading-[1.625rem] [font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:hidden" dir="auto">
-  {finalCta.body}
-</p>
-<span className="inline-flex mt-8 w-fit h-12 items-center gap-2 px-6 bg-background text-color-001 text-base font-semibold leading-[1.625rem] [font-family:Inter,_'Inter_Placeholder',_sans-serif] 2xl:hidden">
-  Start a Project &rarr;
-</span>
-                        </div>
-                      </div>
-                      <div className="w-25 h-25 flex absolute top-4 right-4 z-1 min-w-0 justify-center items-center content-center shrink-0 gap-2.5 overflow-clip aspect-square max-lg:w-16 max-lg:h-16 2xl:hidden" data-cid="n2118">
-                        <div className="w-4.5 h-[0.1875rem] block absolute top-[0.5625rem] left-[5.0625rem] min-w-0 shrink-0 transform-[matrix(0.707107,0.707107,-0.707107,0.707107,0,0)] origin-[9px_1.5px] max-lg:w-2.5 max-lg:h-[5.6875rem] max-lg:-top-2.5 max-lg:left-[1.4375rem] max-lg:origin-[5px_45.5px] 2xl:hidden" data-cid="n2119" aria-hidden="true">
-                          <div className="h-full block 2xl:hidden" data-cid="n2120">
-                            <Icon26 cid={"n2121"} />
-                          </div>
-                        </div>
-                        <div className="w-25 h-full block relative shrink-0 max-lg:w-16 2xl:hidden" data-cid="n2122" aria-hidden="true">
-                          <div className="h-full block 2xl:hidden" data-cid="n2123">
-                            <Illustration cid={"n2124"} />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
+              <SolutionsHomeSection />
+              <WhyEnergexSection />
+              <IndustriesCompactSection />
+              <CapabilitiesEvidenceSection />
+              <ContactCloseSection />
             </main>
           </div>
           <div className="w-full block relative shrink-0 order-[1004]" data-cid="n2125">

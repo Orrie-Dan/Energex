@@ -53,7 +53,7 @@ export default function CorporateFooterSection() {
               Solutions
             </p>
             <ul className="flex flex-col gap-2 list-none m-0 p-0">
-              {footer.solutions.slice(0, 4).map((item) => (
+              {footer.solutions.filter((item) => item.href !== "/solutions").map((item) => (
                 <li key={item.label}>
                   <a
                     className={`text-background ${FONT} text-base leading-[1.625rem] hover:text-accent`}

@@ -6,6 +6,8 @@ export const metadata: Metadata = {
   title: "Privacy",
   description: "Privacy policy placeholder for ENERGEX Global Solutions.",
   robots: { index: false, follow: true },
+  alternates: { canonical: "/privacy" },
+  openGraph: { url: "/privacy" },
 };
 
 export default function PrivacyPage() {

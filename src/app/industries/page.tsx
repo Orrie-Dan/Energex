@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteChrome } from "../components/site-chrome";
 import {
+  customerSegmentId,
   finalCta,
   industrialVerticals,
   industries,
@@ -12,6 +13,13 @@ export const metadata: Metadata = {
   title: "Industries",
   description:
     "ENERGEX target customers — governments, IPPs, mining, industrial parks, oil & gas, commercial real estate, fleet operators and development institutions.",
+  alternates: { canonical: "/industries" },
+  openGraph: {
+    title: "Industries",
+    description:
+      "ENERGEX target customers — governments, IPPs, mining, industrial parks, oil and gas, commercial real estate, fleet operators and development institutions.",
+    url: "/industries",
+  },
 };
 
 export default function IndustriesPage() {
@@ -31,7 +39,8 @@ export default function IndustriesPage() {
           {industries.map((item, index) => (
             <article
               key={item.title}
-              className="overflow-hidden rounded-lg border border-[#011836]/10 bg-white"
+              id={customerSegmentId(item.title)}
+              className="overflow-hidden rounded-lg border border-[#011836]/10 bg-white scroll-mt-24"
             >
               <div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
                 <div className="relative min-h-48 bg-[#011836] md:min-h-full">

@@ -7,6 +7,13 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Contact ENERGEX Global Solutions in Hong Kong to discuss power, renewables, storage, grid, LNG and project delivery requirements.",
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Contact",
+    description:
+      "Contact ENERGEX Global Solutions in Hong Kong to discuss power, renewables, storage, grid, LNG and project delivery requirements.",
+    url: "/contact",
+  },
 };
 
 export default function ContactPage() {

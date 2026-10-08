@@ -11,7 +11,7 @@ const siteDescription =
   "ENERGEX Global Solutions — one partner across integrated energy development, delivery, operations, and digital energy. From concept to power.";
 
 export const metadata = {
-  metadataBase: new URL(SITE_ORIGIN || "http://localhost:3000"),
+  metadataBase: new URL(SITE_ORIGIN),
   title: {
     default: brand.shortName,
     template: `%s | ${brand.shortName}`,

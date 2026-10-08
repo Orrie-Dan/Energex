@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   description:
     "Selected ENERGEX Global Solutions project references will be published as cleared for disclosure.",
   robots: { index: false, follow: true },
+  alternates: { canonical: "/projects" },
+  openGraph: { url: "/projects" },
 };
 
 export default function ProjectsPage() {
