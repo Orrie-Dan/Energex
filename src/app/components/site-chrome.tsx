@@ -1,12 +1,15 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
-import { brand, footer, navCta, navLinks } from "../../data/energex";
+import { formatText, type Locale } from "../../i18n/config";
+import { getContent } from "../../i18n/content";
+import { LanguageSwitcher } from "./language-switcher";
 import { MobileNav } from "./mobile-nav";
 
 const NAVY = "#011836";
 const ACCENT = "#f06f12";
 
 type SiteChromeProps = {
+  locale: Locale;
   children: ReactNode;
   /** `plain` uses white page chrome (closer to Tilanium secondary pages). */
   tone?: "cream" | "plain";
@@ -17,7 +20,7 @@ function FooterColumn({
   links,
 }: {
   title: string;
-  links: { href: string; label: string }[];
+  links: readonly { href: string; label: string }[];
 }) {
   return (
     <div>
@@ -38,7 +41,8 @@ function FooterColumn({
   );
 }
 
-export function SiteChrome({ children, tone = "cream" }: SiteChromeProps) {
+export function SiteChrome({ locale, children, tone = "cream" }: SiteChromeProps) {
+  const { brand, footer, navCta, navLinks, ui, href } = getContent(locale);
   return (
     <div
       className={`flex min-h-screen flex-col text-[#011836] [font-family:Inter,system-ui,sans-serif] text-base leading-normal ${
@@ -48,7 +52,7 @@ export function SiteChrome({ children, tone = "cream" }: SiteChromeProps) {
     >
       <header className="sticky top-0 z-40 border-b border-[#011836]/10 bg-white/95 backdrop-blur-sm">
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
-          <Link href="/" className="flex shrink-0 items-center gap-2">
+          <Link href={href("/")} className="flex shrink-0 items-center gap-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={brand.logoLight}
@@ -59,7 +63,7 @@ export function SiteChrome({ children, tone = "cream" }: SiteChromeProps) {
             />
           </Link>
 
-          <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">
+          <nav className="hidden items-center gap-8 lg:flex" aria-label={ui.chrome.mainNav}>
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -72,6 +76,11 @@ export function SiteChrome({ children, tone = "cream" }: SiteChromeProps) {
           </nav>
 
           <div className="flex items-center gap-3">
+            <LanguageSwitcher
+              locale={locale}
+              switchLabel={ui.chrome.switchLanguage}
+              className="hidden rounded-md border border-[#011836]/15 px-3 py-2 text-sm font-semibold text-[#011836] transition-colors hover:border-[#f06f12] hover:text-[#f06f12] lg:inline-flex"
+            />
             <Link
               href={navCta.href}
               className="hidden rounded-md px-4 py-2 text-sm font-semibold text-white transition-colors hover:opacity-90 sm:inline-flex"
@@ -79,7 +88,17 @@ export function SiteChrome({ children, tone = "cream" }: SiteChromeProps) {
             >
               {navCta.label}
             </Link>
-            <MobileNav links={navLinks} cta={navCta} />
+            <MobileNav
+              locale={locale}
+              links={navLinks}
+              cta={navCta}
+              labels={{
+                open: ui.chrome.openMenu,
+                close: ui.chrome.closeMenu,
+                dialog: ui.chrome.mobileNav,
+                switchLanguage: ui.chrome.switchLanguage,
+              }}
+            />
           </div>
         </div>
       </header>
@@ -99,23 +118,23 @@ export function SiteChrome({ children, tone = "cream" }: SiteChromeProps) {
                   </span>
                 ))}
               </address>
-              <p className="mt-4 text-xs text-white/50">Reg. {brand.registration}</p>
+              <p className="mt-4 text-xs text-white/50">
+                {formatText(ui.chrome.registrationShort, { registration: brand.registration })}
+              </p>
             </div>
-            <FooterColumn title="Solutions" links={footer.solutions} />
-            <FooterColumn title="Delivery" links={footer.delivery} />
-            <FooterColumn title="Company" links={footer.company} />
+            <FooterColumn title={ui.chrome.footerSolutions} links={footer.solutions} />
+            <FooterColumn title={ui.chrome.footerDelivery} links={footer.delivery} />
+            <FooterColumn title={ui.chrome.footerCompany} links={footer.company} />
           </div>
 
           <div className="mt-10 flex flex-col gap-3 border-t border-white/10 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
-            <p>
-              © {new Date().getFullYear()} {brand.name}. All rights reserved.
-            </p>
+            <p>{formatText(ui.chrome.rights, { year: new Date().getFullYear(), name: brand.name })}</p>
             <div className="flex gap-6">
-              <Link href="/privacy" className="hover:text-white">
-                Privacy
+              <Link href={href("/privacy")} className="hover:text-white">
+                {ui.chrome.privacy}
               </Link>
-              <Link href="/terms" className="hover:text-white">
-                Terms
+              <Link href={href("/terms")} className="hover:text-white">
+                {ui.chrome.terms}
               </Link>
             </div>
           </div>

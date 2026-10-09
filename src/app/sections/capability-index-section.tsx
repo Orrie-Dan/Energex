@@ -2,12 +2,34 @@
 
 import Link from "next/link";
 import { useState } from "react";
-import { capabilities, familyLabels, solutionsIndexPage } from "../../data/energex";
+import type { Capability, CapabilityFamilySlug } from "../../data/energex";
+import { formatText } from "../../i18n/config";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
+type CapabilityIndexProps = {
+  capabilities: readonly Capability[];
+  familyLabels: Record<CapabilityFamilySlug, string>;
+  familiesNote: string;
+  text: {
+    eyebrow: string;
+    heading: string;
+    listLabel: string;
+    crossCutting: string;
+    belongsTo: string;
+    viewAll: string;
+    /** "{family} →" */
+    familyLink: string;
+  };
+};
+
 /** Editorial 15-capability index — desktop select + preview; mobile accordion. */
-export default function CapabilityIndexSection() {
+export default function CapabilityIndexSection({
+  capabilities,
+  familyLabels,
+  familiesNote,
+  text,
+}: CapabilityIndexProps) {
   const [active, setActive] = useState(0);
   const [openMobile, setOpenMobile] = useState(0);
   const current = capabilities[active]!;
@@ -20,21 +42,21 @@ export default function CapabilityIndexSection() {
     >
       <div className="w-full max-w-400 flex relative py-16 px-8 flex-col gap-10 max-lg:py-12 max-lg:px-6 max-lg:gap-8">
         <div className="max-w-175 flex flex-col gap-4">
-          <p className={`text-color-001 ${FONT} text-sm font-semibold`}>Full portfolio</p>
+          <p className={`text-color-001 ${FONT} text-sm font-semibold`}>{text.eyebrow}</p>
           <h2
             id="capabilities-heading"
             className={`text-color-001 ${FONT} text-[2.5rem] font-medium leading-10 tracking-[-1.4px] text-balance max-lg:text-3xl`}
           >
-            Fifteen specialist capabilities
+            {text.heading}
           </h2>
           <p className={`text-muted-foreground ${FONT} text-base leading-6.5`}>
-            {solutionsIndexPage.familiesNote}
+            {familiesNote}
           </p>
         </div>
 
         {/* Desktop: index + detail plane */}
         <div className="hidden lg:grid w-full grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 items-stretch min-h-140">
-          <ol className="m-0 flex list-none flex-col border-t border-color-001/10 p-0" role="listbox" aria-label="Capabilities">
+          <ol className="m-0 flex list-none flex-col border-t border-color-001/10 p-0" role="listbox" aria-label={text.listLabel}>
             {capabilities.map((cap, i) => {
               const selected = i === active;
               return (
@@ -91,15 +113,15 @@ export default function CapabilityIndexSection() {
             </ul>
             <div className="mt-2 flex flex-col gap-1">
               <p className={`m-0 text-muted-foreground ${FONT} text-xs font-semibold tracking-wide uppercase`}>
-                {current.familySlug === "cross-cutting" ? "Cross-cutting" : "Belongs to"}
+                {current.familySlug === "cross-cutting" ? text.crossCutting : text.belongsTo}
               </p>
               <Link
                 href={current.familyHref}
                 className={`inline-flex w-fit items-center gap-2 text-color-001 ${FONT} text-sm font-semibold underline decoration-accent decoration-2 underline-offset-4 hover:text-accent`}
               >
                 {current.familySlug === "cross-cutting"
-                  ? "View all capabilities →"
-                  : `${familyLabels[current.familySlug]} →`}
+                  ? text.viewAll
+                  : formatText(text.familyLink, { family: familyLabels[current.familySlug] })}
               </Link>
             </div>
           </article>
@@ -139,15 +161,15 @@ export default function CapabilityIndexSection() {
                     </ul>
                     <div className="flex flex-col gap-1">
                       <p className={`m-0 text-muted-foreground ${FONT} text-xs font-semibold uppercase`}>
-                        {cap.familySlug === "cross-cutting" ? "Cross-cutting" : "Belongs to"}
+                        {cap.familySlug === "cross-cutting" ? text.crossCutting : text.belongsTo}
                       </p>
                       <Link
                         href={cap.familyHref}
                         className={`inline-flex text-sm font-semibold text-accent ${FONT}`}
                       >
                         {cap.familySlug === "cross-cutting"
-                          ? "View all capabilities →"
-                          : `${familyLabels[cap.familySlug]} →`}
+                          ? text.viewAll
+                          : formatText(text.familyLink, { family: familyLabels[cap.familySlug] })}
                       </Link>
                     </div>
                   </div>

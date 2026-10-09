@@ -656,3 +656,31 @@ fieldset, legend { min-width: 0; }
 body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
 html, body { overflow-x: clip; }
 }
+
+/* ------------------------------------------------------------------------
+ * Traditional Chinese (Hong Kong) typography. Scoped to :lang(zh-HK) so the
+ * English rendering is unchanged.
+ * - Inter (Latin-only unicode ranges) still renders Latin text, numbers and
+ *   acronyms; Han characters fall through to a Hong Kong / Traditional font.
+ * - Negative tracking tuned for Latin display type crowds CJK glyphs.
+ * - Very tight display leading clips CJK ascenders, so it is relaxed.
+ * ---------------------------------------------------------------------- */
+html:lang(zh-HK) {
+  --font-cjk-hk: "PingFang HK", "Noto Sans HK", "Noto Sans TC", "Microsoft JhengHei", "Heiti TC", sans-serif;
+}
+html:lang(zh-HK) :where(body, body *):not(svg, svg *) {
+  font-family: Inter, "Inter Placeholder", var(--font-cjk-hk) !important;
+}
+html:lang(zh-HK) body {
+  line-break: strict;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  text-autospace: normal;
+}
+html:lang(zh-HK) :is(h1, h2, h3, h4, h5, h6) {
+  letter-spacing: 0 !important;
+  line-height: max(1.25, 1em) !important;
+}
+html:lang(zh-HK) :is(p, li, dd, td, address) {
+  letter-spacing: 0.01em;
+}

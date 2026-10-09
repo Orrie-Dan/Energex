@@ -1,10 +1,12 @@
-import { contactClose } from "../../data/energex";
+import type { Locale } from "../../i18n/config";
+import { getContent } from "../../i18n/content";
 import { HomeReveal } from "../components/home-reveal";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
 /** Closing inquiry routes. These links do not submit a form. */
-export default function ContactCloseSection() {
+export default function ContactCloseSection({ locale }: { locale: Locale }) {
+  const { contactClose } = getContent(locale);
   return (
     <section
       id="contact"

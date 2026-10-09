@@ -1,4 +1,5 @@
-import { approvedEvidence, capabilityStrengths, evidenceSection } from "../../data/energex";
+import type { Locale } from "../../i18n/config";
+import { getContent } from "../../i18n/content";
 import { HomeReveal } from "../components/home-reveal";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
@@ -7,7 +8,8 @@ const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
  * Evidence slot stays empty until approvedEvidence has records.
  * Capability strengths remain labeled as capabilities, not completed work.
  */
-export default function CapabilitiesEvidenceSection() {
+export default function CapabilitiesEvidenceSection({ locale }: { locale: Locale }) {
+  const { approvedEvidence, capabilityStrengths, evidenceSection, ui } = getContent(locale);
   const hasEvidence = approvedEvidence.length > 0;
 
   return (
@@ -39,7 +41,7 @@ export default function CapabilitiesEvidenceSection() {
 
         <HomeReveal delayMs={140} className="flex flex-col gap-4 border border-color-001/10 bg-background p-6 md:p-8">
           <h3 className={`text-color-001 ${FONT} text-lg font-medium leading-6`}>
-            {hasEvidence ? "Approved records" : "Published project evidence"}
+            {hasEvidence ? ui.home.evidenceApproved : ui.home.evidencePublished}
           </h3>
           {hasEvidence ? (
             <ul className="m-0 flex list-none flex-col gap-4 p-0">

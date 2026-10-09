@@ -16,5 +16,17 @@ const nextConfig = {
   typescript: { ignoreBuildErrors: true },
   // The dev-tools badge would leak into reviewer/validator screenshots.
   devIndicators: false,
+  // Pre-localization URLs permanently redirect (308) to their English page.
+  // Next keeps the query string; browsers keep the #fragment across redirects.
+  // Listed explicitly so assets, /api, robots, sitemap and llms.txt are never caught.
+  async redirects() {
+    const pages = ["/about", "/contact", "/equipment", "/industries", "/solutions", "/projects", "/privacy", "/terms"];
+    return [
+      { source: "/", destination: "/en", permanent: true },
+      ...pages.map((path) => ({ source: path, destination: `/en${path}`, permanent: true })),
+      { source: "/equipment/:slug", destination: "/en/equipment/:slug", permanent: true },
+      { source: "/solutions/:slug", destination: "/en/solutions/:slug", permanent: true },
+    ];
+  },
 };
 export default nextConfig;

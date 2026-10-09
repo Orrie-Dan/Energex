@@ -74,15 +74,28 @@ export type SolutionDetail = {
   seoDescription: string;
 };
 
-function familyToDetail(def: SolutionFamilyDef): SolutionDetail {
+/** Page-level text that is not part of the family definition (localized by the caller). */
+export type SolutionDetailText = {
+  eyebrow: string;
+  cta: { href: string; label: string };
+  finalCta: { heading: string; href: string };
+};
+
+const englishDetailText: SolutionDetailText = {
+  eyebrow: "Solutions",
+  cta: { href: "/contact", label: "Start a Project" },
+  finalCta: { heading: finalCta.heading, href: "/contact" },
+};
+
+export function familyToDetail(def: SolutionFamilyDef, text: SolutionDetailText = englishDetailText): SolutionDetail {
   return {
     slug: def.slug,
-    eyebrow: "Solutions",
+    eyebrow: text.eyebrow,
     title: def.title,
     titleLines: [...def.titleLines],
     supporting: def.supporting,
     heroImage: solutionFamilyHero(def.slug, def.heroAlt, def.heroObjectPosition),
-    cta: { href: "/contact", label: "Start a Project" },
+    cta: text.cta,
     introduction: {
       paragraphs: [...def.introduction],
     },
@@ -97,10 +110,7 @@ function familyToDetail(def: SolutionFamilyDef): SolutionDetail {
     digitalContext: def.digitalContext,
     customerTitles: def.customerTitles,
     frameworkCta: def.frameworkCta,
-    finalCta: {
-      heading: finalCta.heading,
-      href: "/contact",
-    },
+    finalCta: text.finalCta,
     seoDescription: def.seoDescription,
   };
 }
@@ -184,7 +194,7 @@ export const referenceSolutionTest: SolutionDetail = {
   seoDescription: "Reference fidelity shell for solution-detail geometry testing.",
 };
 
-export const solutionDetails: SolutionDetail[] = solutionFamilyDefs.map(familyToDetail);
+export const solutionDetails: SolutionDetail[] = solutionFamilyDefs.map((def) => familyToDetail(def));
 
 export const solutionSlugs = solutionDetails.map((s) => s.slug);
 

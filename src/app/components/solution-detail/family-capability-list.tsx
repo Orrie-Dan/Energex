@@ -2,19 +2,24 @@
 
 import { useState } from "react";
 import type { Capability } from "../../../data/energex";
-import { financingNote } from "../../../data/energex";
+import { formatText } from "../../../i18n/config";
 import { SolutionReveal } from "./solution-reveal";
+
+type CapabilityListText = { showLess: string; showMore: string; financingNote: string };
 
 type FamilyCapabilityListProps = {
   capabilities: Capability[];
+  text: CapabilityListText;
 };
 
 function CapabilityBlock({
   capability,
   index,
   defaultVisible,
+  text,
 }: {
   capability: Capability;
+  text: CapabilityListText;
   index: number;
   /** Dense families (4+) show fewer includes until expanded. */
   defaultVisible: number;
@@ -51,18 +56,18 @@ function CapabilityBlock({
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
           >
-            {open ? "Show less" : `Show ${extras.length} more`}
+            {open ? text.showLess : formatText(text.showMore, { count: extras.length })}
           </button>
         ) : null}
         {capability.id === "13" ? (
-          <p className="sd-cap-note">{financingNote}</p>
+          <p className="sd-cap-note">{text.financingNote}</p>
         ) : null}
       </article>
     </SolutionReveal>
   );
 }
 
-export function FamilyCapabilityList({ capabilities }: FamilyCapabilityListProps) {
+export function FamilyCapabilityList({ capabilities, text }: FamilyCapabilityListProps) {
   const dense = capabilities.length >= 4;
   const defaultVisible = dense ? 3 : 4;
 
@@ -74,6 +79,7 @@ export function FamilyCapabilityList({ capabilities }: FamilyCapabilityListProps
           capability={cap}
           index={index}
           defaultVisible={defaultVisible}
+          text={text}
         />
       ))}
     </div>

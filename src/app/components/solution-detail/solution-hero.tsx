@@ -6,6 +6,8 @@ import { sdReducedMotion } from "./solution-motion";
 
 type SolutionHeroProps = {
   eyebrow: string;
+  /** Accessible name of the hero region. */
+  regionLabel?: string;
   titleLines: string[];
   /** Short supporting statement under the title. */
   supporting?: string;
@@ -22,6 +24,7 @@ type SolutionHeroProps = {
  */
 export function SolutionHero({
   eyebrow,
+  regionLabel = "Solution hero",
   titleLines,
   supporting,
   cta,
@@ -54,7 +57,7 @@ export function SolutionHero({
   }, [motionKey, titleLines]);
 
   return (
-    <section ref={heroRef} className="sd-hero" id="solution-hero" aria-label="Solution hero">
+    <section ref={heroRef} className="sd-hero" id="solution-hero" aria-label={regionLabel}>
       <div className="sd-hero-inner">
         <div className="sd-hero-eyebrow">
           <span className="sd-hero-eyebrow-bar" aria-hidden />

@@ -1,10 +1,12 @@
-import { whyEnergex } from "../../data/energex";
+import type { Locale } from "../../i18n/config";
+import { getContent } from "../../i18n/content";
 import { HomeReveal } from "../components/home-reveal";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
 /** Four customer-value pillars. Hover and focus use the existing accent rule — no new motion system. */
-export default function WhyEnergexSection() {
+export default function WhyEnergexSection({ locale }: { locale: Locale }) {
+  const { whyEnergex } = getContent(locale);
   return (
     <section
       id="why"

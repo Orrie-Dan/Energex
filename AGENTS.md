@@ -26,6 +26,8 @@ This is the ENERGEX Global Solutions website, adapted from a repaired Ditto clon
 
 ## Routes
 
+Public pages live under a locale prefix: `/en/...` and `/zh-hk/...` (Traditional Chinese, Hong Kong). Paths below are shown without it. Unprefixed legacy URLs 308-redirect to `/en` (see `next.config.mjs`).
+
 - `/` — Home
 - `/solutions` — full 15-capability portfolio index (families link to detail pages)
 - `/solutions/power-generation` — Power & Generation family
@@ -37,8 +39,20 @@ This is the ENERGEX Global Solutions website, adapted from a repaired Ditto clon
 - `/contact` — Hong Kong address and inquiry form (live submission only when configured; preview/unavailable otherwise)
 - `/privacy` — temporary legal placeholder
 - `/terms` — temporary legal placeholder
-- `/reference-solution-test` — internal fidelity shell (not in nav)
-- `/api/inquiry` — POST-only inquiry endpoint (server function). Disabled unless configured.
+- `/equipment`, `/equipment/[slug]` — Power Equipment Supply and category pages (slugs identical in both locales)
+- `/industries` — customer segments
+- `/reference-solution-test` — internal fidelity shell (not in nav, not localized, `(internal)` route group)
+- `/api/inquiry` — POST-only inquiry endpoint (server function). Disabled unless configured. Not localized.
+
+## Localization
+
+- Locales and URL helpers: `src/i18n/config.ts`. Page routes: `src/app/[locale]/` (root layout sets `<html lang>`).
+- English business content stays in `src/data/energex*` (source of truth). zh-HK text overlays live in `src/i18n/zh-hk/*.ts` and contain text only; links, media, ids, slugs, brand name and address always come from English (`STRUCTURAL_KEYS` in `src/i18n/translate.ts`).
+- Component interface text: `src/i18n/ui/en.ts` and `src/i18n/ui/zh-hk.ts`. Inquiry validation/outcome text: `src/lib/inquiry/messages.ts`.
+- Server components read `getContent(locale)`; client components receive localized props and must not import `src/i18n/content.ts` (enforced by `src/i18n/i18n.test.ts`).
+- Adding English text: add it to the English source, then the zh-HK overlay; `npm test` fails on any missing translation.
+- SEO: `src/i18n/metadata.ts` (canonical, hreflang incl. `x-default`, `og:locale`); `sitemap.ts` lists both locales with alternates.
+- zh-HK copy is a draft translation pending native-speaker and business review. Legal pages remain unapproved placeholders in both languages.
 
 ## Inquiry Delivery
 

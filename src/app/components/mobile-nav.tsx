@@ -2,16 +2,20 @@
 
 import Link from "next/link";
 import { useCallback, useEffect, useId, useState } from "react";
+import type { Locale } from "../../i18n/config";
+import { LanguageSwitcher } from "./language-switcher";
 
 type NavLink = { href: string; label: string };
 type NavCta = { href: string; label: string };
 
 type MobileNavProps = {
+  locale: Locale;
   links: readonly NavLink[];
   cta: NavCta;
+  labels: { open: string; close: string; dialog: string; switchLanguage: string };
 };
 
-export function MobileNav({ links, cta }: MobileNavProps) {
+export function MobileNav({ locale, links, cta, labels }: MobileNavProps) {
   const [open, setOpen] = useState(false);
   const panelId = useId();
 
@@ -37,10 +41,10 @@ export function MobileNav({ links, cta }: MobileNavProps) {
         className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-[#011836]/15 text-[#011836] hover:bg-[#011836]/5"
         aria-expanded={open}
         aria-controls={panelId}
-        aria-label={open ? "Close menu" : "Open menu"}
+        aria-label={open ? labels.close : labels.open}
         onClick={() => setOpen((prev) => !prev)}
       >
-        <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+        <span className="sr-only">{open ? labels.close : labels.open}</span>
         <svg
           aria-hidden
           className="h-5 w-5"
@@ -62,7 +66,7 @@ export function MobileNav({ links, cta }: MobileNavProps) {
           id={panelId}
           role="dialog"
           aria-modal="true"
-          aria-label="Main navigation"
+          aria-label={labels.dialog}
           className="fixed inset-0 z-50 flex flex-col bg-[#f6f4f0] pt-[4.5rem]"
         >
           <nav className="flex flex-1 flex-col gap-1 px-6 py-4">
@@ -76,6 +80,12 @@ export function MobileNav({ links, cta }: MobileNavProps) {
                 {link.label}
               </Link>
             ))}
+            <LanguageSwitcher
+              locale={locale}
+              switchLabel={labels.switchLanguage}
+              className="rounded-md px-3 py-3 text-base font-medium text-[#011836] hover:bg-white"
+              onNavigate={close}
+            />
             <Link
               href={cta.href}
               className="mt-4 inline-flex items-center justify-center rounded-md bg-[#f06f12] px-4 py-3 text-sm font-semibold text-white hover:bg-[#c4500a]"

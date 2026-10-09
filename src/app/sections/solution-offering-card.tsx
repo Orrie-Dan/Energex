@@ -8,7 +8,13 @@ export type SolutionOffering = {
 };
 
 /** One commercial offering. Hover stays on the card, separate from the track motion. */
-export default function SolutionOfferingCard({ offering }: { offering: SolutionOffering }) {
+export default function SolutionOfferingCard({
+  offering,
+  exploreLabel = "Explore",
+}: {
+  offering: SolutionOffering;
+  exploreLabel?: string;
+}) {
   return (
     <a
       href={offering.href}
@@ -36,7 +42,7 @@ export default function SolutionOfferingCard({ offering }: { offering: SolutionO
         <span
           className={`mt-auto pt-2 inline-flex items-center gap-1.5 text-color-001 ${FONT} text-sm font-semibold leading-5 transition-colors duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] group-hover:text-accent`}
         >
-          Explore
+          {exploreLabel}
           <span
             aria-hidden="true"
             className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] group-hover:translate-x-1 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0"

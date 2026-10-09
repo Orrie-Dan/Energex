@@ -9,6 +9,7 @@ import {
   type PointerEvent as ReactPointerEvent,
   type ReactNode,
 } from "react";
+import { formatText } from "../../i18n/config";
 import { useRevealed } from "./home-reveal";
 
 const GAP = 16;
@@ -36,8 +37,22 @@ function offsetsFor(count: number, slide: number, view: number) {
   return list;
 }
 
+export type OfferCarouselText = {
+  previous: string;
+  next: string;
+  /** "Showing {first} to {last} of {count}" */
+  showing: string;
+};
+
+const DEFAULT_TEXT: OfferCarouselText = {
+  previous: "Previous",
+  next: "Next",
+  showing: "Showing {first} to {last} of {count}",
+};
+
 type Props = {
   label: string;
+  text?: OfferCarouselText;
   header?: (controls: ReactNode) => ReactNode;
   children: ReactNode;
 };
@@ -46,7 +61,7 @@ type Props = {
  * Finite horizontal track. The last snap sits flush with the viewport
  * so the end of the row does not leave an empty column.
  */
-export default function OfferCarousel({ label, header, children }: Props) {
+export default function OfferCarousel({ label, text = DEFAULT_TEXT, header, children }: Props) {
   const slides = Children.toArray(children);
   const count = slides.length;
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -187,7 +202,7 @@ export default function OfferCarousel({ label, header, children }: Props) {
     <div className="flex gap-1">
       <button
         type="button"
-        aria-label="Previous"
+        aria-label={text.previous}
         disabled={atStart}
         onClick={() => go(-1)}
         className="flex h-10 w-10 cursor-pointer items-center justify-center bg-color-001 disabled:cursor-default disabled:opacity-35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
@@ -196,7 +211,7 @@ export default function OfferCarousel({ label, header, children }: Props) {
       </button>
       <button
         type="button"
-        aria-label="Next"
+        aria-label={text.next}
         disabled={atEnd}
         onClick={() => go(1)}
         className="flex h-10 w-10 cursor-pointer items-center justify-center bg-color-001 disabled:cursor-default disabled:opacity-35 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
@@ -222,7 +237,7 @@ export default function OfferCarousel({ label, header, children }: Props) {
     >
       {header ? header(controls) : <div className="flex justify-end">{controls}</div>}
       <p className="offer-live" aria-live="polite">
-        {`Showing ${first} to ${last} of ${count}`}
+        {formatText(text.showing, { first, last, count })}
       </p>
       <div ref={viewportRef} className="offer-viewport w-full min-w-0 overflow-hidden">
         <ul

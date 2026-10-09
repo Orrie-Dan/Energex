@@ -1,11 +1,7 @@
 import Link from "next/link";
 import type { SolutionDetail } from "../../../data/solutions";
-import { getAdjacentSolutions, solutionDetails } from "../../../data/solutions";
-import {
-  finalCta as siteFinalCta,
-  getCapabilitiesByIds,
-  getCapabilityById,
-} from "../../../data/energex";
+import type { Locale } from "../../../i18n/config";
+import { getContent } from "../../../i18n/content";
 import { FamilyCapabilityList } from "./family-capability-list";
 import { SolutionHero } from "./solution-hero";
 import { SolutionMedia } from "./solution-media";
@@ -14,6 +10,7 @@ import { SolutionPageMotion } from "./solution-page-motion";
 import { SolutionReveal } from "./solution-reveal";
 
 type SolutionDetailPageProps = {
+  locale: Locale;
   solution: SolutionDetail;
   /**
    * When true, previous/next walk the Energex family list.
@@ -64,13 +61,30 @@ function IntegrationChain({
 }
 
 export function SolutionDetailPage({
+  locale,
   solution,
   useFamilyNavigation = true,
   previousOverride,
   nextOverride,
 }: SolutionDetailPageProps) {
+  const {
+    finalCta: siteFinalCta,
+    financingNote,
+    getCapabilitiesByIds,
+    getCapabilityById,
+    solutionDetails,
+    customerTitle,
+    ui,
+    href,
+  } = getContent(locale);
+  const t = ui.solutionDetail;
+  // Tilanium does not wrap: the first family has next only, the last has previous only.
+  const index = solutionDetails.findIndex((item) => item.slug === solution.slug);
   const adjacent = useFamilyNavigation
-    ? getAdjacentSolutions(solution.slug)
+    ? {
+        previous: index > 0 ? solutionDetails[index - 1]! : null,
+        next: index >= 0 && index < solutionDetails.length - 1 ? solutionDetails[index + 1]! : null,
+      }
     : { previous: previousOverride ?? null, next: nextOverride ?? null };
 
   const previous = adjacent.previous;
@@ -91,6 +105,7 @@ export function SolutionDetailPage({
         <SolutionHero
           motionKey={motionKey}
           eyebrow={solution.eyebrow}
+          regionLabel={t.heroLabel}
           titleLines={solution.titleLines}
           supporting={solution.supporting}
           cta={solution.cta}
@@ -109,7 +124,7 @@ export function SolutionDetailPage({
             <div className="sd-content-col">
               <SolutionReveal>
                 <section className="sd-block">
-                  <h2 className="sd-h">Introduction</h2>
+                  <h2 className="sd-h">{t.introduction}</h2>
                   {solution.introduction.paragraphs.map((p) => (
                     <p key={p.slice(0, 48)} className="sd-body">
                       {p}
@@ -120,9 +135,12 @@ export function SolutionDetailPage({
 
               <SolutionReveal delayMs={40}>
                 <section className="sd-block">
-                  <h2 className="sd-h">What We Deliver</h2>
+                  <h2 className="sd-h">{t.whatWeDeliver}</h2>
                   {familyCapabilities.length > 0 ? (
-                    <FamilyCapabilityList capabilities={familyCapabilities} />
+                    <FamilyCapabilityList
+                      capabilities={familyCapabilities}
+                      text={{ showLess: t.showLess, showMore: t.showMore, financingNote }}
+                    />
                   ) : (
                     <div className="sd-deliverables">
                       {(solution.deliverables ?? []).map((item, index) => (
@@ -140,7 +158,7 @@ export function SolutionDetailPage({
 
               <SolutionReveal delayMs={40}>
                 <section className="sd-block">
-                  <h2 className="sd-h">Our Approach</h2>
+                  <h2 className="sd-h">{t.ourApproach}</h2>
                   {solution.approach.paragraphs.map((p) => (
                     <p key={p.slice(0, 48)} className="sd-body">
                       {p}
@@ -160,9 +178,9 @@ export function SolutionDetailPage({
 
               {solution.digitalContext && digitalCapability ? (
                 <SolutionReveal delayMs={40}>
-                  <section className="sd-block sd-digital" aria-label="Digital layer">
-                    <p className="sd-digital-eyebrow">Cross-cutting</p>
-                    <h2 className="sd-h">Digital Layer</h2>
+                  <section className="sd-block sd-digital" aria-label={t.digitalLayerLabel}>
+                    <p className="sd-digital-eyebrow">{t.crossCutting}</p>
+                    <h2 className="sd-h">{t.digitalLayer}</h2>
                     <div className="sd-cap-head">
                       <h3 className="sd-cap-title sd-cap-title-digital">
                         <span className="sd-cap-num">{digitalCapability.id}</span>
@@ -170,10 +188,7 @@ export function SolutionDetailPage({
                       </h3>
                     </div>
                     <p className="sd-body">{solution.digitalContext}</p>
-                    <p className="sd-body sd-muted">
-                      Not a family-exclusive capability — can integrate across
-                      generation, renewables, grid, charging and lifecycle packages.
-                    </p>
+                    <p className="sd-body sd-muted">{t.digitalNote}</p>
                   </section>
                 </SolutionReveal>
               ) : null}
@@ -181,10 +196,10 @@ export function SolutionDetailPage({
               {solution.customerTitles?.length ? (
                 <SolutionReveal delayMs={40}>
                   <section className="sd-block">
-                    <h2 className="sd-h">Built For</h2>
+                    <h2 className="sd-h">{t.builtFor}</h2>
                     <ul className="sd-built-for">
                       {solution.customerTitles.map((title) => (
-                        <li key={title}>{title}</li>
+                        <li key={title}>{customerTitle(title)}</li>
                       ))}
                     </ul>
                   </section>
@@ -224,14 +239,19 @@ export function SolutionDetailPage({
               {isFamilyPage ? (
                 <SolutionReveal delayMs={20}>
                   <p className="sd-portfolio-link-wrap">
-                    <Link href="/solutions" className="sd-text-link">
-                      View all capabilities →
+                    <Link href={href("/solutions")} className="sd-text-link">
+                      {t.viewAllCapabilities}
                     </Link>
                   </p>
                 </SolutionReveal>
               ) : null}
 
-              <SolutionNavigation previous={previous} next={next} />
+              <SolutionNavigation
+                previous={previous}
+                next={next}
+                basePath={href("/solutions")}
+                text={{ previous: t.previousSolution, next: t.nextSolution, adjacent: t.adjacentSolutions }}
+              />
             </div>
           </div>
         </section>

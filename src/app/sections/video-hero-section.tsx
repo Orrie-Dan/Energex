@@ -1,14 +1,16 @@
-import { brand, hero } from "../../data/energex";
+import type { Locale } from "../../i18n/config";
+import { getContent } from "../../i18n/content";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
 /** Full-bleed video opener with hero copy overlaid. */
-export default function VideoHeroSection() {
+export default function VideoHeroSection({ locale }: { locale: Locale }) {
+  const { brand, hero, ui } = getContent(locale);
   return (
     <header
       id="hero"
       className="relative w-full min-h-[100svh] flex flex-col justify-end overflow-clip bg-color-001 max-lg:min-h-[36rem]"
-      aria-label="Hero"
+      aria-label={ui.home.heroLabel}
     >
       <div
         className="absolute inset-0 z-0 overflow-clip"

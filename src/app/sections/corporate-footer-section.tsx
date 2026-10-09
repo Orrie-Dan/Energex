@@ -1,18 +1,24 @@
-import { brand, finalCta, footer, navLinks } from "../../data/energex";
+import { formatText, type Locale } from "../../i18n/config";
+import { getContent } from "../../i18n/content";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
-const navigation = [{ href: "/", label: "Home" }, ...navLinks, { href: "/privacy", label: "Privacy" }];
-
 /** Corporate address + navigation block for the below-2xl footer (replaces the template newsletter section). */
-export default function CorporateFooterSection() {
+export default function CorporateFooterSection({ locale }: { locale: Locale }) {
+  const { brand, finalCta, footer, navLinks, ui, href } = getContent(locale);
+  const navigation = [
+    { href: href("/"), label: ui.chrome.home },
+    ...navLinks,
+    { href: href("/privacy"), label: ui.chrome.privacy },
+  ];
+  const allCapabilitiesHref = href("/solutions");
   return (
     <div
       className="w-full flex relative justify-start items-start content-start shrink-0 gap-25 max-lg:flex-col max-lg:gap-12 2xl:hidden"
       data-cid="n2261"
     >
       <div className="w-[18%] flex relative max-w-55 flex-col justify-start items-start content-start shrink-0 gap-6 max-lg:w-full max-lg:max-w-none">
-        <a className="block relative h-7 w-[8.6625rem] shrink-0" href="/" data-cid="n2265">
+        <a className="block relative h-7 w-[8.6625rem] shrink-0" href={href("/")} data-cid="n2265">
           <img
             className="block h-7 w-full overflow-clip object-cover"
             data-cid="n2267"
@@ -23,17 +29,17 @@ export default function CorporateFooterSection() {
           />
         </a>
         <p className={`block text-color-002 ${FONT} text-sm font-semibold leading-[1.375rem] text-balance`} dir="auto">
-          FROM CONCEPT TO POWER.
+          {brand.taglineSecondary}
         </p>
         <p className={`block text-color-002 ${FONT} text-xs leading-4`} dir="auto">
-          Registration No. {brand.registration}
+          {formatText(ui.chrome.registration, { registration: brand.registration })}
         </p>
       </div>
       <div className="w-[73.5%] flex relative justify-start items-start content-start grow shrink-0 basis-0 gap-12 max-lg:w-full max-lg:flex-col max-lg:grow-[initial] max-lg:basis-[initial]">
         <div className="flex relative justify-start items-start content-start grow shrink-0 basis-0 gap-25 max-lg:w-full max-lg:grow-[initial] max-lg:basis-[initial] max-lg:gap-6 max-md:flex-col">
           <div className="flex relative flex-col justify-start items-start content-start shrink-0 gap-6 max-lg:flex-1">
             <p className={`block text-color-002 ${FONT} text-sm font-semibold leading-[1.375rem]`} dir="auto">
-              Navigation
+              {ui.chrome.navigation}
             </p>
             <ul className="flex flex-col gap-2 list-none m-0 p-0">
               {navigation.map((item) => (
@@ -50,10 +56,10 @@ export default function CorporateFooterSection() {
           </div>
           <div className="flex relative flex-col justify-start items-start content-start shrink-0 gap-6 max-lg:flex-1">
             <p className={`block text-color-002 ${FONT} text-sm font-semibold leading-[1.375rem]`} dir="auto">
-              Solutions
+              {ui.chrome.solutions}
             </p>
             <ul className="flex flex-col gap-2 list-none m-0 p-0">
-              {footer.solutions.filter((item) => item.href !== "/solutions").map((item) => (
+              {footer.solutions.filter((item) => item.href !== allCapabilitiesHref).map((item) => (
                 <li key={item.label}>
                   <a
                     className={`text-background ${FONT} text-base leading-[1.625rem] hover:text-accent`}
@@ -79,8 +85,8 @@ export default function CorporateFooterSection() {
               data-component="heading"
               dir="auto"
             >
-              {"Corporate "}
-              <span className="inline text-color-002">address</span>
+              {ui.chrome.corporateLead}
+              <span className="inline text-color-002">{ui.chrome.corporateAccent}</span>
             </h3>
             <address className={`block not-italic text-background ${FONT} text-base leading-[1.625rem]`}>
               <span className="block font-semibold">{brand.name}</span>
@@ -95,9 +101,9 @@ export default function CorporateFooterSection() {
             </p>
             <a
               className={`inline-flex w-fit items-center gap-2 text-accent ${FONT} text-base font-semibold leading-[1.625rem] underline underline-offset-4`}
-              href="/contact"
+              href={href("/contact")}
             >
-              Start a Project &rarr;
+              {ui.chrome.startProjectArrow}
             </a>
           </div>
         </div>

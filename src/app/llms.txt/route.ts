@@ -8,6 +8,8 @@ import {
   solutionFamilies,
   visionMission,
 } from "../../data/energex";
+import { localizeHref } from "../../i18n/config";
+import { getContent } from "../../i18n/content";
 import { SITE_ORIGIN } from "../../lib/site";
 
 export const dynamic = "force-static";
@@ -23,6 +25,16 @@ export async function GET() {
     })),
     { path: "/privacy", label: "Privacy" },
     { path: "/terms", label: "Terms" },
+  ].map((link) => ({ ...link, path: localizeHref("en", link.path) }));
+
+  const zh = getContent("zh-hk");
+  const zhLinks = [
+    { path: zh.href("/"), label: zh.ui.chrome.home },
+    ...zh.navLinks.map((l) => ({ path: l.href, label: l.label })),
+    ...zh.equipmentCategories.map((category) => ({
+      path: zh.equipmentCategoryHref(category.slug),
+      label: category.title,
+    })),
   ];
 
   const body = [
@@ -57,6 +69,12 @@ export async function GET() {
     "## Routes",
     "",
     ...links.map((l) => `- [${l.label}](${origin}${l.path})`),
+    "",
+    "## Traditional Chinese (Hong Kong) / 繁體中文（香港）",
+    "",
+    "Every public page is also available in Traditional Chinese (Hong Kong) under /zh-hk.",
+    "",
+    ...zhLinks.map((l) => `- [${l.label}](${origin}${l.path})`),
     "",
     "## Corporate",
     "",
