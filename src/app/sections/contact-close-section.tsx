@@ -1,4 +1,5 @@
 import { contactClose } from "../../data/energex";
+import { HomeReveal } from "../components/home-reveal";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
@@ -11,15 +12,19 @@ export default function ContactCloseSection() {
       aria-labelledby="contact-heading"
     >
       <div className="flex w-full max-w-400 flex-col gap-8 px-8 py-28 max-lg:px-6 max-lg:py-18">
-        <p className={`text-accent ${FONT} text-sm font-semibold leading-5.5`}>{contactClose.label}</p>
-        <h2
-          id="contact-heading"
-          className={`max-w-200 text-background ${FONT} text-[2.75rem] font-medium leading-11 tracking-[-1.76px] text-balance max-lg:text-4xl max-lg:leading-9`}
-        >
-          {contactClose.heading}
-        </h2>
-        <p className={`max-w-150 text-background/80 ${FONT} text-base leading-6.5`}>{contactClose.body}</p>
-        <div className="flex flex-wrap gap-4">
+        <HomeReveal>
+          <p className={`text-accent ${FONT} text-sm font-semibold leading-5.5`}>{contactClose.label}</p>
+          <h2
+            id="contact-heading"
+            className={`max-w-200 text-background ${FONT} text-[2.75rem] font-medium leading-11 tracking-[-1.76px] text-balance max-lg:text-4xl max-lg:leading-9`}
+          >
+            {contactClose.heading}
+          </h2>
+        </HomeReveal>
+        <HomeReveal delayMs={90}>
+          <p className={`max-w-150 text-background/80 ${FONT} text-base leading-6.5`}>{contactClose.body}</p>
+        </HomeReveal>
+        <HomeReveal delayMs={160} className="flex flex-wrap gap-4">
           <a
             href={contactClose.project.href}
             className={`inline-flex h-12 items-center bg-accent px-6 text-background ${FONT} text-sm font-semibold hover:opacity-90`}
@@ -32,7 +37,7 @@ export default function ContactCloseSection() {
           >
             {contactClose.equipment.label}
           </a>
-        </div>
+        </HomeReveal>
       </div>
     </section>
   );

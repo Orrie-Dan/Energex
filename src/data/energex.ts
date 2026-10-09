@@ -59,8 +59,12 @@ export {
 
 export {
   equipmentCategories,
+  equipmentCategoryHref,
   equipmentPage,
+  equipmentProcurement,
+  equipmentQuoteHref,
   equipmentSupplyCard,
+  getEquipmentCategory,
   type EquipmentCategory,
 } from "./energex/equipment";
 
@@ -351,16 +355,10 @@ export const contactPage = {
     "O&M, asset management and digital energy",
   ],
   formNote:
-    "Form preview only — submission is not connected yet. Direct email and phone lines will be published when confirmed.",
-  interests: [
-    "Project inquiry",
-    "Power Equipment Supply",
-    "Power & Generation",
-    "Renewables & Storage",
-    "Grid & Distributed Energy",
-    "Project Delivery & Lifecycle",
-    "General inquiry",
-  ],
+    "Form preview only. Inquiry delivery is not connected, so nothing on this page is emailed. Direct email and phone lines will be published when confirmed.",
+  /** Shown only when live delivery is configured (NEXT_PUBLIC_INQUIRY_DELIVERY_ENABLED). */
+  formNoteLive:
+    "Sending this form emails your details to the ENERGEX team so they can respond. Do not include confidential information you do not want sent by email.",
 } as const;
 
 export const contactClose = {

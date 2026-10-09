@@ -1,6 +1,8 @@
 import {
   brand,
   capabilities,
+  equipmentCategories,
+  equipmentCategoryHref,
   marketPhases,
   navLinks,
   solutionFamilies,
@@ -15,6 +17,10 @@ export async function GET() {
   const links = [
     { path: "/", label: "Home" },
     ...navLinks.map((l) => ({ path: l.href, label: l.label })),
+    ...equipmentCategories.map((category) => ({
+      path: equipmentCategoryHref(category.slug),
+      label: category.title,
+    })),
     { path: "/privacy", label: "Privacy" },
     { path: "/terms", label: "Terms" },
   ];

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteChrome } from "../components/site-chrome";
 import { brand, contactPage } from "../../data/energex";
+import { publicInquiryConfig } from "../../lib/inquiry/public-config";
 import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = {
@@ -77,7 +78,7 @@ export default function ContactPage() {
               ))}
             </ul>
 
-            <p className="mt-8 text-sm text-[#011836]/60">{contactPage.formNote}</p>
+            <p className="mt-8 text-sm text-[#011836]/60">{publicInquiryConfig.enabled ? contactPage.formNoteLive : contactPage.formNote}</p>
           </div>
 
           <ContactForm />

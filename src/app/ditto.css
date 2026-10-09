@@ -508,3 +508,80 @@ body.ditto-menu-lock {
     display: none;
   }
 }
+
+/* Homepage carousels. Widths follow the track viewport, not the window. */
+.offer-viewport {
+  container-type: inline-size;
+}
+.offer-slide {
+  width: 86cqw;
+  flex-basis: 86cqw;
+}
+@container (min-width: 700px) {
+  .offer-slide {
+    width: calc((100cqw - 16px) / 2);
+    flex-basis: calc((100cqw - 16px) / 2);
+  }
+}
+@container (min-width: 1200px) {
+  .offer-slide {
+    width: calc((100cqw - 32px) / 3);
+    flex-basis: calc((100cqw - 32px) / 3);
+  }
+}
+.offer-live {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reversible homepage reveal. Same ease as the solution-detail scroll reveal. */
+@media (prefers-reduced-motion: no-preference) {
+  .home-reveal {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+    transition:
+      opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .home-reveal[data-revealed="true"] {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .home-reveal-stagger > * {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+    transition:
+      opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .home-reveal-stagger[data-revealed="true"] > * {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+  .home-reveal-stagger[data-revealed="true"] > *:nth-child(2) { transition-delay: 70ms; }
+  .home-reveal-stagger[data-revealed="true"] > *:nth-child(3) { transition-delay: 140ms; }
+  .home-reveal-stagger[data-revealed="true"] > *:nth-child(4) { transition-delay: 210ms; }
+  .home-reveal-stagger[data-revealed="true"] > *:nth-child(n + 5) { transition-delay: 260ms; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-reveal,
+  .home-reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+@media (scripting: none) {
+  .home-reveal,
+  .home-reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+  }
+}

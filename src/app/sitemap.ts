@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { equipmentCategories } from "../data/energex";
 import { absoluteUrl } from "../lib/site";
 
 export const dynamic = "force-static";
@@ -12,6 +13,7 @@ const routes = [
   "/solutions/grid-distributed-energy",
   "/solutions/project-delivery-lifecycle",
   "/equipment",
+  ...equipmentCategories.map((category) => `/equipment/${category.slug}`),
   "/industries",
   "/about",
   "/contact",

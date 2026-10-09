@@ -8,7 +8,8 @@ const nextConfig = {
   // Parent dirs also have lockfiles (D:\Ideas\ditto, ditto.site, …). Pin root
   // so PostCSS resolves @tailwindcss/postcss from this app, not the parent.
   outputFileTracingRoot: __dirname,
-  output: "export",
+  // Hybrid deployment: pages remain statically generated; only /api/inquiry
+  // runs as a server function. (Previously `output: "export"`.)
   images: { unoptimized: true },
   reactStrictMode: false,
   eslint: { ignoreDuringBuilds: true },

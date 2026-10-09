@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SiteChrome } from "../components/site-chrome";
-import { equipmentCategories, equipmentPage } from "../../data/energex";
+import { equipmentCategories, equipmentCategoryHref, equipmentPage } from "../../data/energex";
+import { publicInquiryConfig } from "../../lib/inquiry/public-config";
 
 export const metadata: Metadata = {
   title: "Power Equipment Supply",
@@ -34,28 +35,30 @@ export default function EquipmentPage() {
         <ul className="mt-12 grid list-none gap-6 p-0 md:grid-cols-2">
           {equipmentCategories.map((category) => (
             <li key={category.slug} id={category.slug} className="overflow-hidden rounded-lg border border-[#011836]/10 bg-white">
-              <img src={category.imgSrc} alt={category.imgAlt} className="h-48 w-full object-cover" />
-              <div className="p-6">
-                <h2 className="text-xl font-semibold text-[#011836]">{category.title}</h2>
-                <p className="mt-2 text-sm leading-relaxed text-[#011836]/80">{category.description}</p>
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {category.scope.map((item) => (
-                    <li
-                      key={item}
-                      className="rounded-full border border-[#011836]/15 px-3 py-1 text-xs font-medium text-[#011836]"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <a href={equipmentCategoryHref(category.slug)} className="block hover:bg-[#f6f4f0]">
+                <img src={category.imgSrc} alt={category.imgAlt} className="h-48 w-full object-cover" />
+                <div className="p-6">
+                  <h2 className="text-xl font-semibold text-[#011836]">{category.title}</h2>
+                  <p className="mt-2 text-sm leading-relaxed text-[#011836]/80">{category.description}</p>
+                  <p className="mt-4 flex flex-wrap gap-2">
+                    {category.scope.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-[#011836]/15 px-3 py-1 text-xs font-medium text-[#011836]"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </p>
+                </div>
+              </a>
             </li>
           ))}
         </ul>
 
         <section id="inquiry" className="mt-14 scroll-mt-24 rounded-lg border border-[#011836]/10 bg-white px-6 py-8 md:px-10">
           <h2 className="text-xl font-semibold text-[#011836]">{equipmentPage.inquiryHeading}</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#011836]/75">{equipmentPage.inquiryBody}</p>
+          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-[#011836]/75">{publicInquiryConfig.enabled ? equipmentPage.inquiryBodyLive : equipmentPage.inquiryBody}</p>
           <a
             href={equipmentPage.inquiryHref}
             className="mt-6 inline-flex rounded-md bg-[#f06f12] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#c4500a]"

@@ -5,6 +5,7 @@
  */
 
 export type EquipmentCategory = {
+  /** Route segment under /equipment. */
   slug: string;
   title: string;
   /** Restates verified scope language. Not a product list. */
@@ -13,6 +14,14 @@ export type EquipmentCategory = {
   imgSrc: string;
   imgAlt: string;
 };
+
+/** Sourcing activities named in capability 11. Not certifications or warranties. */
+export const equipmentProcurement = [
+  "OEM evaluation",
+  "Factory audit",
+  "Logistics support",
+  "Customs support",
+] as const;
 
 export const equipmentPage = {
   eyebrow: "Power Equipment Supply",
@@ -26,13 +35,20 @@ export const equipmentPage = {
   inquiryHeading: "Equipment inquiries",
   inquiryBody:
     "Open the contact page to describe an equipment requirement. The form is a preview and does not send a message.",
+  /** Shown only when live delivery is configured. Not a quotation. */
+  inquiryBodyLive:
+    "Open the contact page to describe an equipment requirement and send it to the ENERGEX team. Sending a request is not a quotation.",
+  quoteNote:
+    "Describe the requirement on the inquiry form. Delivery is not connected, so the form does not send a message or issue a quotation.",
+  quoteNoteLive:
+    "Describe the requirement on the inquiry form and send it to the ENERGEX team. Sending a request does not issue a quotation.",
   inquiryHref: "/contact?interest=equipment",
   inquiryLabel: "Discuss equipment supply",
 } as const;
 
 export const equipmentCategories: readonly EquipmentCategory[] = [
   {
-    slug: "power-generation-equipment",
+    slug: "power-generation",
     title: "Power Generation Equipment",
     description: "Engines, turbines, and generators coordinated as project equipment supply.",
     scope: ["Engines", "Turbines", "Generators"],
@@ -40,7 +56,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
     imgAlt: "Waterfront power plant",
   },
   {
-    slug: "solar-energy-storage",
+    slug: "solar-storage",
     title: "Solar & Energy Storage",
     description: "Solar and battery equipment within the same procurement scope.",
     scope: ["Solar equipment", "Battery equipment"],
@@ -56,7 +72,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
     imgAlt: "Electrical substation",
   },
   {
-    slug: "charging-energy-controls",
+    slug: "charging-controls",
     title: "Charging & Energy Controls",
     description: "EV chargers, smart meters, and digital controls.",
     scope: ["EV chargers", "Smart meters", "Digital controls"],
@@ -64,7 +80,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
     imgAlt: "Vehicle charging infrastructure",
   },
   {
-    slug: "lng-cryogenic-equipment",
+    slug: "lng-cryogenic",
     title: "LNG & Cryogenic Equipment",
     description: "LNG equipment, pumps, compressors, and cryogenic systems.",
     scope: ["LNG equipment", "Pumps", "Compressors", "Cryogenic systems"],
@@ -72,11 +88,11 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
     imgAlt: "LNG infrastructure",
   },
   {
-    slug: "spare-parts-support",
+    slug: "spare-parts",
     title: "Spare Parts & Support",
     description:
       "Spare parts and lifecycle replacement components, coordinated with logistics and customs support.",
-    scope: ["Spare parts", "Lifecycle replacement components", "Logistics and customs support"],
+    scope: ["Spare parts", "Lifecycle replacement components"],
     imgSrc: "/assets/energex/trading.webp",
     imgAlt: "Industrial equipment handling",
   },
@@ -90,3 +106,16 @@ export const equipmentSupplyCard = {
     "International trading and procurement of generation, solar, storage, grid, charging, LNG, and spare-parts equipment.",
   imgSrc: "/assets/energex/trading.webp",
 } as const;
+
+export function equipmentCategoryHref(slug: string): string {
+  return `/equipment/${slug}`;
+}
+
+export function equipmentQuoteHref(slug: string): string {
+  return `/contact?interest=equipment&category=${encodeURIComponent(slug)}`;
+}
+
+export function getEquipmentCategory(slug: string): EquipmentCategory | undefined {
+  const key = slug.trim().toLowerCase();
+  return equipmentCategories.find((category) => category.slug === key);
+}
