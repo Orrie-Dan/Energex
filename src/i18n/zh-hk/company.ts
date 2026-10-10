@@ -19,6 +19,7 @@ export const companyZhHk: Translation<
     | "revenueModels"
     | "financingStructures"
     | "financingNote"
+    | "visionMission"
   >
 > = {
   brandLifecycle: [
@@ -139,8 +140,6 @@ export const companyZhHk: Translation<
     label: "市場策略",
     headingLead: "為",
     headingAccent: "全球能源市場而建。",
-    supporting: "地域階段說明策略優次——並非聲稱目前在各個國家均有營運。",
-    disclaimer: "地圖及階段標籤傳達策略及目標，並非經核實的營運國家覆蓋範圍。",
   },
   organizationFunctions: [
     { title: "董事會／行政領導", description: "策略、投資審批、管治及主要合作夥伴關係。" },
@@ -156,7 +155,7 @@ export const companyZhHk: Translation<
     label: "組織",
     headingLead: "組織及",
     headingAccent: "主要職能。",
-    supporting: "支援業務開拓、交付、貿易、財務及生命週期服務的職能能力。此並非匯報架構。",
+    supporting: "支援業務開拓、交付、貿易、財務及生命週期服務的職能能力。",
   },
   revenueModels: [
     { stream: "項目開發及顧問", mechanism: "可行性研究、開發及架構設計費用", character: "按項目" },
@@ -177,4 +176,14 @@ export const companyZhHk: Translation<
   ],
   financingNote:
     "Energex 支援項目架構設計及投資者／貸款方協調——包括 IPP／PPA、BOT／BOOT／BOO、租賃轉擁有及能源即服務模式——並可透過項目 SPV 選擇性參與。Energex 並非銀行，亦不會自動為客戶項目提供融資。",
+  visionMission: {
+    vision: {
+      title: "願景",
+      body: "成為領先的綜合能源解決方案平台，將世界級的技術、資本及執行能力，與新興市場日益增長的能源需要連結起來。",
+    },
+    mission: {
+      title: "使命",
+      body: "為客戶的能源需要提供單一責任窗口——由識別問題，以至交付及維護營運中的資產。",
+    },
+  },
 };

@@ -31,10 +31,6 @@ export const marketStrategySection = {
   label: "Market Strategy",
   headingLead: "Built for",
   headingAccent: "Global Energy Markets.",
-  supporting:
-    "Geographic phases describe strategic priority — not a claim of current country-by-country operations.",
-  disclaimer:
-    "Map and phase labels communicate strategy and ambition. They are not a verified operating-country footprint.",
 } as const;
 
 export const marketBridge = {

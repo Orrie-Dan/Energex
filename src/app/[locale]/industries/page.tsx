@@ -19,25 +19,30 @@ export default async function IndustriesPage({ params }: Props) {
   const t = ui.industries;
   return (
     <SiteChrome locale={locale} tone="plain">
-      <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-wider text-[#f06f12]">
-          {industriesSection.label}
-        </p>
-        <h1 className="mt-2 max-w-3xl text-3xl font-semibold tracking-tight text-[#011836] md:text-4xl">
-          {industriesSection.headingLead}{" "}
-          <span className="text-[#011836]/55">{industriesSection.headingAccent}</span>
-        </h1>
-        <p className="mt-4 max-w-3xl text-[#011836]/80">{industriesSection.supporting}</p>
+      <div className="mx-auto w-full max-w-[100rem] px-6 py-14 md:px-8 md:py-20 lg:px-10">
+        <header data-enter className="max-w-3xl">
+          <p className="text-sm font-semibold uppercase tracking-wider text-[#f06f12]">
+            {industriesSection.label}
+          </p>
+          <h1 className="mt-3 text-4xl font-semibold leading-[1.1] tracking-tight text-balance text-[#011836] md:text-5xl lg:text-6xl">
+            <span className="inline-block">{t.heroHeadingLead}</span>{" "}
+            <span className="inline-block text-[#011836]/55">{t.heroHeadingAccent}</span>
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#011836]/75 md:text-lg">
+            {t.heroDescription}
+          </p>
+        </header>
 
-        <div className="mt-12 space-y-6">
+        <div className="mt-10 space-y-6 md:mt-14">
           {customers.map((item, index) => (
             <article
+              data-reveal
               key={item.title}
               id={item.anchorId}
-              className="overflow-hidden rounded-lg border border-[#011836]/10 bg-white scroll-mt-24"
+              className="motion-zoom overflow-hidden rounded-lg border border-[#011836]/10 bg-white scroll-mt-24"
             >
-              <div className="grid md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-                <div className="relative min-h-48 bg-[#011836] md:min-h-full">
+              <div className="grid lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)]">
+                <div className="relative min-h-56 bg-[#011836] lg:min-h-full">
                   <img
                     src={item.imgSrc}
                     alt=""
@@ -52,25 +57,26 @@ export default async function IndustriesPage({ params }: Props) {
                   </div>
                 </div>
 
-                <div className="p-6 md:p-8">
-                  <div className="grid gap-5 sm:grid-cols-2">
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
-                        {t.primaryNeed}
-                      </p>
-                      <p className="mt-1 text-sm font-medium text-[#011836]">{item.need}</p>
+                <div className="grid gap-8 p-6 md:p-8 xl:grid-cols-[minmax(0,1fr)_minmax(16rem,0.8fr)] xl:gap-12">
+                  <div>
+                    <div className="grid gap-5 sm:grid-cols-2">
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
+                          {t.primaryNeed}
+                        </p>
+                        <p className="mt-1 text-sm font-medium text-[#011836]">{item.need}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
+                          {t.response}
+                        </p>
+                        <p className="mt-1 text-sm font-medium text-[#011836]">{item.response}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
-                        {t.response}
-                      </p>
-                      <p className="mt-1 text-sm font-medium text-[#011836]">{item.response}</p>
-                    </div>
+                    <p className="mt-5 text-sm leading-relaxed text-[#011836]/80">{item.detail}</p>
                   </div>
 
-                  <p className="mt-5 text-sm leading-relaxed text-[#011836]/80">{item.detail}</p>
-
-                  <ul className="mt-5 space-y-2">
+                  <ul className="space-y-2 xl:mt-0">
                     {item.offerings.map((offering) => (
                       <li
                         key={offering}
@@ -91,15 +97,15 @@ export default async function IndustriesPage({ params }: Props) {
         </div>
 
         <section className="mt-16">
-          <h2 className="text-xl font-semibold text-[#011836]">{t.focusHeading}</h2>
-          <p className="mt-2 max-w-2xl text-sm text-[#011836]/70">
-            {t.focusIntro}
-          </p>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <div data-reveal className="grid items-end gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.7fr)] lg:gap-16">
+            <h2 className="text-xl font-semibold text-[#011836]">{t.focusHeading}</h2>
+            <p className="text-sm text-[#011836]/70">{t.focusIntro}</p>
+          </div>
+          <ul data-reveal="stagger" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {industrialVerticals.map((vertical) => (
               <li
                 key={vertical.title}
-                className="rounded-lg border border-[#011836]/10 bg-white p-5"
+                className="motion-lift rounded-lg border border-[#011836]/10 bg-white p-5"
               >
                 <h3 className="font-semibold text-[#011836]">{vertical.title}</h3>
                 <p className="mt-2 text-sm text-[#011836]/75">{vertical.description}</p>
@@ -108,10 +114,12 @@ export default async function IndustriesPage({ params }: Props) {
           </ul>
         </section>
 
-        <section className="mt-14 rounded-lg border border-[#011836]/10 bg-white px-6 py-8 text-center md:px-10">
-          <h2 className="text-xl font-semibold text-[#011836]">{finalCta.heading}</h2>
-          <p className="mx-auto mt-3 max-w-2xl text-sm text-[#011836]/75">{finalCta.body}</p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+        <section data-reveal className="mt-14 flex flex-col gap-6 rounded-lg border border-[#011836]/10 bg-white px-6 py-8 md:px-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-3xl">
+            <h2 className="text-xl font-semibold text-[#011836]">{finalCta.heading}</h2>
+            <p className="mt-3 text-sm text-[#011836]/75">{finalCta.body}</p>
+          </div>
+          <div className="flex shrink-0 flex-wrap items-center gap-3">
             <Link
               href={finalCta.cta.href}
               className="inline-flex rounded-md bg-[#f06f12] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#c4500a]"

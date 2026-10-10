@@ -25,9 +25,12 @@ export const equipmentProcurement = [
 
 export const equipmentPage = {
   eyebrow: "Power Equipment Supply",
-  heading: "Equipment sourced for the project.",
+  heading: "Powering Projects with the Right Equipment.",
   intro:
-    "Equipment Trading & Global Procurement covers international trading and procurement with technical qualification and supply-chain management. The groups below organize that scope. This page is not a stocked catalogue.",
+    "From generation and energy storage to grid infrastructure, ENERGEX coordinates equipment sourcing and procurement for energy projects.",
+  /** Concise sourcing disclaimer shown below the category grid. */
+  note:
+    "This is not a stocked catalogue. Manufacturers, specifications, prices, certifications, warranties and availability are not published here. Sourcing support such as OEM evaluation, factory audit, logistics and customs is not a claim of certification or warranty.",
   boundary:
     "Energex does not publish manufacturers, product codes, specifications, prices, certifications, warranties, or availability here. Product pages will be added only when an approved record exists.",
   coordination:
@@ -93,7 +96,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
     description:
       "Spare parts and lifecycle replacement components, coordinated with logistics and customs support.",
     scope: ["Spare parts", "Lifecycle replacement components"],
-    imgSrc: "/assets/energex/trading.webp",
+    imgSrc: "/assets/energex/trading-hd.webp",
     imgAlt: "Industrial equipment handling",
   },
 ] as const;
@@ -104,7 +107,7 @@ export const equipmentSupplyCard = {
   title: "Power Equipment Supply",
   description:
     "International trading and procurement of generation, solar, storage, grid, charging, LNG, and spare-parts equipment.",
-  imgSrc: "/assets/energex/trading.webp",
+  imgSrc: "/assets/energex/trading-hd.webp",
 } as const;
 
 export function equipmentCategoryHref(slug: string): string {

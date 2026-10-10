@@ -52,5 +52,5 @@ export const organizationSection = {
   headingLead: "Organization &",
   headingAccent: "Key Functions.",
   supporting:
-    "Functional capabilities behind origination, delivery, trading, finance and lifecycle services. This is not a reporting hierarchy.",
+    "Functional capabilities behind origination, delivery, trading, finance and lifecycle services.",
 } as const;

@@ -62,16 +62,32 @@ export const siteZhHk: Translation<
       "其角色可將項目開發、工程、全球採購、EPC 交付、融資支援、營運及長期資產管理，連結於同一交付框架之下。",
     operatingModel:
       "營運模式不受技術限制：Energex 會評估每項客戶需求，並圍繞項目需要，組合最合適的傳統發電、可再生能源、電池儲能、電網基建、LNG 及燃氣發電、分佈式能源、電動出行及數碼能源系統。Energex 以整合者身份運作，而非自行製造每項技術——專業原設備製造商（OEM）、EPC 承建商、工程公司、造船廠、技術供應商、金融機構、物流供應商及本地承建商可執行指定工作包，而 Energex 則保留客戶對接、項目整合、商業協調及整體交付框架。",
+    principles: [
+      {
+        title: "不受技術限制",
+        description:
+          "按每項需求的實際情況作評估，並圍繞項目組合最合適的發電、可再生能源、儲能、電網、LNG、分佈式能源、電動出行及數碼系統。",
+      },
+      {
+        title: "整合者，而非製造商",
+        description:
+          "專業原設備製造商（OEM）、EPC 承建商、工程公司、造船廠、技術供應商、金融機構、物流供應商及本地承建商可執行指定工作包。",
+      },
+      {
+        title: "單一問責窗口",
+        description: "Energex 保留客戶對接、項目整合、商業協調及整體交付框架。",
+      },
+    ],
     cta: { label: "關於 Energex" },
   },
   solutionFamilies: [
     {
       title: "電力及發電",
-      description: "發電、LNG 及燃氣發電，以及浮動式發電——為涵蓋完整組合的四個總覽類別之一。",
+      description: "發電、LNG 及燃氣發電，以及浮動式發電解決方案。",
     },
     {
       title: "可再生能源及儲能",
-      description: "可再生能源及電池儲能能力，歸納作總覽之用。",
+      description: "可再生能源及電池儲能能力。",
     },
     {
       title: "電網及分佈式能源",
@@ -87,7 +103,7 @@ export const siteZhHk: Translation<
     headingLead: "一個對接窗口，",
     headingAccent: "貫穿整個項目。",
     supporting:
-      "以下是 Energex 可圍繞能源需求承擔責任的四種方式，描述公司可如何參與，並非已完成項目的紀錄。",
+      "以下是 Energex 可圍繞能源需求承擔責任的四種方式。",
     pillars: [
       { title: "工程", body: "根據負荷、場地、燃料或資源，以及電網或工業接駁，界定技術配置。" },
       { title: "全球採購", body: "審核及協調 OEM 設備及供應方案，包括工廠審核、物流及清關支援。" },
@@ -175,18 +191,15 @@ export const siteZhHk: Translation<
   contactClose: {
     label: "聯絡我們",
     heading: "項目及設備查詢。",
-    body: "請選擇查詢途徑。兩者均會開啟本網站的頁面，主頁不會提交任何資料。",
+    body: "請選擇最切合您需求的查詢途徑。",
     project: { label: "項目查詢" },
     equipment: { label: "設備查詢" },
   },
   approvedEvidence: [],
   evidenceSection: {
-    label: "能力及證明",
-    headingLead: "現時可以",
-    headingAccent: "陳述的內容。",
-    supporting: "能力及交付方法與項目證明分開列出。已完成項目、客戶及資歷只會在獲准公開後才會顯示。",
-    empty: "目前尚未有任何項目、客戶、交付或資歷紀錄獲准公開。",
-    strengthsLabel: "經核實的能力——並非已完成項目的聲明",
+    label: "核心能力",
+    headingLead: "Energex 帶來的",
+    headingAccent: "價值。",
   },
   capabilityStrengths: [
     {

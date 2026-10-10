@@ -10,7 +10,7 @@ import type { InquiryConfigResult } from "./config";
 import { buildInquiryEmail } from "./email";
 import { parseInquiryRequest } from "./parse";
 import type { RateLimiter } from "./rate-limit";
-import type { EmailSender } from "./resend";
+import type { EmailSender, SendOutcome } from "./resend";
 import type { TurnstileVerifier } from "./turnstile";
 
 /** Technical abuse limits (not business policy). Tune with production traffic. */
@@ -297,7 +297,7 @@ export async function handleInquiryRequest(request: Request, deps: InquiryHandle
     to: body.mode === "project" ? config.toProject : config.toEquipment,
   });
 
-  let outcome;
+  let outcome: SendOutcome;
   try {
     outcome = await deps.sendEmail(email, body.idempotencyKey);
   } catch {
@@ -312,9 +312,21 @@ export async function handleInquiryRequest(request: Request, deps: InquiryHandle
 
   deps.idempotency.release(body.idempotencyKey);
   if (outcome.kind === "refused") {
-    log({ outcome: "provider_refused", reference, mode: body.mode, httpStatus: outcome.httpStatus });
+    log({
+      outcome: "provider_refused",
+      reference,
+      mode: body.mode,
+      httpStatus: outcome.httpStatus,
+      detail: outcome.errorName,
+    });
     return respond(502, { status: "failed" });
   }
-  log({ outcome: "provider_unknown", reference, mode: body.mode, httpStatus: outcome.httpStatus });
+  log({
+    outcome: "provider_unknown",
+    reference,
+    mode: body.mode,
+    httpStatus: outcome.httpStatus,
+    detail: outcome.errorName,
+  });
   return respond(504, { status: "uncertain" });
 }

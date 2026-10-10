@@ -188,7 +188,6 @@ export function SolutionDetailPage({
                       </h3>
                     </div>
                     <p className="sd-body">{solution.digitalContext}</p>
-                    <p className="sd-body sd-muted">{t.digitalNote}</p>
                   </section>
                 </SolutionReveal>
               ) : null}

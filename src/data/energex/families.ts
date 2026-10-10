@@ -68,7 +68,7 @@ export const solutionFamilyDefs: readonly SolutionFamilyDef[] = [
     ],
     capabilityIds: ["02", "05", "06"],
     approach: [
-      "Technology selection follows demand, fuel availability, reliability targets, site conditions, commercial structure and schedule — not a preferred OEM list.",
+      "Technology selection follows demand, fuel availability, reliability targets, site conditions, commercial structure and schedule.",
       "Energex coordinates engineering, sourcing and delivery interfaces so generation assets commission into a coherent operating system with a single client interface.",
     ],
     integration: {
@@ -101,7 +101,7 @@ export const solutionFamilyDefs: readonly SolutionFamilyDef[] = [
     capabilityIds: ["03", "04"],
     approach: [
       "Resource quality, load profile, grid hosting capacity, storage need and commercial structure determine the technology mix.",
-      "Storage is introduced where it improves reliability, usable renewable output or operating economics — not as a default add-on.",
+      "Storage is introduced where it improves reliability, usable renewable output or operating economics.",
     ],
     integration: {
       label: "How capabilities connect",

@@ -59,6 +59,18 @@ describe("createResendSender", () => {
     });
     expect(await offline(email, "k")).toEqual({ kind: "unknown", httpStatus: null });
   });
+
+  it("keeps only Resend's error code, never its free-text message", async () => {
+    const send = createResendSender("k", async () =>
+      jsonResponse(403, { statusCode: 403, name: "validation_error", message: "You can only send to owner@x.test" }),
+    );
+    const outcome = await send(email, "k");
+    expect(outcome).toEqual({ kind: "refused", httpStatus: 403, errorName: "validation_error" });
+    expect(JSON.stringify(outcome)).not.toContain("owner@x.test");
+
+    const odd = createResendSender("k", async () => jsonResponse(422, { name: "Has Spaces <a@b.test>" }));
+    expect(await odd(email, "k")).toEqual({ kind: "refused", httpStatus: 422 });
+  });
 });
 
 describe("createTurnstileVerifier", () => {

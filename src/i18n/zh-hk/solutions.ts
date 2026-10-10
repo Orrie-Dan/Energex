@@ -193,10 +193,10 @@ export const solutionsZhHk: Translation<
   ],
   solutionsIndexPage: {
     eyebrow: "解決方案",
-    headingLead: "能源基建，",
-    headingAccent: "從概念到營運。",
+    headingLead: "全面能源",
+    headingAccent: "解決方案。",
     intro:
-      "Energex 在十五項專業能力中協調不受技術限制的解決方案——由早期開發、發電，以至電網、工業能源、採購、融資支援、營運及數碼層。專業合作夥伴可執行指定工作包，而 Energex 則保留客戶對接窗口及交付框架。",
+      "十五項專業能力，由同一整合商統籌。Energex 將發電、儲能、電網及項目交付整合於單一客戶對接窗口——不受單一技術路線所限。",
     familiesNote: "主頁上的四個解決方案類別為總覽分組，完整組合列於下方。",
     connectHeading: "各項能力如何連繫",
     connectBody:
@@ -217,7 +217,7 @@ export const solutionsZhHk: Translation<
         "此類別將發電與 LNG／燃氣發電及浮動式發電歸納在一起，以便將燃料路徑、電廠配置及部署方式作為同一解決方案範疇協調。",
       ],
       approach: [
-        "技術選型取決於用電需求、燃料供應、可靠性目標、場地條件、商業結構及時間表——而非預設的 OEM 名單。",
+        "技術選型取決於用電需求、燃料供應、可靠性目標、場地條件、商業結構及時間表。",
         "Energex 協調工程、採購及交付各介面，讓發電資產在單一客戶對接窗口下，調試投入為一個協調一致的營運系統。",
       ],
       integration: {
@@ -238,7 +238,7 @@ export const solutionsZhHk: Translation<
       ],
       approach: [
         "資源質素、負荷曲線、電網承載能力、儲能需要及商業結構決定技術組合。",
-        "只有在能提升可靠性、可用的可再生能源輸出或營運經濟效益時，才會引入儲能——而非預設的附加項目。",
+        "只有在能提升可靠性、可用的可再生能源輸出或營運經濟效益時，才會引入儲能。",
       ],
       integration: {
         label: "各項能力如何連繫",

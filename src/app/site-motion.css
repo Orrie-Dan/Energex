@@ -1,0 +1,90 @@
+/* =========================================================================
+   Site-wide motion for secondary pages (driven by components/site-motion.tsx).
+   Same ease as the homepage and solution-detail reveals.
+   - [data-enter]           CSS-only hero entrance; children rise in sequence on load.
+   - [data-reveal]          one-shot scroll reveal of the element.
+   - [data-reveal=stagger]  one-shot scroll reveal of direct children in sequence.
+   - .motion-lift           hover lift for cards (uses `translate`, so it never
+                            fights the reveal `transform` or its delays).
+   ========================================================================= */
+
+:root {
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes site-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-enter] > * {
+    animation: site-enter 0.9s var(--motion-ease) both;
+  }
+  [data-enter] > *:nth-child(2) { animation-delay: 80ms; }
+  [data-enter] > *:nth-child(3) { animation-delay: 160ms; }
+  [data-enter] > *:nth-child(4) { animation-delay: 240ms; }
+  [data-enter] > *:nth-child(n + 5) { animation-delay: 300ms; }
+
+  [data-reveal]:not([data-reveal="stagger"]),
+  [data-reveal="stagger"] > * {
+    transition:
+      opacity 0.7s var(--motion-ease) var(--reveal-delay, 0ms),
+      transform 0.9s var(--motion-ease) var(--reveal-delay, 0ms),
+      translate 0.3s var(--motion-ease),
+      box-shadow 0.3s var(--motion-ease),
+      border-color 0.3s var(--motion-ease),
+      background-color 0.3s var(--motion-ease);
+  }
+
+  html[data-motion] [data-reveal]:not([data-reveal="stagger"]):not([data-revealed]),
+  html[data-motion] [data-reveal="stagger"]:not([data-revealed]) > * {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+
+  [data-reveal="stagger"] > *:nth-child(2) { --reveal-delay: 60ms; }
+  [data-reveal="stagger"] > *:nth-child(3) { --reveal-delay: 120ms; }
+  [data-reveal="stagger"] > *:nth-child(4) { --reveal-delay: 180ms; }
+  [data-reveal="stagger"] > *:nth-child(5) { --reveal-delay: 240ms; }
+  [data-reveal="stagger"] > *:nth-child(6) { --reveal-delay: 290ms; }
+  [data-reveal="stagger"] > *:nth-child(n + 7) { --reveal-delay: 330ms; }
+
+  .motion-lift:hover,
+  .motion-lift:focus-within {
+    translate: 0 -3px;
+    box-shadow: 0 14px 30px -18px rgb(1 24 54 / 0.35);
+  }
+  /* Reveal selectors above outrank this, so stagger/reveal cards keep their delays. */
+  .motion-lift {
+    transition:
+      translate 0.3s var(--motion-ease),
+      box-shadow 0.3s var(--motion-ease),
+      border-color 0.3s var(--motion-ease),
+      background-color 0.3s var(--motion-ease);
+  }
+
+  .motion-zoom img {
+    transition: transform 0.9s var(--motion-ease);
+  }
+  .motion-zoom:hover img,
+  .motion-zoom:focus-within img {
+    transform: scale(1.04);
+  }
+}
+
+/* Sticky header elevation once the page leaves the top. */
+[data-site-header] {
+  transition:
+    box-shadow 0.3s var(--motion-ease),
+    background-color 0.3s var(--motion-ease);
+}
+html[data-scrolled] [data-site-header] {
+  box-shadow: 0 8px 24px -16px rgb(1 24 54 / 0.35);
+}

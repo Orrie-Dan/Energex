@@ -55,13 +55,13 @@ export default async function EquipmentCategoryPage({ params }: Props) {
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-[#011836]/70" aria-hidden="true" />
-        <div className="relative mx-auto flex min-h-[28rem] max-w-6xl flex-col justify-end px-5 py-14 md:min-h-[34rem] md:px-8 md:py-20">
+        <div data-enter className="relative mx-auto flex min-h-[28rem] w-full max-w-[100rem] flex-col justify-end px-6 py-14 md:min-h-[34rem] md:px-8 md:py-20 lg:px-10">
           <p className="text-sm font-semibold uppercase tracking-wider text-[#f06f12]">
             <a href={href("/equipment")} className="hover:text-white">
               {equipmentPage.eyebrow}
             </a>
           </p>
-          <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight md:text-6xl">
+          <h1 className="mt-3 max-w-4xl text-4xl font-semibold tracking-tight md:text-6xl">
             {category.title}
           </h1>
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-white/85">{category.description}</p>
@@ -75,11 +75,14 @@ export default async function EquipmentCategoryPage({ params }: Props) {
         </div>
       </header>
 
-      <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
-        <p className="max-w-3xl text-[#011836]/80">{t.categoryIntro}</p>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#011836]/70">{equipmentPage.boundary}</p>
+      <div className="mx-auto w-full max-w-[100rem] px-6 py-14 md:px-8 md:py-20 lg:px-10">
+        <div data-reveal="stagger" className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-16">
+          <div>
+            <p className="text-[#011836]/80">{t.categoryIntro}</p>
+            <p className="mt-3 text-sm leading-relaxed text-[#011836]/70">{equipmentPage.boundary}</p>
+          </div>
 
-        <section className="mt-12" aria-labelledby="equipment-types">
+        <section aria-labelledby="equipment-types">
           <h2 id="equipment-types" className="text-2xl font-semibold tracking-tight text-[#011836] md:text-3xl">
             {t.typesHeading}
           </h2>
@@ -94,13 +97,16 @@ export default async function EquipmentCategoryPage({ params }: Props) {
             ))}
           </ul>
         </section>
+        </div>
 
         <section className="mt-14" aria-labelledby="procurement">
-          <h2 id="procurement" className="text-2xl font-semibold tracking-tight text-[#011836] md:text-3xl">
-            {t.procurementHeading}
-          </h2>
-          <p className="mt-4 max-w-3xl text-[#011836]/80">{equipmentPage.coordination}</p>
-          <ul className="mt-6 grid list-none gap-3 p-0 sm:grid-cols-2">
+          <div data-reveal className="grid items-end gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.8fr)] lg:gap-16">
+            <h2 id="procurement" className="text-2xl font-semibold tracking-tight text-[#011836] md:text-3xl">
+              {t.procurementHeading}
+            </h2>
+            <p className="text-[#011836]/80">{equipmentPage.coordination}</p>
+          </div>
+          <ul data-reveal="stagger" className="mt-6 grid list-none gap-3 p-0 sm:grid-cols-2 xl:grid-cols-4">
             {equipmentProcurement.map((item) => (
               <li key={item} className="border-l-2 border-[#f06f12] py-2 pl-4 text-[#011836]">
                 {item}
@@ -109,14 +115,16 @@ export default async function EquipmentCategoryPage({ params }: Props) {
           </ul>
         </section>
 
-        <section className="mt-14 rounded-lg bg-[#011836] px-6 py-10 text-white md:px-10">
-          <h2 className="text-2xl font-semibold tracking-tight">{t.requestQuote}</h2>
-          <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/75">
-            {publicInquiryConfig.enabled ? equipmentPage.quoteNoteLive : equipmentPage.quoteNote}
-          </p>
+        <section data-reveal className="mt-14 flex flex-col gap-6 rounded-lg bg-[#011836] px-6 py-10 text-white md:px-10 lg:flex-row lg:items-center lg:justify-between">
+          <div className="max-w-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight">{t.requestQuote}</h2>
+            <p className="mt-3 text-sm leading-relaxed text-white/75">
+              {publicInquiryConfig.enabled ? equipmentPage.quoteNoteLive : equipmentPage.quoteNote}
+            </p>
+          </div>
           <a
             href={quoteHref}
-            className="mt-6 inline-flex rounded-md bg-[#f06f12] px-5 py-3 text-sm font-semibold text-white hover:bg-[#c4500a]"
+            className="inline-flex shrink-0 rounded-md bg-[#f06f12] px-5 py-3 text-sm font-semibold text-white hover:bg-[#c4500a]"
           >
             {t.requestQuote}
           </a>
@@ -126,12 +134,12 @@ export default async function EquipmentCategoryPage({ params }: Props) {
           <h2 id="related-equipment" className="text-2xl font-semibold tracking-tight text-[#011836] md:text-3xl">
             {t.relatedHeading}
           </h2>
-          <ul className="mt-6 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3">
+          <ul data-reveal="stagger" className="mt-6 grid list-none gap-4 p-0 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {related.map((item) => (
-              <li key={item.slug}>
+              <li key={item.slug} className="motion-lift motion-zoom rounded-lg">
                 <a
                   href={equipmentCategoryHref(item.slug)}
-                  className="block overflow-hidden rounded-lg border border-[#011836]/10 bg-white hover:border-[#f06f12]"
+                  className="block overflow-hidden rounded-lg border border-[#011836]/10 bg-white transition-colors duration-300 hover:border-[#f06f12]"
                 >
                   <img src={item.imgSrc} alt="" className="h-36 w-full object-cover" />
                   <span className="block px-4 py-4 text-sm font-semibold text-[#011836]">{item.title}</span>

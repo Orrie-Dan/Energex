@@ -72,7 +72,7 @@ export const capabilities: readonly Capability[] = [
     ],
     familySlug: "renewables-storage",
     familyHref: "/solutions/renewables-storage",
-    imgSrc: "/assets/energex/renewables-storage.png",
+    imgSrc: "/assets/energex/renewables.webp",
   },
   {
     id: "04",
@@ -208,7 +208,7 @@ export const capabilities: readonly Capability[] = [
     ],
     familySlug: "project-delivery-lifecycle",
     familyHref: "/solutions/project-delivery-lifecycle",
-    imgSrc: "/assets/energex/investment.webp",
+    imgSrc: "/assets/energex/trading-hd.webp",
   },
   {
     id: "12",
@@ -225,7 +225,7 @@ export const capabilities: readonly Capability[] = [
     ],
     familySlug: "project-delivery-lifecycle",
     familyHref: "/solutions/project-delivery-lifecycle",
-    imgSrc: "/assets/energex/investment.webp",
+    imgSrc: "/assets/energex/engineers.png",
   },
   {
     id: "13",
@@ -242,7 +242,7 @@ export const capabilities: readonly Capability[] = [
     ],
     familySlug: "project-delivery-lifecycle",
     familyHref: "/solutions/project-delivery-lifecycle",
-    imgSrc: "/assets/energex/investment.webp",
+    imgSrc: "/assets/energex/commercial-campus.png",
   },
   {
     id: "14",
@@ -292,10 +292,10 @@ export function getCapabilitiesByIds(ids: readonly string[]): Capability[] {
 
 export const solutionsIndexPage = {
   eyebrow: "Solutions",
-  headingLead: "Energy Infrastructure,",
-  headingAccent: "From Concept to Operation.",
+  headingLead: "Complete Energy",
+  headingAccent: "Solutions.",
   intro:
-    "Energex coordinates technology-agnostic solutions across fifteen specialist capabilities — from early development and generation through grid, industrial energy, procurement, financing support, operations and digital layers. Specialist partners may execute defined packages while Energex retains the client interface and delivery framework.",
+    "Fifteen specialist capabilities, coordinated by one integrator. Energex brings generation, storage, grid and delivery together under a single client interface — without locking you into one technology.",
   familiesNote:
     "The four solution families on the homepage are executive groupings. The complete portfolio is listed below.",
   connectHeading: "How capabilities connect",

@@ -5,8 +5,8 @@ import { HomeReveal } from "../components/home-reveal";
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
 /**
- * Evidence slot stays empty until approvedEvidence has records.
- * Capability strengths remain labeled as capabilities, not completed work.
+ * Capability strengths, plus an evidence list that renders only once
+ * approvedEvidence has records cleared for publication.
  */
 export default function CapabilitiesEvidenceSection({ locale }: { locale: Locale }) {
   const { approvedEvidence, capabilityStrengths, evidenceSection, ui } = getContent(locale);
@@ -32,18 +32,13 @@ export default function CapabilitiesEvidenceSection({ locale }: { locale: Locale
               <span className="text-muted-foreground">{evidenceSection.headingAccent}</span>
             </h2>
           </HomeReveal>
-          <HomeReveal delayMs={90}>
-            <p className={`max-w-150 text-muted-foreground ${FONT} text-base leading-6.5`}>
-              {evidenceSection.supporting}
-            </p>
-          </HomeReveal>
         </div>
 
-        <HomeReveal delayMs={140} className="flex flex-col gap-4 border border-color-001/10 bg-background p-6 md:p-8">
-          <h3 className={`text-color-001 ${FONT} text-lg font-medium leading-6`}>
-            {hasEvidence ? ui.home.evidenceApproved : ui.home.evidencePublished}
-          </h3>
-          {hasEvidence ? (
+        {hasEvidence ? (
+          <HomeReveal delayMs={140} className="flex flex-col gap-4 border border-color-001/10 bg-background p-6 md:p-8">
+            <h3 className={`text-color-001 ${FONT} text-lg font-medium leading-6`}>
+              {ui.home.evidenceApproved}
+            </h3>
             <ul className="m-0 flex list-none flex-col gap-4 p-0">
               {approvedEvidence.map((item) => (
                 <li key={item.id} className="border-t border-color-001/10 pt-4 first:border-t-0 first:pt-0">
@@ -55,33 +50,24 @@ export default function CapabilitiesEvidenceSection({ locale }: { locale: Locale
                 </li>
               ))}
             </ul>
-          ) : (
-            <p className={`text-muted-foreground ${FONT} text-sm leading-6`}>{evidenceSection.empty}</p>
-          )}
-        </HomeReveal>
+          </HomeReveal>
+        ) : null}
 
-        <div className="flex flex-col gap-4">
-          <HomeReveal delayMs={80}>
-            <h3 className={`text-color-001 ${FONT} text-lg font-medium leading-6`}>
-              {evidenceSection.strengthsLabel}
-            </h3>
-          </HomeReveal>
-          <HomeReveal as="ul" stagger className="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2">
-            {capabilityStrengths.map((item) => (
-              <li key={item.title}>
-                <a
-                  href={item.href}
-                  className="flex h-full flex-col gap-2 border border-color-001/10 bg-background p-6 outline-none hover:border-accent focus-visible:ring-2 focus-visible:ring-accent"
-                >
-                  <span className={`text-color-001 ${FONT} text-base font-medium leading-6`}>
-                    {item.title}
-                  </span>
-                  <span className={`text-muted-foreground ${FONT} text-sm leading-6`}>{item.body}</span>
-                </a>
-              </li>
-            ))}
-          </HomeReveal>
-        </div>
+        <HomeReveal as="ul" stagger className="m-0 grid list-none grid-cols-1 gap-4 p-0 md:grid-cols-2">
+          {capabilityStrengths.map((item) => (
+            <li key={item.title}>
+              <a
+                href={item.href}
+                className="flex h-full flex-col gap-2 border border-color-001/10 bg-background p-6 outline-none hover:border-accent focus-visible:ring-2 focus-visible:ring-accent"
+              >
+                <span className={`text-color-001 ${FONT} text-base font-medium leading-6`}>
+                  {item.title}
+                </span>
+                <span className={`text-muted-foreground ${FONT} text-sm leading-6`}>{item.body}</span>
+              </a>
+            </li>
+          ))}
+        </HomeReveal>
       </div>
     </section>
   );

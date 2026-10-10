@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { Capability, CapabilityFamilySlug } from "../../data/energex";
 import { formatText } from "../../i18n/config";
+import { HomeReveal, useRevealed } from "../components/home-reveal";
 
 const FONT = "[font-family:Inter,_'Inter_Placeholder',_sans-serif]";
 
@@ -33,6 +34,8 @@ export default function CapabilityIndexSection({
   const [active, setActive] = useState(0);
   const [openMobile, setOpenMobile] = useState(0);
   const current = capabilities[active]!;
+  const desktopRef = useRef<HTMLDivElement>(null);
+  const desktopShown = useRevealed(desktopRef);
 
   return (
     <section
@@ -41,7 +44,7 @@ export default function CapabilityIndexSection({
       aria-labelledby="capabilities-heading"
     >
       <div className="w-full max-w-400 flex relative py-16 px-8 flex-col gap-10 max-lg:py-12 max-lg:px-6 max-lg:gap-8">
-        <div className="max-w-175 flex flex-col gap-4">
+        <HomeReveal stagger className="max-w-175 flex flex-col gap-4">
           <p className={`text-color-001 ${FONT} text-sm font-semibold`}>{text.eyebrow}</p>
           <h2
             id="capabilities-heading"
@@ -52,11 +55,14 @@ export default function CapabilityIndexSection({
           <p className={`text-muted-foreground ${FONT} text-base leading-6.5`}>
             {familiesNote}
           </p>
-        </div>
+        </HomeReveal>
 
         {/* Desktop: index + detail plane */}
-        <div className="hidden lg:grid w-full grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 items-stretch min-h-140">
-          <ol className="m-0 flex list-none flex-col border-t border-color-001/10 p-0" role="listbox" aria-label={text.listLabel}>
+        <div ref={desktopRef} className="hidden lg:grid w-full grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] gap-12 items-stretch min-h-140">
+          <ol
+            data-revealed={desktopShown ? "true" : "false"}
+            className="home-reveal-stagger m-0 flex list-none flex-col border-t border-color-001/10 p-0"
+            role="listbox" aria-label={text.listLabel}>
             {capabilities.map((cap, i) => {
               const selected = i === active;
               return (
@@ -90,7 +96,11 @@ export default function CapabilityIndexSection({
             })}
           </ol>
 
-          <article className="sticky top-28 flex flex-col gap-6 self-start border border-color-001/10 bg-surface p-8">
+          <article
+            data-revealed={desktopShown ? "true" : "false"}
+            className="home-reveal sticky top-28 flex flex-col gap-6 self-start border border-color-001/10 bg-surface p-8"
+            style={{ transitionDelay: desktopShown ? "120ms" : "0ms" }}
+          >
             <div className="relative h-56 w-full overflow-hidden bg-color-001">
               <img
                 src={current.imgSrc}
@@ -128,7 +138,7 @@ export default function CapabilityIndexSection({
         </div>
 
         {/* Mobile accordion */}
-        <div className="lg:hidden w-full border-t border-color-001/10">
+        <HomeReveal className="lg:hidden w-full border-t border-color-001/10">
           {capabilities.map((cap, i) => {
             const open = openMobile === i;
             return (
@@ -177,7 +187,7 @@ export default function CapabilityIndexSection({
               </div>
             );
           })}
-        </div>
+        </HomeReveal>
       </div>
     </section>
   );

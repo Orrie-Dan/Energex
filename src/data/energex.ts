@@ -110,6 +110,24 @@ export const about = {
     "Its role can connect project development, engineering, global procurement, EPC delivery, financing support, operations and long-term asset management under one delivery framework.",
   operatingModel:
     "The operating model is technology-agnostic: each client requirement is assessed and the most appropriate combination of conventional generation, renewable energy, battery storage, grid infrastructure, LNG and gas-to-power, distributed energy, e-mobility and digital energy systems is assembled around the project need. Energex operates as an integrator rather than manufacturing every technology internally — specialist OEMs, EPC contractors, engineering firms, shipyards, technology providers, financial institutions, logistics providers and local contractors may execute defined packages while Energex retains the client interface, project integration, commercial coordination and overall delivery framework.",
+  /** Concise restatement of `operatingModel` for the About page; same scope, no new claims. */
+  principles: [
+    {
+      title: "Technology-agnostic",
+      description:
+        "Each requirement is assessed on its own terms, and the right mix of generation, renewables, storage, grid, LNG, distributed energy, e-mobility and digital systems is assembled around the project.",
+    },
+    {
+      title: "Integrator, not manufacturer",
+      description:
+        "Specialist OEMs, EPC contractors, engineering firms, shipyards, technology providers, financial institutions, logistics providers and local contractors may execute defined packages.",
+    },
+    {
+      title: "One accountable interface",
+      description:
+        "Energex retains the client interface, project integration, commercial coordination and the overall delivery framework.",
+    },
+  ],
   cta: { href: "/about", label: "About Energex" },
 };
 
@@ -149,7 +167,7 @@ export const solutionFamilies = [
     href: "/solutions/power-generation",
     title: "Power & Generation",
     description:
-      "Power generation, LNG & gas-to-power, and floating power — one of four executive families spanning the full portfolio.",
+      "Power generation, LNG & gas-to-power, and floating power solutions.",
     imgSrc: "/assets/energex/power.webp",
     srcSet: "/assets/energex/power.webp 1400w",
     imgSrc2: "/assets/energex/floating-power.png",
@@ -159,7 +177,7 @@ export const solutionFamilies = [
     href: "/solutions/renewables-storage",
     title: "Renewables & Storage",
     description:
-      "Renewable energy and battery storage capabilities grouped for executive overview.",
+      "Renewable energy and battery storage capabilities.",
     imgSrc: "/assets/energex/renewables-storage.png",
     srcSet: "/assets/energex/renewables-storage.png 1400w",
     imgSrc2: "/assets/energex/renewables-storage.png",
@@ -211,7 +229,7 @@ export const whyEnergex = {
   headingLead: "One interface",
   headingAccent: "across the work.",
   supporting:
-    "Four ways Energex can take responsibility around an energy requirement. These describe how the company can participate. They are not a record of completed projects.",
+    "Four ways Energex can take responsibility around an energy requirement.",
   pillars: [
     {
       number: "01",
@@ -364,7 +382,7 @@ export const contactPage = {
 export const contactClose = {
   label: "Contact",
   heading: "Project and equipment inquiries.",
-  body: "Choose a path. Both open a page on this site. Nothing is submitted from the homepage.",
+  body: "Choose the inquiry path that fits your requirement.",
   project: { href: "/contact?interest=project", label: "Project inquiries" },
   equipment: { href: "/equipment#inquiry", label: "Equipment inquiries" },
 } as const;
@@ -380,13 +398,9 @@ export type ApprovedEvidence = {
 export const approvedEvidence: readonly ApprovedEvidence[] = [];
 
 export const evidenceSection = {
-  label: "Capabilities & Evidence",
-  headingLead: "What can be stated",
-  headingAccent: "today.",
-  supporting:
-    "Capabilities and delivery methods are listed separately from project evidence. Completed projects, clients, and credentials appear only after they are approved for publication.",
-  empty: "No project, client, delivery, or credential record is approved for publication yet.",
-  strengthsLabel: "Verified capabilities — not completed-project claims",
+  label: "Capabilities",
+  headingLead: "What Energex",
+  headingAccent: "brings.",
 } as const;
 
 export const capabilityStrengths = [

@@ -74,14 +74,14 @@ export default function IndustriesCompactSection({
             <a
               key={segment.href}
               href={segment.href}
-              className="group flex h-full w-full flex-col overflow-hidden bg-background text-primary ring-1 ring-color-001/10 outline-none transition-[transform] duration-500 ease-[cubic-bezier(0.33,0,0.2,1)] hover:-translate-y-1 hover:ring-accent focus-visible:ring-2 focus-visible:ring-accent motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+              className="offer-card group flex h-full w-full flex-col overflow-hidden bg-background text-primary ring-1 ring-color-001/10 outline-none hover:ring-accent focus-visible:ring-2 focus-visible:ring-accent"
             >
               <span className="relative block aspect-[16/10] overflow-hidden bg-color-001">
                 <img
                   src={segment.imgSrc}
                   alt=""
                   draggable={false}
-                  className="h-full w-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.33,0,0.2,1)] group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  className="h-full w-full object-cover"
                 />
               </span>
               <span className="flex flex-1 flex-col gap-2 p-5">

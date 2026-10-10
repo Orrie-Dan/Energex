@@ -31,6 +31,10 @@ export default function VideoHeroSection({ locale }: { locale: Locale }) {
           className="pointer-events-none absolute inset-0 bg-gradient-to-t from-color-001/90 via-color-001/35 to-color-001/20"
           aria-hidden="true"
         />
+        <div
+          className="pointer-events-none absolute inset-x-0 top-0 z-[1] h-36 bg-gradient-to-b from-color-001/80 to-transparent"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="relative z-1 flex w-full max-w-400 flex-col justify-end gap-6 px-8 pb-16 pt-40 max-lg:px-6 max-lg:pb-12 max-lg:pt-28">

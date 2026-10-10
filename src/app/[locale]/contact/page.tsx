@@ -20,7 +20,7 @@ export default async function ContactPage({ params }: Props) {
   const t = ui.contact;
   return (
     <SiteChrome locale={locale}>
-      <div className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
+      <div data-enter className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
         <p className="text-sm font-semibold uppercase tracking-wider text-[#f06f12]">
           {contactPage.eyebrow}
         </p>

@@ -23,9 +23,23 @@ export type SendOutcome =
   /** Resend accepted the message and returned its id. */
   | { kind: "sent"; providerId: string }
   /** Resend definitively refused the message; it was not accepted. */
-  | { kind: "refused"; httpStatus: number }
+  | { kind: "refused"; httpStatus: number; errorName?: string }
   /** The outcome is unknown (timeout, network error, 5xx, idempotency conflict, malformed reply). */
-  | { kind: "unknown"; httpStatus: number | null };
+  | { kind: "unknown"; httpStatus: number | null; errorName?: string };
+
+/**
+ * Resend's machine-readable error code (e.g. `validation_error`,
+ * `invalid_from_address`). The free-text `message` is never read because it
+ * can echo addresses; only a strictly formatted code is kept for logs.
+ */
+async function readErrorName(response: Response): Promise<string | undefined> {
+  try {
+    const name = ((await response.json()) as { name?: unknown })?.name;
+    return typeof name === "string" && /^[a-z_]{1,64}$/.test(name) ? name : undefined;
+  } catch {
+    return undefined;
+  }
+}
 
 export type EmailSender = (email: OutgoingEmail, idempotencyKey: string) => Promise<SendOutcome>;
 
@@ -68,10 +82,11 @@ export function createResendSender(apiKey: string, fetchImpl: typeof fetch = fet
       return { kind: "unknown", httpStatus: response.status };
     }
 
+    const errorName = await readErrorName(response);
     // 409: concurrent or conflicting idempotent request. A previous attempt may have been accepted.
     if (response.status === 409 || response.status >= 500) {
-      return { kind: "unknown", httpStatus: response.status };
+      return { kind: "unknown", httpStatus: response.status, ...(errorName ? { errorName } : {}) };
     }
-    return { kind: "refused", httpStatus: response.status };
+    return { kind: "refused", httpStatus: response.status, ...(errorName ? { errorName } : {}) };
   };
 }

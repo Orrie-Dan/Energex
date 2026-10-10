@@ -36,7 +36,7 @@ export default function WhyEnergexSection({ locale }: { locale: Locale }) {
         <HomeReveal as="ol" stagger className="m-0 grid list-none grid-cols-1 gap-4 p-0 sm:grid-cols-2 xl:grid-cols-4">
           {whyEnergex.pillars.map((pillar) => (
             <li key={pillar.title}>
-              <article className="group flex h-full flex-col gap-4 border border-color-001/10 bg-background p-6 transition-[border-color] duration-300 ease-[cubic-bezier(0.33,0,0.2,1)] hover:border-accent focus-within:border-accent motion-reduce:transition-none">
+              <article className="group flex h-full flex-col gap-4 border border-color-001/10 bg-background p-6 transition-[border-color] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-accent focus-within:border-accent motion-reduce:transition-none">
                 <span className={`text-accent ${FONT} text-sm font-semibold leading-5`}>
                   {pillar.number}
                 </span>

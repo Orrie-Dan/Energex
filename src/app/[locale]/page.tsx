@@ -94,7 +94,7 @@ export default async function Page({ params }: Props) {
                   <div className="hidden 2xl:w-[8.6625rem] 2xl:h-7 2xl:block 2xl:relative 2xl:z-1 2xl:shrink-0" data-cid="n39">
                     <a className="hidden 2xl:h-7 2xl:block 2xl:relative 2xl:aspect-[4.95/1] 2xl:text-primary 2xl:cursor-pointer" data-cid="n40" href={href("/")}>
                       <div className="hidden 2xl:w-[8.6625rem] 2xl:h-full 2xl:block 2xl:absolute 2xl:top-0" data-cid="n41">
-                        <img className="hidden 2xl:w-full 2xl:h-7 2xl:block 2xl:overflow-clip 2xl:object-contain 2xl:object-left 2xl:aspect-[auto_396/103]" data-cid="n42" alt="ENERGEX" height="80" src="/assets/energex/logo-cropped.png" width="396" />
+                        <img className="hidden 2xl:w-full 2xl:h-7 2xl:block 2xl:overflow-clip 2xl:object-contain 2xl:object-left 2xl:aspect-[auto_396/103]" data-cid="n42" alt="ENERGEX" height="80" src="/assets/energex/logo-on-dark-cropped.png" width="396" />
                       </div>
                     </a>
                   </div>
@@ -126,8 +126,7 @@ export default async function Page({ params }: Props) {
                     <div className="w-[8.6625rem] h-7 block relative z-1 shrink-0 2xl:hidden" data-cid="n77">
                       <a className="h-7 block relative aspect-[4.95/1] text-primary cursor-pointer 2xl:hidden" data-cid="n78" data-component="link" href={href("/")}>
                         <div className="w-[8.6625rem] h-full block absolute top-0 2xl:hidden" data-cid="n79">
-                          <img className="hidden lg:block w-full h-7 overflow-clip object-contain object-left aspect-[auto_396/103] 2xl:hidden" data-cid="n80" data-component="image" alt="ENERGEX" height="80" src="/assets/energex/logo-cropped.png" width="396" />
-                          <img className="block lg:hidden w-full h-7 overflow-clip object-contain object-left aspect-[auto_396/103]" data-cid="n80b" alt="ENERGEX" height="80" src="/assets/energex/logo-on-dark-cropped.png" width="396" />
+                          <img className="block w-full h-7 overflow-clip object-contain object-left aspect-[auto_396/103] 2xl:hidden" data-cid="n80" data-component="image" alt="ENERGEX" height="80" src="/assets/energex/logo-on-dark-cropped.png" width="396" />
                         </div>
                       </a>
                     </div>

@@ -1,5 +1,6 @@
 import "../globals.css";
 import "../ditto.css";
+import "../site-motion.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";
@@ -9,6 +10,7 @@ import { getContent } from "../../i18n/content";
 import { languageAlternates } from "../../i18n/metadata";
 import { SITE_ORIGIN } from "../../lib/site";
 import ScrollMotion from "../components/scroll-motion";
+import SiteMotion from "../components/site-motion";
 import DittoBehaviors from "../ditto/behaviors";
 import SvgSprite from "../svgs/svg-sprite";
 
@@ -77,6 +79,7 @@ export default async function LocaleLayout({
         {children}
         <DittoBehaviors />
         <ScrollMotion />
+        <SiteMotion />
       </body>
     </html>
   );

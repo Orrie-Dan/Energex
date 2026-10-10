@@ -245,9 +245,19 @@
   transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, -0.000833333, 0, 0, 0, 1);
   pointer-events: auto;
 }
-/* Top nav fades out when the floating bottom bar takes over (Framer). */
+/* Top nav fades out when the floating bottom bar takes over (Framer).
+   It overlays the hero video, so the dark wordmark and navy labels are forced light
+   and kept above the scaled footage. */
 [data-ditto-nav-top] {
+  z-index: 30;
   transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-ditto-nav-top] :is(a, p, h2) {
+  color: #fff;
+}
+[data-ditto-nav-top] a:hover,
+[data-ditto-nav-top] a:hover :is(p, h2) {
+  color: var(--accent);
 }
 [data-ditto-nav-top].ditto-nav-top-hidden {
   opacity: 0;
@@ -322,14 +332,12 @@ body.ditto-menu-lock {
 .service-arrow-glyph {
   transform: rotate(0deg);
   transform-origin: center center;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .service-arrow-slash {
   transform: rotate(45deg);
   transform-origin: 5.5px 0.5px;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+  transition: transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
 }
 [data-service-tilt]:hover .service-arrow-glyph,
 [data-service-tilt]:focus-visible .service-arrow-glyph,
@@ -358,13 +366,12 @@ body.ditto-menu-lock {
 [data-service-tilt] img {
   transform: scale(1);
   transform-origin: center center;
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: transform;
+  transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 [data-service-tilt]:hover img,
 [data-service-tilt]:focus-visible img,
 [data-service-tilt]:focus-within img {
-  transform: scale(1.12);
+  transform: scale(1.06);
 }
 @media (prefers-reduced-motion: reduce) {
   [data-service-tilt] img {
@@ -509,9 +516,46 @@ body.ditto-menu-lock {
   }
 }
 
-/* Homepage carousels. Widths follow the track viewport, not the window. */
+/* Homepage carousels. Widths follow the track viewport, not the window.
+   Vertical padding is the room the card lift uses; the clip edge stays put. */
 .offer-viewport {
   container-type: inline-size;
+  padding-block: 14px;
+  margin-block: -14px;
+}
+/* Ease in and out. The previous curve spent most of the move in the first frames. */
+.offer-card {
+  transition:
+    transform 1.15s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 1.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.offer-card:hover,
+.offer-card:focus-visible {
+  transform: translate3d(0, -8px, 0);
+}
+.offer-card img {
+  transform: scale(1);
+  transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.offer-card:hover img,
+.offer-card:focus-visible img {
+  transform: scale(1.045);
+}
+.offer-card::before {
+  transition: transform 1.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .offer-card,
+  .offer-card img,
+  .offer-card::before {
+    transition: none;
+  }
+  .offer-card:hover,
+  .offer-card:focus-visible,
+  .offer-card:hover img,
+  .offer-card:focus-visible img {
+    transform: none;
+  }
 }
 .offer-slide {
   width: 86cqw;

@@ -50,8 +50,8 @@ export function SiteChrome({ locale, children, tone = "cream" }: SiteChromeProps
       }`}
       style={{ color: NAVY }}
     >
-      <header className="sticky top-0 z-40 border-b border-[#011836]/10 bg-white/95 backdrop-blur-sm">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4 md:px-8">
+      <header data-site-header className="sticky top-0 z-40 border-b border-[#011836]/10 bg-white/95 backdrop-blur-sm">
+        <div className="mx-auto flex w-full max-w-[100rem] items-center justify-between gap-4 px-6 py-4 md:px-8 lg:px-10">
           <Link href={href("/")} className="flex shrink-0 items-center gap-2">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
@@ -106,7 +106,7 @@ export function SiteChrome({ locale, children, tone = "cream" }: SiteChromeProps
       <main className="flex-1">{children}</main>
 
       <footer className="border-t border-white/10 bg-[#011836] text-white">
-        <div className="mx-auto max-w-6xl px-5 py-12 md:px-8">
+        <div className="mx-auto w-full max-w-[100rem] px-6 py-12 md:px-8 lg:px-10">
           <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             <div className="lg:col-span-1">
               <p className="text-lg font-semibold tracking-tight">{brand.shortName}</p>
