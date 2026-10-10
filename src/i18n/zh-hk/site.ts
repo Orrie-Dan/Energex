@@ -38,10 +38,10 @@ export const siteZhHk: Translation<
     natureOfBusiness: "貿易",
   },
   navLinks: [
+    { label: "關於我們" },
     { label: "解決方案" },
     { label: "設備供應" },
     { label: "服務行業" },
-    { label: "關於我們" },
     { label: "聯絡我們" },
   ],
   navCta: { label: "開展項目" },

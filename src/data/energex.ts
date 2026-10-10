@@ -83,10 +83,10 @@ export const brand = {
 
 /** Primary nav — Projects omitted until verified case studies are supplied. */
 export const navLinks = [
+  { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions" },
   { href: "/equipment", label: "Equipment Supply" },
   { href: "/industries", label: "Industries" },
-  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
