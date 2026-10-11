@@ -141,31 +141,62 @@ export default function CapabilityIndexSection({
         <HomeReveal className="lg:hidden w-full border-t border-color-001/10">
           {capabilities.map((cap, i) => {
             const open = openMobile === i;
+            const panelId = `capability-panel-${cap.id}`;
             return (
               <div key={cap.id} className="border-b border-color-001/10">
                 <button
                   type="button"
-                  className="flex w-full items-baseline gap-4 py-5 text-left"
+                  className="flex w-full scroll-mt-24 items-center gap-3 py-4 text-left"
                   aria-expanded={open}
-                  onClick={() => setOpenMobile(open ? -1 : i)}
+                  aria-controls={panelId}
+                  onClick={(event) => {
+                    const trigger = event.currentTarget;
+                    setOpenMobile(open ? -1 : i);
+                    // Collapsing a taller panel above can push this row off-screen.
+                    requestAnimationFrame(() => {
+                      if (trigger.getBoundingClientRect().top < 80) {
+                        trigger.scrollIntoView({ block: "start" });
+                      }
+                    });
+                  }}
                 >
-                  <span className={`shrink-0 text-accent ${FONT} text-sm font-semibold`}>
+                  <span className={`w-7 shrink-0 text-accent ${FONT} text-sm font-semibold tabular-nums`}>
                     {cap.id}
                   </span>
-                  <span className={`flex-1 text-color-001 ${FONT} text-base font-medium`}>
+                  <span
+                    className={`flex-1 ${FONT} text-base font-medium leading-snug tracking-[-0.2px] ${
+                      open ? "text-color-001" : "text-color-001/85"
+                    }`}
+                  >
                     {cap.title}
                   </span>
-                  <span className="text-muted-foreground" aria-hidden>
+                  <span
+                    className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-lg leading-none transition-colors ${
+                      open
+                        ? "border-accent bg-accent text-white"
+                        : "border-color-001/15 text-color-001"
+                    }`}
+                    aria-hidden
+                  >
                     {open ? "−" : "+"}
                   </span>
                 </button>
                 {open ? (
-                  <div className="pb-6 pl-10 flex flex-col gap-4">
+                  <div id={panelId} className="pb-6 pl-10 pr-11 flex flex-col gap-4">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-color-001">
+                      <img
+                        src={cap.imgSrc}
+                        alt=""
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover opacity-90"
+                      />
+                    </div>
                     <p className={`text-muted-foreground ${FONT} text-sm leading-6`}>{cap.summary}</p>
                     <ul className="m-0 flex list-none flex-col gap-2 p-0">
                       {cap.includes.slice(0, 5).map((item) => (
-                        <li key={item} className={`text-sm text-color-001 ${FONT}`}>
-                          · {item}
+                        <li key={item} className={`flex gap-3 text-sm leading-relaxed text-color-001 ${FONT}`}>
+                          <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden />
+                          <span>{item}</span>
                         </li>
                       ))}
                     </ul>
