@@ -53,16 +53,16 @@ type QueryState = {
   rejectedCategory: boolean;
 };
 
-function readQuery(): QueryState {
+function readQuery(fallback: InquiryMode): QueryState {
   if (typeof window === "undefined") {
-    return { mode: "project", category: "", rejectedCategory: false };
+    return { mode: fallback, category: "", rejectedCategory: false };
   }
   const params = new URLSearchParams(window.location.search);
   const interest = params.get("interest")?.trim().toLowerCase() ?? "";
   const rawCategory = params.get("category")?.trim() ?? "";
   const category = getEquipmentCategory(rawCategory);
   const rejectedCategory = rawCategory.length > 0 && !category;
-  if (interest === "equipment" || (!interest && category)) {
+  if (interest === "equipment" || (!interest && (category || fallback === "equipment"))) {
     return { mode: "equipment", category: category?.slug ?? "", rejectedCategory };
   }
   return { mode: "project", category: category?.slug ?? "", rejectedCategory: false };
@@ -85,9 +85,18 @@ export type ContactFormProps = {
   formNoteLive: string;
   /** Published categories with localized titles; slugs are the submitted values. */
   categories: readonly { slug: string; title: string }[];
+  /** Mode used when the URL does not set `interest`. */
+  defaultMode?: InquiryMode;
 };
 
-export function ContactForm({ locale, text, formNote, formNoteLive, categories }: ContactFormProps) {
+export function ContactForm({
+  locale,
+  text,
+  formNote,
+  formNoteLive,
+  categories,
+  defaultMode = "project",
+}: ContactFormProps) {
   const live = publicInquiryConfig.enabled;
   const messageLocale = inquiryLocaleFor(locale);
   const inquiryStateText = inquiryMessages[messageLocale].state;
@@ -95,7 +104,7 @@ export function ContactForm({ locale, text, formNote, formNoteLive, categories }
   // "Fields marked with {mark} are required." — the mark is rendered as a visual asterisk plus screen-reader text.
   const [legendBefore = "", legendAfter = ""] = text.requiredLegend.split("{mark}");
   const formRef = useRef<HTMLFormElement>(null);
-  const [mode, setMode] = useState<InquiryMode>("project");
+  const [mode, setMode] = useState<InquiryMode>(defaultMode);
   const [project, setProject] = useState(EMPTY_PROJECT);
   const [equipment, setEquipment] = useState(EMPTY_EQUIPMENT);
   const [errors, setErrors] = useState<InquiryFieldErrors>({});
@@ -110,7 +119,7 @@ export function ContactForm({ locale, text, formNote, formNoteLive, categories }
   const attemptRef = useRef(createInquiryAttemptTracker());
 
   useEffect(() => {
-    const query = readQuery();
+    const query = readQuery(defaultMode);
     setMode(query.mode);
     setRejectedCategory(query.rejectedCategory);
     if (query.category) {

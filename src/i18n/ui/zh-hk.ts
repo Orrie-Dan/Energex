@@ -16,7 +16,7 @@ export const uiZhHk: UiText = {
     },
     about: {
       title: "關於我們",
-      description: "ENERGEX 的營運模式、項目交付框架、交付管控、市場策略、組織架構及責任框架。",
+      description: "ENERGEX 的營運模式、交付框架、交付管控及全球願景。",
     },
     solutions: {
       title: "解決方案",
@@ -161,6 +161,18 @@ export const uiZhHk: UiText = {
     typesHeading: "設備類型",
     procurementHeading: "採購及物流",
     relatedHeading: "相關設備類別",
+    browseCategories: "瀏覽類別",
+    heroBadge: "採購支援",
+    categoriesEyebrow: "採購範圍",
+    categoriesHeading: "設備類別",
+    featured: "精選",
+    procureEyebrow: "採購流程",
+    procureHeading: "由需求到現場。",
+    pauseSteps: "暫停",
+    playSteps: "播放",
+    stepOf: "第 {current} 步，共 {total} 步",
+    quoteEyebrow: "索取報價",
+    quoteHeading: "告訴我們您需要採購的設備。",
   },
   projects: {
     exploreSolutions: "瀏覽解決方案",

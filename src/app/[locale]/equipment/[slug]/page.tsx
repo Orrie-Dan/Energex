@@ -89,10 +89,11 @@ export default async function EquipmentCategoryPage({ params }: Props) {
           <ul className="mt-6 grid list-none gap-3 p-0 sm:grid-cols-2">
             {category.scope.map((item) => (
               <li
-                key={item}
-                className="rounded-lg border border-[#011836]/10 bg-[#f6f4f0] px-5 py-4 text-base font-medium text-[#011836]"
+                key={item.label}
+                className="rounded-lg border border-[#011836]/10 bg-[#f6f4f0] px-5 py-4 text-[#011836]"
               >
-                {item}
+                <span className="block text-base font-medium">{item.label}</span>
+                <span className="mt-1 block text-sm leading-relaxed text-[#011836]/60">{item.detail}</span>
               </li>
             ))}
           </ul>

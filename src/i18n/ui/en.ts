@@ -15,7 +15,7 @@ export const uiEn = {
     about: {
       title: "About",
       description:
-        "ENERGEX operating model, project delivery framework, delivery controls, market strategy, organization and responsibility framework.",
+        "ENERGEX operating model, delivery framework, delivery controls and global vision.",
     },
     solutions: {
       title: "Solutions",
@@ -166,6 +166,18 @@ export const uiEn = {
     typesHeading: "Equipment types",
     procurementHeading: "Procurement and logistics",
     relatedHeading: "Related equipment categories",
+    browseCategories: "Browse categories",
+    heroBadge: "Sourcing support",
+    categoriesEyebrow: "What we source",
+    categoriesHeading: "Equipment categories",
+    featured: "Featured",
+    procureEyebrow: "How we procure",
+    procureHeading: "From requirement to site.",
+    pauseSteps: "Pause",
+    playSteps: "Play",
+    stepOf: "Step {current} of {total}",
+    quoteEyebrow: "Request a quote",
+    quoteHeading: "Tell us what you need to source.",
   },
   projects: {
     exploreSolutions: "Explore Solutions",

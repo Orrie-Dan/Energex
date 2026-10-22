@@ -88,3 +88,9 @@
 html[data-scrolled] [data-site-header] {
   box-shadow: 0 8px 24px -16px rgb(1 24 54 / 0.35);
 }
+
+/* Procurement stepper: the active step's segment fills, then advances (components/procurement-stepper.tsx). */
+@keyframes site-fill {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}

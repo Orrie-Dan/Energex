@@ -85,6 +85,11 @@ export const mediaStatus = [
     note: "Sticky About / hero video — Energex project footage.",
   },
   {
+    path: "/assets/energex/equipment-hero.mp4",
+    status: "available" as const,
+    note: "Equipment page hero background video.",
+  },
+  {
     path: "/assets/energex/engineers.png",
     status: "available" as const,
     note: "About section image — Energex engineers inspecting a solar array.",

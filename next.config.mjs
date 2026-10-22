@@ -23,6 +23,9 @@ const nextConfig = {
     const pages = ["/about", "/contact", "/equipment", "/industries", "/solutions", "/projects", "/privacy", "/terms"];
     return [
       { source: "/", destination: "/en", permanent: true },
+      // Retired equipment slug: split into generators-engines and turbines.
+      { source: "/:locale(en|zh-hk)/equipment/power-generation", destination: "/:locale/equipment/generators-engines", permanent: true },
+      { source: "/equipment/power-generation", destination: "/en/equipment/generators-engines", permanent: true },
       ...pages.map((path) => ({ source: path, destination: `/en${path}`, permanent: true })),
       { source: "/equipment/:slug", destination: "/en/equipment/:slug", permanent: true },
       { source: "/solutions/:slug", destination: "/en/solutions/:slug", permanent: true },
