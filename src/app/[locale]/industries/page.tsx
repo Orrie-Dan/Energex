@@ -1,11 +1,29 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteChrome } from "../../components/site-chrome";
+import { CtaBanner } from "../../components/shell/cta-banner";
+import { pad2 } from "../../components/shell/emph";
+import { IndustrySelector } from "../../components/shell/industry-selector";
+import { PageHero } from "../../components/shell/page-hero";
+import { SectionHead } from "../../components/shell/section-head";
 import { isLocale, type Locale } from "../../../i18n/config";
 import { getContent } from "../../../i18n/content";
 import { pageMetadata } from "../../../i18n/metadata";
 
 type Props = { params: Promise<{ locale: string }> };
+
+const HERO_VIDEO = "/assets/energex/industries-hero.mp4";
+const HERO_POSTER = "/assets/energex/industries-hero-poster.jpg";
+const CTA_IMAGE = "/assets/energex/ind-ipp.jpg";
+
+/** Bento layout for the six focus areas; the last one is a wide banner with a description. */
+const VERTICAL_LAYOUT = [
+  { span: "nx-b8", height: "min-h-[460px]", size: "nx-t-h3", pad: "p-8" },
+  { span: "nx-b4", height: "min-h-[460px]", size: "nx-t-h4", pad: "p-7" },
+  { span: "nx-b4", height: "min-h-[380px]", size: "nx-t-h4", pad: "p-7" },
+  { span: "nx-b4", height: "min-h-[380px]", size: "nx-t-h4", pad: "p-7" },
+  { span: "nx-b4", height: "min-h-[380px]", size: "nx-t-h4", pad: "p-7" },
+] as const;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -15,126 +33,131 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function IndustriesPage({ params }: Props) {
   const { locale } = (await params) as { locale: Locale };
-  const { customers, finalCta, industrialVerticals, industriesSection, ui, href } = getContent(locale);
-  const t = ui.industries;
+  const { customers, industrialVerticals, navCta, pageCopy, href } = getContent(locale);
+  const t = pageCopy.industries;
+  const wide = industrialVerticals.length - 1;
+
   return (
-    <SiteChrome locale={locale} tone="plain">
-      <div className="mx-auto w-full max-w-[100rem] px-6 py-14 md:px-8 md:py-20 lg:px-10">
-        <header data-enter className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-wider text-[#f06f12]">
-            {industriesSection.label}
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold leading-[1.1] tracking-tight text-balance text-[#011836] md:text-5xl lg:text-6xl">
-            <span className="inline-block">{t.heroHeadingLead}</span>{" "}
-            <span className="inline-block text-[#011836]/55">{t.heroHeadingAccent}</span>
-          </h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#011836]/75 md:text-lg">
-            {t.heroDescription}
-          </p>
-        </header>
-
-        <div className="mt-10 space-y-6 md:mt-14">
-          {customers.map((item, index) => (
-            <article
-              data-reveal
-              key={item.title}
-              id={item.anchorId}
-              className="motion-zoom overflow-hidden rounded-lg border border-[#011836]/10 bg-white scroll-mt-24"
-            >
-              <div className="grid lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)]">
-                <div className="relative min-h-56 bg-[#011836] lg:min-h-full">
-                  <img
-                    src={item.imgSrc}
-                    alt=""
-                    className="absolute inset-0 h-full w-full object-cover opacity-90"
-                  />
-                  <div className="absolute inset-0 bg-linear-to-t from-[#011836]/80 via-[#011836]/25 to-transparent" />
-                  <div className="absolute inset-x-0 bottom-0 p-5">
-                    <span className="text-xs font-semibold text-[#f06f12]">
-                      {String(index + 1).padStart(2, "0")}
-                    </span>
-                    <h2 className="mt-1 text-xl font-semibold text-white">{item.title}</h2>
-                  </div>
-                </div>
-
-                <div className="grid gap-8 p-6 md:p-8 xl:grid-cols-[minmax(0,1fr)_minmax(16rem,0.8fr)] xl:gap-12">
-                  <div>
-                    <div className="grid gap-5 sm:grid-cols-2">
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
-                          {t.primaryNeed}
-                        </p>
-                        <p className="mt-1 text-sm font-medium text-[#011836]">{item.need}</p>
-                      </div>
-                      <div>
-                        <p className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
-                          {t.response}
-                        </p>
-                        <p className="mt-1 text-sm font-medium text-[#011836]">{item.response}</p>
-                      </div>
-                    </div>
-                    <p className="mt-5 text-sm leading-relaxed text-[#011836]/80">{item.detail}</p>
-                  </div>
-
-                  <ul className="space-y-2 xl:mt-0">
-                    {item.offerings.map((offering) => (
-                      <li
-                        key={offering}
-                        className="flex gap-3 text-sm leading-relaxed text-[#011836]/80"
-                      >
-                        <span
-                          className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#f06f12]"
-                          aria-hidden
-                        />
-                        <span>{offering}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        <section className="mt-16">
-          <div data-reveal className="grid items-end gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(16rem,0.7fr)] lg:gap-16">
-            <h2 className="text-xl font-semibold text-[#011836]">{t.focusHeading}</h2>
-            <p className="text-sm text-[#011836]/70">{t.focusIntro}</p>
-          </div>
-          <ul data-reveal="stagger" className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {industrialVerticals.map((vertical) => (
-              <li
-                key={vertical.title}
-                className="motion-lift rounded-lg border border-[#011836]/10 bg-white p-5"
+    <SiteChrome locale={locale} tone="plain" heroOverlay>
+      <PageHero
+        label={t.heroEyebrow}
+        video={HERO_VIDEO}
+        poster={HERO_POSTER}
+        shade="linear-gradient(180deg, rgba(11,26,48,0.78) 0%, rgba(11,26,48,0.45) 40%, rgba(11,26,48,0.95) 100%)"
+        tint
+        minHeight={780}
+        paddingBottom={152}
+        eyebrow={t.heroEyebrow}
+        title={t.heroTitle}
+        lead={t.heroLead}
+        aside={
+          <div className="flex flex-wrap gap-4">
+            {t.stats.map((stat, i) => (
+              <div
+                key={stat.number}
+                className="flex flex-col gap-1.5 rounded-[20px] border border-white/15 bg-white/[0.08] px-7 py-6 backdrop-blur-[14px]"
               >
-                <h3 className="font-semibold text-[#011836]">{vertical.title}</h3>
-                <p className="mt-2 text-sm text-[#011836]/75">{vertical.description}</p>
-              </li>
+                <span
+                  className={`nx-t-stat font-semibold ${
+                    i === t.stats.length - 1 ? "text-[var(--nx-accent)]" : ""
+                  }`}
+                >
+                  {stat.number}
+                </span>
+                <span className="text-sm text-[var(--nx-cloud)]">{stat.label}</span>
+              </div>
             ))}
-          </ul>
-        </section>
+          </div>
+        }
+      />
 
-        <section data-reveal className="mt-14 flex flex-col gap-6 rounded-lg border border-[#011836]/10 bg-white px-6 py-8 md:px-10 lg:flex-row lg:items-center lg:justify-between">
-          <div className="max-w-3xl">
-            <h2 className="text-xl font-semibold text-[#011836]">{finalCta.heading}</h2>
-            <p className="mt-3 text-sm text-[#011836]/75">{finalCta.body}</p>
-          </div>
-          <div className="flex shrink-0 flex-wrap items-center gap-3">
-            <Link
-              href={finalCta.cta.href}
-              className="inline-flex rounded-md bg-[#f06f12] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#c4500a]"
-            >
-              {finalCta.cta.label}
-            </Link>
-            <Link
-              href={href("/solutions")}
-              className="inline-flex rounded-md border border-[#011836]/20 px-5 py-2.5 text-sm font-semibold text-[#011836] hover:border-[#f06f12]/50"
-            >
-              {t.exploreAllCapabilities}
-            </Link>
-          </div>
-        </section>
-      </div>
+      <section aria-labelledby="segments-heading" className="nx-wrap nx-section flex flex-col gap-14">
+        <SectionHead id="segments-heading" eyebrow={t.segmentsEyebrow} title={t.segmentsTitle} aside={t.segmentsIntro} />
+        <IndustrySelector
+          segments={customers.map((customer, i) => ({
+            anchorId: customer.anchorId,
+            title: customer.title,
+            need: customer.need,
+            response: customer.response,
+            services: customer.offerings,
+            imgSrc: customer.imgSrc,
+            imgAlt: t.segmentAlts[i] ?? "",
+          }))}
+          discussHref={navCta.href}
+          exploreHref={href("/solutions")}
+          text={{
+            label: t.segmentsLabel,
+            segmentOf: t.segmentOf,
+            need: t.need,
+            response: t.response,
+            discuss: t.discuss,
+            explore: t.explore,
+          }}
+        />
+      </section>
+
+      <section aria-labelledby="focus-heading" className="bg-[var(--nx-sand)]">
+        <div className="nx-wrap nx-section flex flex-col gap-14">
+          <SectionHead id="focus-heading" eyebrow={t.focusEyebrow} title={t.focusTitle} titleMaxWidth={820} />
+          <ul data-reveal="stagger" className="nx-bento m-0 list-none p-0">
+            {industrialVerticals.map((vertical, i) => {
+              const media = t.verticals[i];
+              if (i === wide) {
+                return (
+                  <li key={vertical.title} className="nx-media nx-zoom nx-b12 flex min-h-[360px] items-end rounded-[24px] text-white">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    {media ? <img src={media.imgSrc} alt={media.imgAlt} loading="lazy" /> : null}
+                    <div
+                      aria-hidden="true"
+                      className="nx-shade"
+                      style={{ background: "linear-gradient(90deg, rgba(11,26,48,0.88) 0%, rgba(11,26,48,0.2) 70%)" }}
+                    />
+                    <div className="relative flex max-w-[560px] flex-col gap-3 p-10 max-[640px]:p-7">
+                      <span className="nx-num text-lg !text-[var(--nx-accent)]">{pad2(i + 1)}</span>
+                      <h3 className="nx-display m-0 nx-t-h3">
+                        {vertical.title}
+                      </h3>
+                      <p className="m-0 text-sm leading-relaxed text-[var(--nx-cloud)]">{t.commercialDescription}</p>
+                    </div>
+                  </li>
+                );
+              }
+              const layout = VERTICAL_LAYOUT[i] ?? VERTICAL_LAYOUT[4];
+              return (
+                <li
+                  key={vertical.title}
+                  className={`nx-media nx-zoom ${layout.span} ${layout.height} flex items-end rounded-[24px] text-white max-[640px]:min-h-[320px]`}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  {media ? <img src={media.imgSrc} alt={media.imgAlt} loading="lazy" /> : null}
+                  <div
+                    aria-hidden="true"
+                    className="nx-shade"
+                    style={{ background: "linear-gradient(180deg, rgba(11,26,48,0) 45%, rgba(11,26,48,0.88) 100%)" }}
+                  />
+                  <div className={`relative flex w-full items-baseline justify-between gap-4 ${layout.pad}`}>
+                    <h3 className={`nx-display m-0 ${layout.size}`}>
+                      {vertical.title}
+                    </h3>
+                    <span className="nx-num text-lg !text-[var(--nx-accent)]">{pad2(i + 1)}</span>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </section>
+
+      <CtaBanner
+        eyebrow={t.ctaEyebrow}
+        title={t.ctaTitle}
+        image={CTA_IMAGE}
+        actions={
+          <Link href={navCta.href} className="nx-btn nx-btn--accent nx-btn--lg">
+            {navCta.label} <span aria-hidden="true">→</span>
+          </Link>
+        }
+      />
     </SiteChrome>
   );
 }

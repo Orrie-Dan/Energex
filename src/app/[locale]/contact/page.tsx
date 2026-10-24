@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { SiteChrome } from "../../components/site-chrome";
-import { isLocale, type Locale } from "../../../i18n/config";
+import { PageHero } from "../../components/shell/page-hero";
+import { formatText, isLocale, type Locale } from "../../../i18n/config";
 import { getContent } from "../../../i18n/content";
 import { pageMetadata } from "../../../i18n/metadata";
-import { publicInquiryConfig } from "../../../lib/inquiry/public-config";
 import { ContactForm } from "./contact-form";
 
 type Props = { params: Promise<{ locale: string }> };
+
+const HERO_VIDEO = "/assets/energex/cta-loop.mp4";
+const HERO_POSTER = "/assets/energex/cta-loop-poster.jpg";
+const HQ_IMAGE = "/assets/energex/fam-delivery.jpg";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
@@ -16,80 +20,76 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ContactPage({ params }: Props) {
   const { locale } = (await params) as { locale: Locale };
-  const { brand, contactPage, equipmentCategories, ui } = getContent(locale);
-  const t = ui.contact;
+  const { brand, contactPage, equipmentCategories, pageCopy, ui } = getContent(locale);
+  const t = pageCopy.contact;
+
   return (
-    <SiteChrome locale={locale}>
-      <div data-enter className="mx-auto max-w-6xl px-5 py-14 md:px-8 md:py-20">
-        <p className="text-sm font-semibold uppercase tracking-wider text-[#f06f12]">
-          {contactPage.eyebrow}
-        </p>
-        <h1 className="mt-2 max-w-3xl text-3xl font-semibold tracking-tight text-[#011836] md:text-4xl">
-          {contactPage.heading}
-        </h1>
-        <p className="mt-4 max-w-3xl text-[#011836]/80">{contactPage.supporting}</p>
+    <SiteChrome locale={locale} tone="plain" heroOverlay>
+      <PageHero
+        label={t.heroEyebrow}
+        video={HERO_VIDEO}
+        poster={HERO_POSTER}
+        shade="linear-gradient(180deg, rgba(11,26,48,0.75) 0%, rgba(11,26,48,0.35) 45%, rgba(11,26,48,0.92) 100%)"
+        minHeight={640}
+        paddingBottom={280}
+        eyebrow={t.heroEyebrow}
+        title={t.heroTitle}
+        titleMaxWidth={1100}
+        lead={t.heroLead}
+      />
 
-        <div className="mt-10 grid gap-10 lg:grid-cols-2">
-          <div>
-            <h2 className="text-lg font-semibold text-[#011836]">{brand.name}</h2>
-            <p className="mt-1 text-sm text-[#011836]/60">{brand.taglinePrimary}</p>
-
-            <address className="mt-6 not-italic text-[#011836]/80">
-              <span className="block text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
-                {t.correspondenceAddress}
-              </span>
-              {brand.addressLines.map((line) => (
-                <span key={line} className="mt-1 block">
-                  {line}
-                </span>
-              ))}
-            </address>
-
-            <dl className="mt-6 space-y-3 text-sm text-[#011836]/75">
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
-                  {t.businessRegistration}
-                </dt>
-                <dd className="mt-1">{brand.registration}</dd>
-              </div>
-              <div>
-                <dt className="text-xs font-semibold uppercase tracking-wide text-[#011836]/50">
-                  {t.natureOfBusiness}
-                </dt>
-                <dd className="mt-1">{brand.natureOfBusiness}</dd>
-              </div>
-            </dl>
-
-            <h3 className="mt-8 text-sm font-semibold uppercase tracking-wide text-[#011836]">
-              {t.topicsHeading}
-            </h3>
-            <ul className="mt-3 space-y-2">
-              {contactPage.topics.map((topic) => (
-                <li
-                  key={topic}
-                  className="flex gap-3 text-sm leading-relaxed text-[#011836]/80"
-                >
-                  <span
-                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#f06f12]"
-                    aria-hidden
-                  />
-                  <span>{topic}</span>
-                </li>
-              ))}
-            </ul>
-
-            <p className="mt-8 text-sm text-[#011836]/60">{publicInquiryConfig.enabled ? contactPage.formNoteLive : contactPage.formNote}</p>
-          </div>
-
+      <section
+        id="inquiry"
+        aria-label={t.heroEyebrow}
+        className="nx-wrap relative z-[3] -mt-[150px] flex flex-wrap items-start gap-6 pb-32 max-[900px]:pb-20"
+      >
+        <div className="min-w-0 flex-[999_1_640px] rounded-[32px] bg-white p-[52px] shadow-[0_40px_100px_rgba(11,26,48,0.18)] max-[640px]:rounded-[24px] max-[640px]:p-6">
           <ContactForm
             locale={locale}
-            text={t}
+            title={t.formTitle}
+            text={ui.contact}
             formNote={contactPage.formNote}
             formNoteLive={contactPage.formNoteLive}
             categories={equipmentCategories.map((category) => ({ slug: category.slug, title: category.title }))}
           />
         </div>
-      </div>
+
+        <aside className="flex min-w-0 flex-[1_1_340px] flex-col gap-5">
+          <div className="nx-media flex min-h-[300px] items-end rounded-[28px] text-white">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={HQ_IMAGE} alt={t.hqImgAlt} loading="lazy" />
+            <div
+              aria-hidden="true"
+              className="nx-shade"
+              style={{ background: "linear-gradient(180deg, rgba(11,26,48,0) 30%, rgba(11,26,48,0.92) 100%)" }}
+            />
+            <div className="relative flex flex-col gap-2 p-7">
+              <h2 className="nx-label m-0 text-[var(--nx-accent)]">{t.hqLabel}</h2>
+              <address className="nx-display not-italic nx-t-h4">
+                {brand.addressLines.map((line) => (
+                  <span key={line} className="block">
+                    {line}
+                  </span>
+                ))}
+              </address>
+              <span className="pt-1.5 text-sm text-[var(--nx-cloud)]">
+                {formatText(ui.chrome.registration, { registration: brand.registration })}
+              </span>
+            </div>
+          </div>
+
+          <div className="flex flex-col gap-4 rounded-[28px] bg-[var(--nx-sand)] p-8 max-[640px]:p-6">
+            <h2 className="nx-label m-0 text-[var(--nx-accent-ink)]">{t.topicsLabel}</h2>
+            <ul className="m-0 flex list-none flex-wrap gap-2 p-0">
+              {t.topics.map((topic) => (
+                <li key={topic} className="rounded-full bg-white px-3.5 py-[9px] text-sm">
+                  {topic}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </aside>
+      </section>
     </SiteChrome>
   );
 }

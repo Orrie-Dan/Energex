@@ -24,6 +24,7 @@ import {
   type InquiryMode,
   type ProjectInquiryFields,
 } from "../../../lib/inquiry/validate";
+import { Emph } from "../../components/shell/emph";
 import { TurnstileWidget } from "./turnstile-widget";
 
 const EMPTY_PROJECT: ProjectInquiryFields = {
@@ -79,6 +80,8 @@ const OUTCOME_CLASS = {
 
 export type ContactFormProps = {
   locale: Locale;
+  /** Form heading; `*text*` marks the accent phrase. */
+  title: string;
   /** Localized form labels (`ui.contact`). */
   text: UiText["contact"];
   formNote: string;
@@ -91,6 +94,7 @@ export type ContactFormProps = {
 
 export function ContactForm({
   locale,
+  title,
   text,
   formNote,
   formNoteLive,
@@ -254,38 +258,46 @@ export function ContactForm({
     <form
       ref={formRef}
       onSubmit={onSubmit}
-      className="rounded-lg border border-[#011836]/10 bg-white p-6 shadow-sm"
+      aria-labelledby="inquiry-title"
+      className="m-0 flex flex-col gap-[30px]"
       noValidate
       aria-busy={submitting || undefined}
     >
-      <p className="text-sm text-[#011836]/70">{live ? formNoteLive : formNote}</p>
-      <p className="mt-2 text-sm text-[#011836]/70">
-        {legendBefore}
-        <span aria-hidden="true">*</span>
-        <span className="sr-only">{text.requiredMarkSr}</span>
-        {legendAfter}
-      </p>
+      <div className="flex flex-wrap items-end justify-between gap-5">
+        <h2 id="inquiry-title" className="nx-display m-0 nx-t-h3">
+          <Emph text={title} />
+        </h2>
+        <fieldset className="m-0 border-0 p-0" disabled={submitting || accepted}>
+          <legend className="sr-only">{text.inquiryType}</legend>
+          <div className="grid grid-cols-2 gap-1 rounded-full bg-[var(--nx-sand)] p-[5px]">
+            <ModeButton pressed={mode === "project"} label={text.projectInquiry} onClick={() => switchMode("project")}>
+              {text.projectShort}
+            </ModeButton>
+            <ModeButton pressed={mode === "equipment"} label={text.equipmentInquiry} onClick={() => switchMode("equipment")}>
+              {text.equipmentShort}
+            </ModeButton>
+          </div>
+        </fieldset>
+      </div>
 
-      <fieldset className="mt-5" disabled={submitting || accepted}>
-        <legend className="text-sm font-medium text-[#011836]">{text.inquiryType}</legend>
-        <div className="mt-2 flex flex-wrap gap-2">
-          <ModeButton pressed={mode === "project"} onClick={() => switchMode("project")}>
-            {text.projectInquiry}
-          </ModeButton>
-          <ModeButton pressed={mode === "equipment"} onClick={() => switchMode("equipment")}>
-            {text.equipmentInquiry}
-          </ModeButton>
-        </div>
-      </fieldset>
+      <div className="-mt-3 flex flex-col gap-1 text-sm leading-relaxed text-[var(--nx-muted)]">
+        <p className="m-0">{live ? formNoteLive : formNote}</p>
+        <p className="m-0">
+          {legendBefore}
+          <span aria-hidden="true" className="text-[var(--nx-accent-ink)]">*</span>
+          <span className="sr-only">{text.requiredMarkSr}</span>
+          {legendAfter}
+        </p>
+      </div>
 
       {rejectedCategory && mode === "equipment" ? (
-        <p className="mt-4 text-sm text-[#011836]" role="status">
+        <p className="m-0 text-sm text-[var(--nx-ink)]" role="status">
           {inquiryStateText.rejectedCategory}
         </p>
       ) : null}
 
       {errorEntries.length > 0 ? (
-        <div className="mt-4 rounded-md border border-[#9f1239]/30 bg-[#fff1f2] p-4" role="alert">
+        <div className="rounded-2xl border border-[#9f1239]/30 bg-[#fff1f2] p-4" role="alert">
           <p className="text-sm font-semibold text-[#9f1239]">{inquiryStateText.errorSummary}</p>
           <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-[#9f1239]">
             {errorEntries.map((entry) => (
@@ -299,7 +311,10 @@ export function ContactForm({
         </div>
       ) : null}
 
-      <fieldset className="mt-5 space-y-4" disabled={submitting || accepted}>
+      <fieldset
+        className="m-0 grid grid-cols-[repeat(auto-fit,minmax(min(240px,100%),1fr))] gap-[18px] border-0 p-0"
+        disabled={submitting || accepted}
+      >
         <TextField
           markers={markers}
           id={fieldId("name")}
@@ -358,6 +373,7 @@ export function ContactForm({
               markers={markers}
               id={fieldId("description")}
               label={text.fieldProjectDescription}
+              hint={text.projectDescriptionHint}
               required
               value={project.description}
               error={messages.description}
@@ -366,9 +382,12 @@ export function ContactForm({
           </>
         ) : (
           <>
-            <label className="block text-sm font-medium text-[#011836]" htmlFor={fieldId("category")}>
-              {text.fieldCategory}
-              <RequiredMark srText={text.requiredSr} />
+            <div className="flex flex-col gap-2">
+            <label className={LABEL_CLASS} htmlFor={fieldId("category")}>
+              <span>
+                {text.fieldCategory}
+                <RequiredMark srText={text.requiredSr} />
+              </span>
               <select
                 id={fieldId("category")}
                 name="category"
@@ -390,6 +409,7 @@ export function ContactForm({
               </select>
             </label>
             <FieldError id={errorId("category")} message={messages.category} />
+            </div>
             <TextAreaField
               markers={markers}
               id={fieldId("description")}
@@ -427,20 +447,22 @@ export function ContactForm({
               error={messages.timeline}
               onChange={(value) => updateEquipment("timeline", value)}
             />
-            <div>
-              <label className="block text-sm font-medium text-[#011836]" htmlFor={fieldId("document")}>
-                {text.fieldDocument}
-                <span className="ml-2 font-normal text-[#011836]/60">{text.documentUnavailable}</span>
+            <div className="col-span-full flex flex-col gap-2">
+              <label className={LABEL_CLASS} htmlFor={fieldId("document")}>
+                <span>
+                  {text.fieldDocument}
+                  <span className="ml-2 font-normal text-[var(--nx-muted)]">{text.documentUnavailable}</span>
+                </span>
                 <input
                   id={fieldId("document")}
                   name="document"
                   type="file"
                   disabled
-                  className="mt-1 block w-full cursor-not-allowed text-sm text-[#011836]/50"
+                  className="block w-full cursor-not-allowed text-sm text-[var(--nx-muted)]"
                   aria-describedby="document-note"
                 />
               </label>
-              <p id="document-note" className="mt-1 text-sm text-[#011836]/60">
+              <p id="document-note" className="m-0 text-sm text-[var(--nx-muted)]">
                 {text.documentNote}
               </p>
             </div>
@@ -466,7 +488,7 @@ export function ContactForm({
 
       {live && !accepted ? (
         turnstileUnavailable ? (
-          <p className="mt-6 text-sm text-[#9f1239]" role="status">
+          <p className="m-0 text-sm text-[#9f1239]" role="status">
             {inquiryStateText.verificationUnavailable}
           </p>
         ) : (
@@ -480,29 +502,29 @@ export function ContactForm({
         )
       ) : null}
 
-      {accepted ? (
-        <button
-          type="button"
-          onClick={startNewInquiry}
-          className="mt-6 rounded-md border border-[#011836]/20 px-5 py-2.5 text-sm font-semibold text-[#011836] hover:bg-[#011836]/5"
-        >
-          {inquiryStateText.startNew}
-        </button>
-      ) : (
-        <button
-          type="submit"
-          disabled={submitting || (live && (!turnstileToken || turnstileUnavailable))}
-          className="mt-6 rounded-md bg-[#f06f12] px-5 py-2.5 text-sm font-semibold text-white hover:bg-[#c4500a] disabled:opacity-60"
-        >
-          {submitLabel}
-        </button>
-      )}
-      {live && !accepted && !submitting && !turnstileToken && !turnstileUnavailable ? (
-        <p className="mt-2 text-sm text-[#011836]/60">{inquiryStateText.verificationPending}</p>
-      ) : null}
+      <div className="flex flex-wrap items-center justify-between gap-4 border-t border-[var(--nx-line)] pt-[22px]">
+        <span className="text-sm text-[var(--nx-muted)]">
+          {live && !accepted && !submitting && !turnstileToken && !turnstileUnavailable
+            ? inquiryStateText.verificationPending
+            : null}
+        </span>
+        {accepted ? (
+          <button type="button" onClick={startNewInquiry} className="nx-btn nx-btn--outline">
+            {inquiryStateText.startNew}
+          </button>
+        ) : (
+          <button
+            type="submit"
+            disabled={submitting || (live && (!turnstileToken || turnstileUnavailable))}
+            className="nx-btn nx-btn--accent nx-btn--lg border-0 disabled:cursor-not-allowed disabled:opacity-60"
+          >
+            {submitLabel} <span aria-hidden="true">→</span>
+          </button>
+        )}
+      </div>
       <div aria-live="polite" role="status">
         {outcomeMessage ? (
-          <p className={`mt-4 rounded-md border p-4 text-sm font-medium ${OUTCOME_CLASS[outcomeMessage.tone]}`}>
+          <p className={`m-0 rounded-2xl border p-4 text-sm font-medium ${OUTCOME_CLASS[outcomeMessage.tone]}`}>
             {outcomeMessage.text}
           </p>
         ) : null}
@@ -526,16 +548,18 @@ function describedBy(name: string, error: string | undefined, hintId?: string) {
   return ids.length ? ids.join(" ") : undefined;
 }
 
-function inputClass(invalid: boolean) {
-  return `mt-1 w-full rounded-md border px-3 py-2 text-sm text-[#011836] ${
-    invalid ? "border-[#9f1239]" : "border-[#011836]/20"
-  }`;
+/** Label wraps its control: text on top, field below. */
+const LABEL_CLASS = "flex flex-col gap-2 text-sm font-semibold text-[var(--nx-ink)]";
+
+// `aria-invalid` drives the error styling in `.nx-field`.
+function inputClass(_invalid: boolean) {
+  return "nx-field font-normal";
 }
 
 function RequiredMark({ srText }: { srText: string }) {
   return (
     <>
-      <span aria-hidden="true"> *</span>
+      <span aria-hidden="true" className="text-[var(--nx-accent-ink)]"> *</span>
       <span className="sr-only">{srText}</span>
     </>
   );
@@ -544,7 +568,7 @@ function RequiredMark({ srText }: { srText: string }) {
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-1 text-sm text-[#9f1239]">
+    <p id={id} className="m-0 text-sm text-[#9f1239]">
       {message}
     </p>
   );
@@ -552,10 +576,13 @@ function FieldError({ id, message }: { id: string; message?: string }) {
 
 function ModeButton({
   pressed,
+  label,
   onClick,
   children,
 }: {
   pressed: boolean;
+  /** Full accessible name (the visible text is the short form). */
+  label: string;
   onClick: () => void;
   children: string;
 }) {
@@ -563,9 +590,10 @@ function ModeButton({
     <button
       type="button"
       aria-pressed={pressed}
+      aria-label={label}
       onClick={onClick}
-      className={`rounded-md px-3 py-2 text-sm font-semibold ${
-        pressed ? "bg-[#011836] text-white" : "border border-[#011836]/20 text-[#011836]"
+      className={`nx-focus min-h-[46px] cursor-pointer rounded-full border-0 px-[22px] text-sm ${
+        pressed ? "bg-[var(--nx-navy)] font-semibold text-white" : "bg-transparent font-medium text-[var(--nx-ink)]"
       }`}
     >
       {children}
@@ -596,10 +624,16 @@ function TextField({
 }) {
   const name = id.replace("inquiry-", "");
   return (
-    <div>
-      <label className="block text-sm font-medium text-[#011836]" htmlFor={id}>
-        {label}
-        {required ? <RequiredMark srText={markers.required} /> : <span className="ml-2 font-normal text-[#011836]/60">{markers.optional}</span>}
+    <div className="flex flex-col gap-2">
+      <label className={LABEL_CLASS} htmlFor={id}>
+        <span>
+          {label}
+          {required ? (
+            <RequiredMark srText={markers.required} />
+          ) : (
+            <span className="ml-1.5 font-normal text-[var(--nx-muted)]">{markers.optional}</span>
+          )}
+        </span>
         <input
           id={id}
           name={name}
@@ -639,12 +673,14 @@ function TextAreaField({
 }) {
   const name = id.replace("inquiry-", "");
   return (
-    <div>
-      <label className="block text-sm font-medium text-[#011836]" htmlFor={id}>
-        {label}
-        {required ? <RequiredMark srText={markers.required} /> : null}
+    <div className="col-span-full flex flex-col gap-2">
+      <label className={LABEL_CLASS} htmlFor={id}>
+        <span>
+          {label}
+          {required ? <RequiredMark srText={markers.required} /> : null}
+        </span>
         {hint ? (
-          <span id={`${id}-hint`} className="mt-1 block font-normal text-[#011836]/60">
+          <span id={`${id}-hint`} className="-mt-1 block text-sm font-normal leading-relaxed text-[var(--nx-muted)]">
             {hint}
           </span>
         ) : null}

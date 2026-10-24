@@ -2,6 +2,7 @@ import type { ContentTranslation } from "../content";
 import { companyZhHk } from "./company";
 import { equipmentZhHk } from "./equipment";
 import { industriesZhHk } from "./industries";
+import { pagesZhHk } from "./pages";
 import { siteZhHk } from "./site";
 import { solutionsZhHk } from "./solutions";
 
@@ -12,4 +13,5 @@ export const contentZhHk: ContentTranslation = {
   ...companyZhHk,
   ...industriesZhHk,
   ...equipmentZhHk,
+  ...pagesZhHk,
 };

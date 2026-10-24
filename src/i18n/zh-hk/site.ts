@@ -232,11 +232,9 @@ export const siteZhHk: Translation<
       { label: "電網及分佈式能源" },
       { label: "項目交付及生命週期" },
       { label: "電力設備供應" },
-      { label: "全部能力" },
     ],
     delivery: [
       { label: "交付框架" },
-      { label: "交付管控" },
       { label: "全球採購" },
       { label: "融資支援" },
       { label: "營運及維護與資產管理" },

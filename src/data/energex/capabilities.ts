@@ -225,7 +225,7 @@ export const capabilities: readonly Capability[] = [
     ],
     familySlug: "project-delivery-lifecycle",
     familyHref: "/solutions/project-delivery-lifecycle",
-    imgSrc: "/assets/energex/engineers.png",
+    imgSrc: "/assets/energex/epc-site.jpg",
   },
   {
     id: "13",
@@ -276,7 +276,7 @@ export const capabilities: readonly Capability[] = [
     ],
     familySlug: "cross-cutting",
     familyHref: "/solutions",
-    imgSrc: "/assets/energex/grid-future.webp",
+    imgSrc: "/assets/energex/digital.jpg",
   },
 ] as const;
 

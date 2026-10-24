@@ -1,6 +1,7 @@
 import "../globals.css";
 import "../ditto.css";
 import "../site-motion.css";
+import "../site-shell.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactNode } from "react";

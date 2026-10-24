@@ -68,6 +68,8 @@ export {
   type EquipmentCategory,
 } from "./energex/equipment";
 
+export { pageCopy } from "./energex/pages";
+
 export const brand = {
   name: "ENERGEX GLOBAL SOLUTIONS",
   shortName: "ENERGEX",
@@ -85,7 +87,7 @@ export const brand = {
 export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions" },
-  { href: "/equipment", label: "Equipment Supply" },
+  { href: "/equipment", label: "Equipment" },
   { href: "/industries", label: "Industries" },
   { href: "/contact", label: "Contact" },
 ] as const;
@@ -168,40 +170,40 @@ export const solutionFamilies = [
     title: "Power & Generation",
     description:
       "Power generation, LNG & gas-to-power, and floating power solutions.",
-    imgSrc: "/assets/energex/power.webp",
-    srcSet: "/assets/energex/power.webp 1400w",
-    imgSrc2: "/assets/energex/floating-power.png",
-    srcSet2: "/assets/energex/floating-power.png 1400w",
+    imgSrc: "/assets/energex/fam-power.jpg",
+    srcSet: "/assets/energex/fam-power.jpg 1600w",
+    imgSrc2: "/assets/energex/fam-power.jpg",
+    srcSet2: "/assets/energex/fam-power.jpg 1600w",
   },
   {
     href: "/solutions/renewables-storage",
     title: "Renewables & Storage",
     description:
       "Renewable energy and battery storage capabilities.",
-    imgSrc: "/assets/energex/renewables-storage.png",
-    srcSet: "/assets/energex/renewables-storage.png 1400w",
-    imgSrc2: "/assets/energex/renewables-storage.png",
-    srcSet2: "/assets/energex/renewables-storage.png 1400w",
+    imgSrc: "/assets/energex/fam-renew.jpg",
+    srcSet: "/assets/energex/fam-renew.jpg 1600w",
+    imgSrc2: "/assets/energex/fam-renew.jpg",
+    srcSet2: "/assets/energex/fam-renew.jpg 1600w",
   },
   {
     href: "/solutions/grid-distributed-energy",
     title: "Grid & Distributed Energy",
     description:
       "Grid, rural electrification, industrial energy and e-mobility capabilities.",
-    imgSrc: "/assets/energex/grid.webp",
-    srcSet: "/assets/energex/grid.webp 1400w",
-    imgSrc2: "/assets/energex/grid-future.webp",
-    srcSet2: "/assets/energex/grid-future.webp 1400w",
+    imgSrc: "/assets/energex/fam-grid.jpg",
+    srcSet: "/assets/energex/fam-grid.jpg 1600w",
+    imgSrc2: "/assets/energex/fam-grid.jpg",
+    srcSet2: "/assets/energex/fam-grid.jpg 1600w",
   },
   {
     href: "/solutions/project-delivery-lifecycle",
     title: "Project Delivery & Lifecycle",
     description:
       "Development, trading, EPC, financing support and O&M — with digital energy as a cross-cutting layer.",
-    imgSrc: "/assets/energex/investment.webp",
-    srcSet: "/assets/energex/investment.webp 1400w",
-    imgSrc2: "/assets/energex/investment.webp",
-    srcSet2: "/assets/energex/investment.webp 1400w",
+    imgSrc: "/assets/energex/fam-delivery.jpg",
+    srcSet: "/assets/energex/fam-delivery.jpg 1600w",
+    imgSrc2: "/assets/energex/fam-delivery.jpg",
+    srcSet2: "/assets/energex/fam-delivery.jpg 1600w",
   },
 ] as const;
 
@@ -447,15 +449,13 @@ export const footer = {
     { href: "/solutions/grid-distributed-energy", label: "Grid & Distributed Energy" },
     { href: "/solutions/project-delivery-lifecycle", label: "Project Delivery & Lifecycle" },
     { href: "/equipment", label: "Power Equipment Supply" },
-    { href: "/solutions", label: "All Capabilities" },
   ],
   delivery: [
     { href: "/about#delivery", label: "Delivery Framework" },
-    { href: "/about#controls", label: "Delivery Controls" },
     { href: "/solutions/project-delivery-lifecycle", label: "Global Procurement" },
     { href: "/solutions/project-delivery-lifecycle", label: "Financing Support" },
     { href: "/solutions/project-delivery-lifecycle", label: "O&M & Asset Management" },
-    { href: "/solutions", label: "Digital Energy" },
+    { href: "/solutions#digital-energy", label: "Digital Energy" },
   ],
   company: [
     { href: "/about", label: "About" },

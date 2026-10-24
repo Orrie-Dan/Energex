@@ -41,6 +41,7 @@ import {
   navLinks,
   organizationFunctions,
   organizationSection,
+  pageCopy,
   projectsPage,
   revenueModels,
   scale,
@@ -105,6 +106,7 @@ export const englishContent = {
   equipmentCategories,
   equipmentProcurement,
   equipmentSupplyCard,
+  pageCopy,
 };
 
 export type EnglishContent = typeof englishContent;

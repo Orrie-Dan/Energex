@@ -271,7 +271,7 @@ export const solutionsZhHk: Translation<
       title: "項目交付及生命週期",
       titleLines: ["項目交付", "及生命週期"],
       supporting: "涵蓋項目開發、採購、EPC 整合、融資支援、營運及長期資產表現的項目能力。",
-      heroAlt: "建造或調試中的大型能源基建（示意圖）",
+      heroAlt: "能源設施內的工程師（示意圖）",
       introduction: [
         "交付及生命週期能力將能源需求轉化為結構完善、已落實採購、可執行及可營運的項目——並不表示每項專業工作均由內部執行。",
         "Energex 擔任整合者：專業 OEM、EPC 承建商、工程公司、融資方及本地合作夥伴可執行指定工作包，而 Energex 則保留客戶對接窗口及商業協調。",

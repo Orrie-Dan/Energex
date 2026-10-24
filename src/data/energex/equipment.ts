@@ -77,8 +77,8 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Balance of plant", detail: "Auxiliary equipment for engine power stations." },
     ],
     featured: true,
-    imgSrc: "/assets/energex/power.webp",
-    imgAlt: "Waterfront power plant",
+    imgSrc: "/assets/energex/eq-gensets.jpg",
+    imgAlt: "Engine generator set in a plant enclosure",
   },
   {
     slug: "turbines",
@@ -89,8 +89,8 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Steam turbines", detail: "Combined-cycle and industrial applications." },
       { label: "Turbine auxiliaries", detail: "Associated balance-of-plant equipment." },
     ],
-    imgSrc: "/assets/energex/grid-future.webp",
-    imgAlt: "Thermal power plant connected to the grid",
+    imgSrc: "/assets/energex/eq-turbines.jpg",
+    imgAlt: "Wind turbine",
   },
   {
     slug: "transmission-distribution",
@@ -102,7 +102,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Cables", detail: "Power cables and accessories." },
       { label: "Substation equipment", detail: "Protection, control and substation packages." },
     ],
-    imgSrc: "/assets/energex/grid.webp",
+    imgSrc: "/assets/energex/eq-td.jpg",
     imgAlt: "Electrical substation",
   },
   {
@@ -114,8 +114,8 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Inverters", detail: "String and central inverters." },
       { label: "Battery storage (BESS)", detail: "Battery energy storage systems." },
     ],
-    imgSrc: "/assets/energex/renewables-storage.png",
-    imgAlt: "Renewable generation and storage",
+    imgSrc: "/assets/energex/eq-storage.jpg",
+    imgAlt: "Battery storage modules",
   },
   {
     slug: "charging-controls",
@@ -126,7 +126,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Smart meters", detail: "Metering for billing and monitoring." },
       { label: "Digital controls", detail: "Monitoring and control systems." },
     ],
-    imgSrc: "/assets/energex/fleet-charging.png",
+    imgSrc: "/assets/energex/eq-charging.jpg",
     imgAlt: "Vehicle charging infrastructure",
   },
   {
@@ -139,8 +139,8 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Compressors", detail: "Gas and boil-off gas compressors." },
       { label: "Cryogenic systems", detail: "Vaporisers and cryogenic process systems." },
     ],
-    imgSrc: "/assets/energex/lng.webp",
-    imgAlt: "LNG infrastructure",
+    imgSrc: "/assets/energex/eq-lng.jpg",
+    imgAlt: "LNG and cryogenic storage tanks",
   },
   {
     slug: "spare-parts",
@@ -152,8 +152,8 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Electrical components", detail: "Breakers, relays and AVRs." },
       { label: "Overhaul kits", detail: "Planned-maintenance kits." },
     ],
-    imgSrc: "/assets/energex/trading-hd.webp",
-    imgAlt: "Industrial equipment handling",
+    imgSrc: "/assets/energex/eq-spares.jpg",
+    imgAlt: "Spare parts warehouse",
   },
 ] as const;
 
@@ -163,7 +163,7 @@ export const equipmentSupplyCard = {
   title: "Power Equipment Supply",
   description:
     "International trading and procurement of generation, solar, storage, grid, charging, LNG, and spare-parts equipment.",
-  imgSrc: "/assets/energex/trading-hd.webp",
+  imgSrc: "/assets/energex/fam-equip.jpg",
 } as const;
 
 export function equipmentCategoryHref(slug: string): string {
