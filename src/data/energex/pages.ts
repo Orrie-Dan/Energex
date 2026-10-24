@@ -184,7 +184,7 @@ export const pageCopy = {
       {
         description: "On-site review of the manufacturing facility before order.",
         imgSrc: "/assets/energex/factory-audit.jpg",
-        imgAlt: "Engineer with a tablet inspecting a factory",
+        imgAlt: "High-voltage switchgear inside a manufacturing hall",
       },
       {
         description: "Coordinating transport from factory to project site.",

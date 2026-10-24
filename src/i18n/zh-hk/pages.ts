@@ -133,7 +133,7 @@ export const pagesZhHk: Translation<Pick<EnglishContent, "pageCopy">> = {
       processNote: "以上為採購活動——並非認證或保養承諾。",
       process: [
         { description: "按項目需求評估製造商，作為技術資格審核的一部分。", imgAlt: "評估中的高壓設備" },
-        { description: "落單前到廠房現場審查製造設施。", imgAlt: "手持平板電腦巡查工廠的工程師" },
+        { description: "落單前到廠房現場審查製造設施。", imgAlt: "製造廠房內的高壓開關設備" },
         { description: "協調由工廠運往項目現場的運輸。", imgAlt: "從高空俯瞰的貨櫃船" },
         { description: "協助辦理目的地的進口清關。", imgAlt: "設有吊機的貨櫃碼頭" },
       ],

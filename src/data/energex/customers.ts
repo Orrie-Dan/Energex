@@ -94,7 +94,7 @@ export const customers: readonly CustomerSegment[] = [
     need: "Cost reduction and resilience",
     response: "C&I solar, BESS and EMS",
     tags: ["C&I Solar", "BESS", "Energy Management"],
-    imgSrc: "/assets/energex/ind-campus.jpg",
+    imgSrc: "/assets/energex/city-night.jpg",
     detail:
       "Commercial buildings and real-estate portfolios seek lower energy cost, higher resilience and cleaner on-site generation.",
     offerings: [
