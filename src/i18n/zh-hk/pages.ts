@@ -85,7 +85,7 @@ export const pagesZhHk: Translation<Pick<EnglishContent, "pageCopy">> = {
         { label: "電力及發電", title: "燃氣、LNG 發電及浮動式發電。", imgAlt: "燃氣處理廠及現場工程師" },
         { label: "可再生能源及儲能", title: "可再生能源及電池儲能。", imgAlt: "設有逆變器及電池櫃的太陽能發電場" },
         { label: "電網及分佈式能源", title: "電網、電氣化及電動出行。", imgAlt: "黃昏下的高壓輸電塔" },
-        { label: "交付及生命週期", title: "項目開發、EPC、融資及營運及維護。", imgAlt: "工業設施內穿著防護裝備的工程師" },
+        { label: "交付及生命週期", title: "項目開發、EPC、融資及營運及維護。", imgAlt: "鳥瞰興建中的變電站" },
         { label: "設備供應", title: "合資格設備，全球採購。", imgAlt: "高壓電氣設備及絕緣子" },
       ],
       capTag: "能力 {ids}",

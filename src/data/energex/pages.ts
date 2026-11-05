@@ -117,8 +117,8 @@ export const pageCopy = {
         label: "Delivery & Lifecycle",
         title: "Development, EPC, financing and O&M.",
         href: "/solutions/project-delivery-lifecycle",
-        imgSrc: "/assets/energex/fam-delivery.jpg",
-        imgAlt: "Engineer in protective gear at an industrial facility",
+        imgSrc: "/assets/energex/epc-site.jpg",
+        imgAlt: "Aerial view of a substation under construction",
       },
       {
         label: "Equipment Supply",

@@ -200,10 +200,10 @@ export const solutionFamilies = [
     title: "Project Delivery & Lifecycle",
     description:
       "Development, trading, EPC, financing support and O&M — with digital energy as a cross-cutting layer.",
-    imgSrc: "/assets/energex/fam-delivery.jpg",
-    srcSet: "/assets/energex/fam-delivery.jpg 1600w",
-    imgSrc2: "/assets/energex/fam-delivery.jpg",
-    srcSet2: "/assets/energex/fam-delivery.jpg 1600w",
+    imgSrc: "/assets/energex/epc-site.jpg",
+    srcSet: "/assets/energex/epc-site.jpg 1600w",
+    imgSrc2: "/assets/energex/epc-site.jpg",
+    srcSet2: "/assets/energex/epc-site.jpg 1600w",
   },
 ] as const;
 

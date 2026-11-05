@@ -156,7 +156,7 @@ export const solutionFamilyDefs: readonly SolutionFamilyDef[] = [
     titleLines: ["Project Delivery", "& Lifecycle"],
     supporting:
       "Project capabilities spanning development, sourcing, EPC integration, financing support, operations and long-term asset performance.",
-    heroAlt: "Engineer at an operating energy facility (thematic)",
+    heroAlt: "Aerial view of a substation under construction (thematic)",
     heroObjectPosition: "50% 40%",
     introduction: [
       "Delivery and lifecycle capabilities convert an energy requirement into a structured, sourced, executable and operable project — without implying that every specialist discipline is performed internally.",
