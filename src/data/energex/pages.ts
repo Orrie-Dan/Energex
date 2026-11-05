@@ -251,7 +251,7 @@ export const pageCopy = {
       "Share your demand, site, fuel or renewable resource, schedule and commercial goals. One team takes it from there.",
     formTitle: "Start your *inquiry.*",
     hqLabel: "Headquarters",
-    hqImgAlt: "Energex engineer on site",
+    hqImgAlt: "Energex engineers inspecting a solar array on site",
     topicsLabel: "Typical inquiries",
     topics: [
       "Generation & LNG-to-power",

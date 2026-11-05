@@ -10,7 +10,7 @@ type Props = { params: Promise<{ locale: string }> };
 
 const HERO_VIDEO = "/assets/energex/cta-loop.mp4";
 const HERO_POSTER = "/assets/energex/cta-loop-poster.jpg";
-const HQ_IMAGE = "/assets/energex/fam-delivery.jpg";
+const HQ_IMAGE = "/assets/energex/engineers.png";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;

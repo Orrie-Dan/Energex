@@ -186,7 +186,7 @@ export const pagesZhHk: Translation<Pick<EnglishContent, "pageCopy">> = {
       heroLead: "分享您的用電需求、場地、燃料或可再生資源、時間表及商業目標，由同一團隊跟進到底。",
       formTitle: "開始您的*查詢。*",
       hqLabel: "總部",
-      hqImgAlt: "Energex 工程師在現場",
+      hqImgAlt: "Energex 工程師在現場檢查太陽能板陣列",
       topicsLabel: "常見查詢",
       topics: [
         "發電及 LNG 發電",
