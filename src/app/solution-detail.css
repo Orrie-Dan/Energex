@@ -263,6 +263,12 @@
   gap: 1.25rem;
 }
 
+.sd-block-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
 .sd-h {
   margin: 0;
   font-size: 1.5rem; /* 24px */
@@ -763,6 +769,131 @@
 
   .sd-final-cta-title {
     font-size: 2.5rem;
+  }
+}
+
+/* --- Split layout (desktop) ---------------------------------------------
+   Section heading in a sticky left rail, content in a wide right column, so
+   the page reads as a structured spread rather than one long narrow strip.
+   Tablet/mobile keep the single column above. */
+
+@media (min-width: 1025px) {
+  .sd-layout-split .sd-content {
+    padding: 6rem 3rem 9.375rem;
+  }
+
+  .sd-layout-split .sd-content-col {
+    --sd-rail: minmax(13rem, 1fr);
+    --sd-main: minmax(0, 2.6fr);
+    width: min(75rem, 100%);
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  .sd-layout-split .sd-block {
+    display: grid;
+    grid-template-columns: var(--sd-rail) var(--sd-main);
+    column-gap: 4.5rem;
+    padding: 4rem 0;
+    border-top: 1px solid rgba(13, 13, 13, 0.12);
+  }
+
+  .sd-layout-split .sd-content-col > .sd-reveal:first-child .sd-block {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .sd-layout-split .sd-block-head {
+    position: sticky;
+    top: 2.5rem;
+    align-self: start;
+  }
+
+  .sd-layout-split .sd-block-body > .sd-body {
+    max-width: 44rem;
+  }
+
+  /* Digital layer: the row divider replaces its own rule. */
+  .sd-layout-split .sd-digital {
+    padding-top: 4rem;
+  }
+
+  /* What We Deliver: capability cards in a two-column grid. */
+  .sd-layout-split .sd-deliverables,
+  .sd-layout-split .sd-deliverables-dense {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 0;
+  }
+
+  .sd-layout-split .sd-deliverables > .sd-reveal > .sd-cap,
+  .sd-layout-split .sd-deliverables > .sd-reveal > .sd-deliverable {
+    height: 100%;
+    padding: 1.75rem;
+    border: 1px solid rgba(13, 13, 13, 0.1);
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+  /* Integration chain reads left to right. */
+  .sd-layout-split .sd-integration {
+    flex-direction: row;
+    flex-wrap: wrap;
+    row-gap: 0.75rem;
+  }
+
+  .sd-layout-split .sd-integration-step {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sd-layout-split .sd-integration-label {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(13, 13, 13, 0.12);
+    background: rgba(255, 255, 255, 0.4);
+    font-size: 0.9375rem;
+  }
+
+  .sd-layout-split .sd-integration-arrow {
+    padding: 0 0.75rem;
+    transform: rotate(-90deg);
+    color: var(--sd-accent);
+  }
+
+  /* Built For: two columns. */
+  .sd-layout-split .sd-built-for {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2.5rem;
+    row-gap: 0.5rem;
+  }
+
+  .sd-layout-split .sd-built-for li:nth-child(2) {
+    border-top: none;
+    padding-top: 0;
+  }
+
+  /* Portfolio link and prev/next align with the content column. */
+  .sd-layout-split .sd-portfolio-link-wrap {
+    display: grid;
+    grid-template-columns: var(--sd-rail) var(--sd-main);
+    column-gap: 4.5rem;
+    padding-top: 1rem;
+  }
+
+  .sd-layout-split .sd-portfolio-link-wrap > a {
+    grid-column: 2;
+  }
+
+  .sd-layout-split .sd-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: 4rem;
+  }
+
+  .sd-layout-split .sd-nav-next {
+    grid-column: 2;
   }
 }
 

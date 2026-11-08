@@ -16,6 +16,14 @@ const HERO_VIDEO = "/assets/energex/industries-hero.mp4";
 const HERO_POSTER = "/assets/energex/industries-hero-poster.jpg";
 const CTA_IMAGE = "/assets/energex/ind-ipp.jpg";
 
+/** Attribution for licensed segment photos, keyed by image path. Proper nouns only, so no translation needed. */
+const IMAGE_CREDITS: Record<string, { label: string; href: string }> = {
+  "/assets/energex/ind-dev.jpg": {
+    label: "© Rupumped · CC BY-SA 4.0",
+    href: "https://commons.wikimedia.org/wiki/File:Mini-Grid_Bayelsa.jpg",
+  },
+};
+
 /** Bento layout for the six focus areas; the last one is a wide banner with a description. */
 const VERTICAL_LAYOUT = [
   { span: "nx-b8", height: "min-h-[460px]", size: "nx-t-h3", pad: "p-8" },
@@ -82,6 +90,7 @@ export default async function IndustriesPage({ params }: Props) {
             services: customer.offerings,
             imgSrc: customer.imgSrc,
             imgAlt: t.segmentAlts[i] ?? "",
+            imgCredit: IMAGE_CREDITS[customer.imgSrc],
           }))}
           discussHref={navCta.href}
           exploreHref={href("/solutions")}

@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import type { SolutionDetail } from "../../../data/solutions";
 import type { Locale } from "../../../i18n/config";
@@ -19,7 +20,38 @@ type SolutionDetailPageProps = {
   useFamilyNavigation?: boolean;
   previousOverride?: SolutionDetail | null;
   nextOverride?: SolutionDetail | null;
+  /**
+   * "split" (default): on desktop, section headings sit in a sticky left column
+   * beside a wide content column. "column": the original single editorial column,
+   * kept for the internal Tilanium fidelity shell.
+   */
+  layout?: "split" | "column";
 };
+
+/** One editorial section: heading (+ optional eyebrow) and a body. */
+function Block({
+  title,
+  eyebrow,
+  className,
+  ariaLabel,
+  children,
+}: {
+  title: string;
+  eyebrow?: string;
+  className?: string;
+  ariaLabel?: string;
+  children: ReactNode;
+}) {
+  return (
+    <section className={`sd-block${className ? ` ${className}` : ""}`} aria-label={ariaLabel}>
+      <div className="sd-block-head">
+        {eyebrow ? <p className="sd-digital-eyebrow">{eyebrow}</p> : null}
+        <h2 className="sd-h">{title}</h2>
+      </div>
+      <div className="sd-block-body">{children}</div>
+    </section>
+  );
+}
 
 function BulletList({ items }: { items: string[] }) {
   return (
@@ -42,8 +74,7 @@ function IntegrationChain({
   steps: readonly string[];
 }) {
   return (
-    <section className="sd-block">
-      <h2 className="sd-h">{label}</h2>
+    <Block title={label}>
       <ol className="sd-integration" aria-label={label}>
         {steps.map((step, i) => (
           <li key={step} className="sd-integration-step">
@@ -56,7 +87,7 @@ function IntegrationChain({
           </li>
         ))}
       </ol>
-    </section>
+    </Block>
   );
 }
 
@@ -66,6 +97,7 @@ export function SolutionDetailPage({
   useFamilyNavigation = true,
   previousOverride,
   nextOverride,
+  layout = "split",
 }: SolutionDetailPageProps) {
   const {
     finalCta: siteFinalCta,
@@ -101,7 +133,7 @@ export function SolutionDetailPage({
 
   return (
     <SolutionPageMotion routeKey={motionKey}>
-      <article className="sd-page">
+      <article className={`sd-page sd-layout-${layout}`}>
         <SolutionHero
           motionKey={motionKey}
           eyebrow={solution.eyebrow}
@@ -123,19 +155,17 @@ export function SolutionDetailPage({
           <div className="sd-content">
             <div className="sd-content-col">
               <SolutionReveal>
-                <section className="sd-block">
-                  <h2 className="sd-h">{t.introduction}</h2>
+                <Block title={t.introduction}>
                   {solution.introduction.paragraphs.map((p) => (
                     <p key={p.slice(0, 48)} className="sd-body">
                       {p}
                     </p>
                   ))}
-                </section>
+                </Block>
               </SolutionReveal>
 
               <SolutionReveal delayMs={40}>
-                <section className="sd-block">
-                  <h2 className="sd-h">{t.whatWeDeliver}</h2>
+                <Block title={t.whatWeDeliver}>
                   {familyCapabilities.length > 0 ? (
                     <FamilyCapabilityList
                       capabilities={familyCapabilities}
@@ -153,18 +183,17 @@ export function SolutionDetailPage({
                       ))}
                     </div>
                   )}
-                </section>
+                </Block>
               </SolutionReveal>
 
               <SolutionReveal delayMs={40}>
-                <section className="sd-block">
-                  <h2 className="sd-h">{t.ourApproach}</h2>
+                <Block title={t.ourApproach}>
                   {solution.approach.paragraphs.map((p) => (
                     <p key={p.slice(0, 48)} className="sd-body">
                       {p}
                     </p>
                   ))}
-                </section>
+                </Block>
               </SolutionReveal>
 
               {solution.integration ? (
@@ -178,9 +207,12 @@ export function SolutionDetailPage({
 
               {solution.digitalContext && digitalCapability ? (
                 <SolutionReveal delayMs={40}>
-                  <section className="sd-block sd-digital" aria-label={t.digitalLayerLabel}>
-                    <p className="sd-digital-eyebrow">{t.crossCutting}</p>
-                    <h2 className="sd-h">{t.digitalLayer}</h2>
+                  <Block
+                    title={t.digitalLayer}
+                    eyebrow={t.crossCutting}
+                    className="sd-digital"
+                    ariaLabel={t.digitalLayerLabel}
+                  >
                     <div className="sd-cap-head">
                       <h3 className="sd-cap-title sd-cap-title-digital">
                         <span className="sd-cap-num">{digitalCapability.id}</span>
@@ -188,50 +220,46 @@ export function SolutionDetailPage({
                       </h3>
                     </div>
                     <p className="sd-body">{solution.digitalContext}</p>
-                  </section>
+                  </Block>
                 </SolutionReveal>
               ) : null}
 
               {solution.customerTitles?.length ? (
                 <SolutionReveal delayMs={40}>
-                  <section className="sd-block">
-                    <h2 className="sd-h">{t.builtFor}</h2>
+                  <Block title={t.builtFor}>
                     <ul className="sd-built-for">
                       {solution.customerTitles.map((title) => (
                         <li key={title}>{customerTitle(title)}</li>
                       ))}
                     </ul>
-                  </section>
+                  </Block>
                 </SolutionReveal>
               ) : null}
 
               {solution.frameworkCta ? (
                 <SolutionReveal delayMs={40}>
-                  <section className="sd-block sd-framework">
-                    <h2 className="sd-h">{solution.frameworkCta.heading}</h2>
+                  <Block title={solution.frameworkCta.heading} className="sd-framework">
                     <p className="sd-body">{solution.frameworkCta.body}</p>
                     <Link href={solution.frameworkCta.href} className="sd-text-link">
                       {solution.frameworkCta.label}
                     </Link>
-                  </section>
+                  </Block>
                 </SolutionReveal>
               ) : null}
 
               {solution.why?.length ? (
                 <SolutionReveal delayMs={40}>
-                  <section className="sd-block">
-                    <h2 className="sd-h">Why Companies Choose Us</h2>
+                  <Block title="Why Companies Choose Us">
                     <BulletList items={solution.why} />
-                  </section>
+                  </Block>
                 </SolutionReveal>
               ) : null}
 
               {solution.results?.length ? (
                 <SolutionReveal delayMs={40}>
-                  <section className="sd-block">
-                    <h2 className="sd-h">Results</h2>
+                  <Block title="Results">
                     <BulletList items={solution.results} />
-                  </section>
+                  </Block>
                 </SolutionReveal>
               ) : null}
 

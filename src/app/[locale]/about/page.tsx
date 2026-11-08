@@ -13,7 +13,7 @@ type Props = { params: Promise<{ locale: string }> };
 
 const HERO_VIDEO = "/assets/energex/about-hero.mp4";
 const HERO_POSTER = "/assets/energex/city-night.jpg";
-const WHO_IMAGE = "/assets/energex/about-team.jpg";
+const WHO_LOGO = "/assets/energex/logo-on-dark-hd.png";
 const VISION_IMAGE = "/assets/energex/about-vision.jpg";
 const CTA_IMAGE = "/assets/energex/fam-grid.jpg";
 
@@ -78,9 +78,9 @@ export default async function AboutPage({ params }: Props) {
             <p className="nx-display relative m-0 text-base md:text-lg">{t.mission}</p>
           </div>
         </div>
-        <div data-reveal className="nx-media nx-zoom relative min-h-[620px] min-w-0 flex-[1_1_480px] rounded-[28px] max-[640px]:min-h-[420px]">
+        <div data-reveal className="nx-media relative min-h-[620px] min-w-0 flex-[1_1_480px] rounded-[28px] max-[640px]:min-h-[420px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={WHO_IMAGE} alt={t.whoImgAlt} loading="lazy" />
+          <img src={WHO_LOGO} alt={t.whoImgAlt} loading="lazy" className="!object-contain px-14 pb-28 pt-14 max-[640px]:px-8 max-[640px]:pb-24" />
           <ol className="absolute bottom-6 left-6 right-6 m-0 flex list-none flex-wrap gap-2 p-0">
             {t.journey.map((step, i) => (
               <li

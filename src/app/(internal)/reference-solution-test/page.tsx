@@ -23,6 +23,7 @@ export default function ReferenceSolutionTestPage() {
         useFamilyNavigation={false}
         previousOverride={null}
         nextOverride={null}
+        layout="column"
       />
     </SiteChrome>
   );

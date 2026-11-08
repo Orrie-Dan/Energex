@@ -14,6 +14,8 @@ export type IndustrySegment = {
   services: readonly string[];
   imgSrc: string;
   imgAlt: string;
+  /** Attribution for licensed photos (e.g. CC BY-SA); rendered over the detail image. */
+  imgCredit?: { label: string; href: string };
 };
 
 type IndustrySelectorProps = {
@@ -130,6 +132,16 @@ export function IndustrySelector({ segments, discussHref, exploreHref, text }: I
             className="nx-shade"
             style={{ background: "linear-gradient(180deg, rgba(11,26,48,0) 35%, rgba(11,26,48,0.9) 100%)" }}
           />
+          {selected.imgCredit ? (
+            <a
+              href={selected.imgCredit.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="nx-focus absolute right-4 top-4 rounded-full bg-[rgba(11,26,48,0.55)] px-3 py-1 text-[11px] text-white/85 backdrop-blur-[6px] hover:text-white"
+            >
+              {selected.imgCredit.label}
+            </a>
+          ) : null}
           <div className="absolute bottom-8 left-10 right-10 flex flex-col gap-2.5 text-white max-[640px]:bottom-6 max-[640px]:left-6 max-[640px]:right-6">
             <span className="nx-label text-[#f07a1a]">
               {formatText(text.segmentOf, { current: pad2(index + 1), total: pad2(segments.length) })}

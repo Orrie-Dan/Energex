@@ -29,7 +29,7 @@ function NavCard({
       : `${basePath}/${solution.slug}`;
 
   return (
-    <SolutionReveal>
+    <SolutionReveal className={`sd-nav-${direction}`}>
       <Link href={href} className="sd-nav-card">
         <div className="sd-nav-card-copy">
           <p className="sd-nav-eyebrow">

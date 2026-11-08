@@ -78,7 +78,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
     ],
     featured: true,
     imgSrc: "/assets/energex/eq-gensets.jpg",
-    imgAlt: "Engine generator set in a plant enclosure",
+    imgAlt: "Row of large diesel generator sets in an engine power station hall",
   },
   {
     slug: "turbines",
@@ -115,7 +115,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Battery storage (BESS)", detail: "Battery energy storage systems." },
     ],
     imgSrc: "/assets/energex/eq-storage.jpg",
-    imgAlt: "Battery storage modules",
+    imgAlt: "Utility-scale solar farm under a clear sky",
   },
   {
     slug: "charging-controls",
@@ -140,7 +140,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Cryogenic systems", detail: "Vaporisers and cryogenic process systems." },
     ],
     imgSrc: "/assets/energex/eq-lng.jpg",
-    imgAlt: "LNG and cryogenic storage tanks",
+    imgAlt: "LNG carrier with spherical cryogenic cargo tanks at sea at sunset",
   },
   {
     slug: "spare-parts",
@@ -153,7 +153,7 @@ export const equipmentCategories: readonly EquipmentCategory[] = [
       { label: "Overhaul kits", detail: "Planned-maintenance kits." },
     ],
     imgSrc: "/assets/energex/eq-spares.jpg",
-    imgAlt: "Spare parts warehouse",
+    imgAlt: "Close-up of engine components, pulleys and drive belts",
   },
 ] as const;
 

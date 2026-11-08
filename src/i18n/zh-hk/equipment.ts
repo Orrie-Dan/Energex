@@ -42,7 +42,7 @@ export const equipmentZhHk: Translation<
         { label: "發電機", detail: "交流發電機及發電機端。" },
         { label: "電廠配套設備", detail: "發動機發電站的輔助設備。" },
       ],
-      imgAlt: "廠房機櫃內的發動機發電機組",
+      imgAlt: "發電廠機房內一排大型柴油發電機組",
     },
     {
       title: "渦輪機",
@@ -73,7 +73,7 @@ export const equipmentZhHk: Translation<
         { label: "逆變器", detail: "組串式及集中式逆變器。" },
         { label: "電池儲能（BESS）", detail: "電池儲能系統。" },
       ],
-      imgAlt: "電池儲能模組",
+      imgAlt: "晴空下的大型太陽能發電場",
     },
     {
       title: "充電及控制",
@@ -94,7 +94,7 @@ export const equipmentZhHk: Translation<
         { label: "壓縮機", detail: "氣體及蒸發氣壓縮機。" },
         { label: "低溫系統", detail: "氣化器及低溫製程系統。" },
       ],
-      imgAlt: "LNG 及低溫儲存罐",
+      imgAlt: "日落時海上載有球形低溫貨艙的 LNG 運輸船",
     },
     {
       title: "備用零件",
@@ -105,7 +105,7 @@ export const equipmentZhHk: Translation<
         { label: "電氣部件", detail: "斷路器、繼電器及自動電壓調節器（AVR）。" },
         { label: "大修套件", detail: "定期保養套件。" },
       ],
-      imgAlt: "備件倉庫",
+      imgAlt: "發動機零件、皮帶輪及傳動帶特寫",
     },
   ],
   equipmentProcurement: ["OEM 評估", "工廠審核", "物流支援", "清關支援"],
